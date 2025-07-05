@@ -184,7 +184,6 @@
                 </div>
                 <button class="start-btn" onclick="reviewAnswers()">Xem lại đáp án / Review Answers</button>
                 <button class="start-btn" onclick="restartTest()">Làm lại / Restart</button>
-                <button class="start-btn" id="downloadBtn" onclick="downloadCSV()">Tải kết quả CSV / Download CSV</button>
             </div>
         </div>
     </div>
@@ -440,4 +439,47 @@
                 detailsHTML += `<div class="result-item"><h3 style="color:#ffc107;">${results.pending}</h3><p>Chờ xem xét / Pending</p></div>`;
             } else {
                 detailsHTML += `<div class="result-item"><h3>${results.correct}</h3><p>Đúng / Correct</p></div>`;
-                detailsHTML += `<div class="result-item"><h3>${results.incorrect}</h3><p>Sai
+                detailsHTML += `<div class="result-item"><h3>${results.incorrect}</h3><p>Sai / Incorrect</p></div>`;
+            }
+            const tm = testConfig.timeLimit*60 - currentTest.timeRemaining;
+            const mm = Math.floor(tm/60).toString().padStart(2,'0');
+            const ss = (tm%60).toString().padStart(2,'0');
+            detailsHTML += `<div class="result-item"><h3>${mm}:${ss}</h3><p>Thời gian / Time</p></div>`;
+            document.querySelector('.results-details').innerHTML = detailsHTML;
+        }
+
+        function calculateResults() {
+            let c=0, x=0, p=0;
+            currentTest.questions.forEach(q=>{
+                const ua=currentTest.answers[q.id];
+                if(q.type==='shortanswer') return p++;
+                const ok = q.type==='fillblank'
+                   ? ua && ua.trim().toLowerCase()===q.correct.toLowerCase()
+                   : ua===q.correct;
+                if(ok) c++; else x++;
+            });
+            const auto= currentTest.questions.length - p;
+            return { correct:c, incorrect:x, pending:p, percentage: auto>0 ? Math.round(c/auto*100) : 0 };
+        }
+
+        function reviewAnswers() {
+            document.getElementById('resultsDisplay').style.display='none';
+            document.getElementById('testInterface').style.display='block';
+            currentTest.reviewMode=true;
+            currentTest.currentIndex=0;
+            document.getElementById('finishBtn').textContent='Về kết quả';
+            loadQuestionReview();
+        }
+
+        function restartTest() {
+            clearInterval(currentTest.timer);
+            document.getElementById('resultsDisplay').style.display='none';
+            document.getElementById('testSetup').style.display='block';
+            currentTest.questions=[];
+            currentTest.currentIndex=0;
+            currentTest.answers={};
+            currentTest.reviewMode=false;
+        }
+    </script>
+</body>
+</html>
