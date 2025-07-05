@@ -52,6 +52,84 @@
             padding: 40px;
         }
 
+        .loading {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #4facfe;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .config-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .config-section h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .url-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        .url-input:focus {
+            outline: none;
+            border-color: #4facfe;
+        }
+
+        .load-btn {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .load-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+        }
+
+        .load-btn:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
         .test-setup {
             text-align: center;
         }
@@ -104,6 +182,7 @@
             background: #6c757d;
             cursor: not-allowed;
             transform: none;
+            box-shadow: none;
         }
 
         .question-container {
@@ -343,13 +422,13 @@
             color: #856404;
         }
 
-        .loading-error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
+        .questions-info {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+            padding: 15px;
             border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
+            margin: 15px 0;
         }
 
         @media (max-width: 768px) {
@@ -393,10 +472,55 @@
         </div>
 
         <div class="content">
+            <!-- Loading State -->
+            <div class="loading" id="loadingState">
+                <div class="loading-spinner"></div>
+                <p>Đang tải câu hỏi... / Loading questions...</p>
+            </div>
+
+            <!-- Configuration Section -->
+            <div class="config-section" id="configSection" style="display: none;">
+                <h3>⚙️ Cấu hình nguồn câu hỏi / Configure Question Source</h3>
+                <input type="text" 
+                       class="url-input" 
+                       id="jsonUrl" 
+                       placeholder="Nhập URL file JSON câu hỏi / Enter JSON URL (e.g., https://raw.githubusercontent.com/username/repo/main/questions.json)"
+                       value="">
+                <button class="load-btn" onclick="loadQuestions()" id="loadQuestionsBtn">
+                    📥 Tải câu hỏi / Load Questions
+                </button>
+                <div id="questionsInfo" class="questions-info" style="display: none;">
+                    <strong>✅ Đã tải thành công!</strong>
+                    <p>Số câu hỏi: <span id="questionCount">0</span></p>
+                    <p>Loại câu hỏi: <span id="questionTypes"></span></p>
+                </div>
+                <div id="errorMessage" style="display: none;"></div>
+            </div>
+
             <!-- Test Setup -->
-            <div class="test-setup" id="testSetup">
-                <h2>⏳ Đang tải câu hỏi... / Loading questions...</h2>
-                <p>Vui lòng đợi trong giây lát / Please wait a moment</p>
+            <div class="test-setup" id="testSetup" style="display: none;">
+                <h2>Thiết lập bài thi / Test Setup</h2>
+                
+                <div class="setup-options">
+                    <div class="option-card" data-option="questionCount">
+                        <h3>📝 Số câu hỏi</h3>
+                        <p>Questions: <span id="questionCountDisplay">10</span></p>
+                        <input type="range" id="questionCountSlider" min="5" max="50" value="10" style="width: 100%; margin-top: 10px;">
+                    </div>
+                    
+                    <div class="option-card" data-option="timeLimit">
+                        <h3>⏰ Thời gian</h3>
+                        <p>Time: <span id="timeLimitDisplay">20</span> phút</p>
+                        <input type="range" id="timeLimit" min="5" max="60" value="20" style="width: 100%; margin-top: 10px;">
+                    </div>
+                    
+                    <div class="option-card" data-option="randomize" onclick="toggleRandomize()">
+                        <h3>🔀 Xáo trộn</h3>
+                        <p id="randomizeText">Randomize: ON</p>
+                    </div>
+                </div>
+                
+                <button class="start-btn" onclick="startTest()" id="startTestBtn">Bắt đầu thi / Start Test</button>
             </div>
 
             <!-- Test Interface -->
@@ -450,7 +574,7 @@
     </div>
 
     <script>
-        // Global variables - Questions loaded from JSON
+        // Global variables
         let questionBank = [];
         let testConfig = {
             questionCount: 10,
@@ -464,178 +588,225 @@
             answers: {},
             startTime: null,
             timer: null,
-            timeRemaining: 0,
-            reviewMode: false
+            timeRemaining: 0
         };
 
-        // Load questions from JSON file
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Try to load default questions first, then show config
+            loadDefaultQuestions();
+        });
+
+        async function loadDefaultQuestions() {
+            const defaultUrl = getDefaultQuestionUrl();
+            if (defaultUrl) {
+                document.getElementById('jsonUrl').value = defaultUrl;
+                try {
+                    await loadQuestionsFromUrl(defaultUrl);
+                    showTestSetup();
+                } catch (error) {
+                    showConfigSection();
+                }
+            } else {
+                showConfigSection();
+            }
+        }
+
+        function getDefaultQuestionUrl() {
+            // You can set a default GitHub raw URL here
+            // For example: 'https://raw.githubusercontent.com/username/repo/main/questions.json'
+            return '';
+        }
+
+        function showConfigSection() {
+            document.getElementById('loadingState').style.display = 'none';
+            document.getElementById('configSection').style.display = 'block';
+        }
+
+        function showTestSetup() {
+            document.getElementById('loadingState').style.display = 'none';
+            document.getElementById('configSection').style.display = 'none';
+            document.getElementById('testSetup').style.display = 'block';
+            updateDisplays();
+        }
+
         async function loadQuestions() {
+            const url = document.getElementById('jsonUrl').value.trim();
+            if (!url) {
+                showError('Vui lòng nhập URL file JSON / Please enter JSON URL');
+                return;
+            }
+
+            document.getElementById('loadQuestionsBtn').disabled = true;
+            document.getElementById('loadQuestionsBtn').textContent = 'Đang tải... / Loading...';
+            
             try {
-                console.log('🔄 Loading questions from questions.json...');
-                
-                const response = await fetch('./questions.json');
-                
+                await loadQuestionsFromUrl(url);
+                showTestSetup();
+            } catch (error) {
+                showError(`Lỗi tải câu hỏi: ${error.message} / Error loading questions: ${error.message}`);
+            } finally {
+                document.getElementById('loadQuestionsBtn').disabled = false;
+                document.getElementById('loadQuestionsBtn').textContent = '📥 Tải câu hỏi / Load Questions';
+            }
+        }
+
+        async function loadQuestionsFromUrl(url) {
+            try {
+                const response = await fetch(url);
                 if (!response.ok) {
-                    throw new Error(`Failed to load questions.json: ${response.status} ${response.statusText}`);
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
                 }
                 
                 const data = await response.json();
                 
-                if (!Array.isArray(data) || data.length === 0) {
-                    throw new Error('Invalid question data: expected non-empty array');
+                // Validate the JSON structure
+                if (!Array.isArray(data)) {
+                    throw new Error('JSON phải là một mảng câu hỏi / JSON must be an array of questions');
+                }
+                
+                if (data.length === 0) {
+                    throw new Error('Không có câu hỏi nào trong file / No questions found in file');
+                }
+                
+                // Validate each question
+                for (let i = 0; i < data.length; i++) {
+                    validateQuestion(data[i], i);
                 }
                 
                 questionBank = data;
-                console.log(`✅ Successfully loaded ${questionBank.length} questions from JSON`);
-                return true;
+                hideError();
+                showQuestionsInfo();
                 
             } catch (error) {
-                console.error('❌ Error loading questions:', error);
-                
-                // Show error to user
-                const setupDiv = document.getElementById('testSetup');
-                setupDiv.innerHTML = `
-                    <div class="loading-error">
-                        <h2>⚠️ Không thể tải câu hỏi / Cannot Load Questions</h2>
-                        <p><strong>Lỗi:</strong> ${error.message}</p>
-                        <p>Đang sử dụng câu hỏi mẫu... / Using sample questions...</p>
-                        <button class="start-btn" onclick="location.reload()">🔄 Thử lại / Retry</button>
-                    </div>
-                `;
-                
-                // Use fallback questions
-                questionBank = [
-                    {
-                        "id": 1,
-                        "type": "multiple",
-                        "question": "Thủ đô của Việt Nam là gì?",
-                        "options": ["Hà Nội", "Hồ Chí Minh", "Đà Nẵng", "Huế"],
-                        "correct": 0,
-                        "explanation": "Hà Nội là thủ đô của Việt Nam từ năm 1010."
-                    },
-                    {
-                        "id": 2,
-                        "type": "multiple",
-                        "question": "Sông nào dài nhất ở Việt Nam?",
-                        "options": ["Sông Hồng", "Sông Mê Kông", "Sông Đồng Nai", "Sông Cửu Long"],
-                        "correct": 1,
-                        "explanation": "Sông Mê Kông là sông dài nhất chảy qua Việt Nam."
-                    },
-                    {
-                        "id": 3,
-                        "type": "shortanswer",
-                        "question": "Mô tả ý nghĩa và chức năng của một cuộc kiểm toán thương hiệu?",
-                        "hints": ["đánh giá sức khỏe của thương hiệu", "thương hiệu dài hạn"],
-                        "explanation": "Kiểm toán thương hiệu giúp đánh giá sức khỏe tổng thể của thương hiệu."
-                    }
-                ];
-                
-                setTimeout(() => {
-                    initializeSetupInterface();
-                }, 2000);
-                
-                return true;
+                if (error instanceof SyntaxError) {
+                    throw new Error('File JSON không hợp lệ / Invalid JSON file');
+                }
+                throw error;
             }
         }
 
-        // Initialize setup interface
-        function initializeSetupInterface() {
-            const setupDiv = document.getElementById('testSetup');
-            setupDiv.innerHTML = `
-                <h2>Thiết lập bài thi / Test Setup</h2>
-                <p style="margin-bottom: 20px; color: #666;">
-                    📚 Đã tải ${questionBank.length} câu hỏi / ${questionBank.length} questions loaded
-                </p>
-                
-                <div class="setup-options">
-                    <div class="option-card">
-                        <h3>📝 Số câu hỏi</h3>
-                        <p>Questions: <span id="questionCountDisplay">${Math.min(testConfig.questionCount, questionBank.length)}</span></p>
-                        <input type="range" id="questionCount" min="1" max="${questionBank.length}" value="${Math.min(testConfig.questionCount, questionBank.length)}" style="width: 100%; margin-top: 10px;">
-                    </div>
-                    
-                    <div class="option-card">
-                        <h3>⏰ Thời gian</h3>
-                        <p>Time: <span id="timeLimitDisplay">${testConfig.timeLimit}</span> phút</p>
-                        <input type="range" id="timeLimit" min="5" max="60" value="${testConfig.timeLimit}" style="width: 100%; margin-top: 10px;">
-                    </div>
-                    
-                    <div class="option-card" onclick="toggleRandomize()">
-                        <h3>🔀 Xáo trộn</h3>
-                        <p id="randomizeText">Randomize: ${testConfig.randomize ? 'ON' : 'OFF'}</p>
-                    </div>
-                </div>
-                
-                <button class="start-btn" onclick="startTest()">Bắt đầu thi / Start Test</button>
-            `;
+        function validateQuestion(question, index) {
+            const required = ['id', 'type', 'question'];
+            for (const field of required) {
+                if (!question[field]) {
+                    throw new Error(`Câu hỏi ${index + 1} thiếu trường "${field}" / Question ${index + 1} missing "${field}" field`);
+                }
+            }
             
-            updateDisplays();
+            const validTypes = ['multiple', 'truefalse', 'fillblank', 'shortanswer'];
+            if (!validTypes.includes(question.type)) {
+                throw new Error(`Câu hỏi ${index + 1} có loại không hợp lệ: ${question.type} / Question ${index + 1} has invalid type: ${question.type}`);
+            }
+            
+            // Type-specific validation
+            if (question.type === 'multiple') {
+                if (!question.options || !Array.isArray(question.options) || question.options.length < 2) {
+                    throw new Error(`Câu hỏi ${index + 1} (multiple choice) cần ít nhất 2 lựa chọn / Question ${index + 1} (multiple choice) needs at least 2 options`);
+                }
+                if (typeof question.correct !== 'number' || question.correct < 0 || question.correct >= question.options.length) {
+                    throw new Error(`Câu hỏi ${index + 1} có chỉ số đáp án đúng không hợp lệ / Question ${index + 1} has invalid correct answer index`);
+                }
+            }
+            
+            if (question.type === 'truefalse') {
+                if (typeof question.correct !== 'boolean') {
+                    throw new Error(`Câu hỏi ${index + 1} (true/false) cần đáp án là true hoặc false / Question ${index + 1} (true/false) needs correct answer as true or false`);
+                }
+            }
+            
+            if (question.type === 'fillblank') {
+                if (!question.correct || typeof question.correct !== 'string') {
+                    throw new Error(`Câu hỏi ${index + 1} (fill blank) cần đáp án là chuỗi / Question ${index + 1} (fill blank) needs correct answer as string`);
+                }
+            }
+            
+            if (question.type === 'shortanswer') {
+                if (!question.hints || !Array.isArray(question.hints)) {
+                    throw new Error(`Câu hỏi ${index + 1} (short answer) cần mảng gợi ý / Question ${index + 1} (short answer) needs hints array`);
+                }
+            }
         }
 
-        // Initialize when page loads
-        document.addEventListener('DOMContentLoaded', async function() {
-            console.log('🚀 Starting Practice Test System...');
+        function showQuestionsInfo() {
+            const types = [...new Set(questionBank.map(q => q.type))];
+            const typeNames = {
+                'multiple': 'Trắc nghiệm',
+                'truefalse': 'Đúng/Sai', 
+                'fillblank': 'Điền khuyết',
+                'shortanswer': 'Tự luận'
+            };
             
-            const success = await loadQuestions();
-            if (success && questionBank.length > 0) {
-                initializeSetupInterface();
-            }
-        });
+            document.getElementById('questionCount').textContent = questionBank.length;
+            document.getElementById('questionTypes').textContent = types.map(t => typeNames[t] || t).join(', ');
+            document.getElementById('questionsInfo').style.display = 'block';
+        }
+
+        function showError(message) {
+            const errorDiv = document.getElementById('errorMessage');
+            errorDiv.innerHTML = `<div class="error">${message}</div>`;
+            errorDiv.style.display = 'block';
+        }
+
+        function hideError() {
+            document.getElementById('errorMessage').style.display = 'none';
+        }
 
         function updateDisplays() {
-            const questionCountDisplay = document.getElementById('questionCountDisplay');
-            const timeLimitDisplay = document.getElementById('timeLimitDisplay');
-            const questionCountSlider = document.getElementById('questionCount');
-            const timeLimitSlider = document.getElementById('timeLimit');
+            const maxQuestions = Math.min(questionBank.length, 50);
+            const questionCountSlider = document.getElementById('questionCountSlider');
+            questionCountSlider.max = maxQuestions;
+            questionCountSlider.value = Math.min(testConfig.questionCount, maxQuestions);
+            testConfig.questionCount = parseInt(questionCountSlider.value);
             
-            if (questionCountDisplay && questionCountSlider) {
-                questionCountSlider.oninput = function() {
-                    testConfig.questionCount = parseInt(this.value);
-                    questionCountDisplay.textContent = this.value;
-                };
-            }
+            document.getElementById('questionCountDisplay').textContent = testConfig.questionCount;
+            document.getElementById('timeLimitDisplay').textContent = testConfig.timeLimit;
             
-            if (timeLimitDisplay && timeLimitSlider) {
-                timeLimitSlider.oninput = function() {
-                    testConfig.timeLimit = parseInt(this.value);
-                    timeLimitDisplay.textContent = this.value;
-                };
-            }
+            questionCountSlider.oninput = function() {
+                testConfig.questionCount = parseInt(this.value);
+                document.getElementById('questionCountDisplay').textContent = this.value;
+            };
+            
+            document.getElementById('timeLimit').oninput = function() {
+                testConfig.timeLimit = parseInt(this.value);
+                document.getElementById('timeLimitDisplay').textContent = this.value;
+            };
         }
 
         function toggleRandomize() {
             testConfig.randomize = !testConfig.randomize;
-            const randomizeText = document.getElementById('randomizeText');
-            if (randomizeText) {
-                randomizeText.textContent = `Randomize: ${testConfig.randomize ? 'ON' : 'OFF'}`;
-            }
+            document.getElementById('randomizeText').textContent = 
+                `Randomize: ${testConfig.randomize ? 'ON' : 'OFF'}`;
         }
 
         function startTest() {
             if (questionBank.length === 0) {
-                alert('❌ No questions available!');
+                showError('Chưa có câu hỏi nào được tải / No questions loaded');
                 return;
             }
-            
-            console.log(`🎯 Starting test with ${testConfig.questionCount} questions`);
-            
+
+            // Prepare questions
             let selectedQuestions = [...questionBank];
             if (testConfig.randomize) {
                 selectedQuestions = shuffle(selectedQuestions);
             }
             currentTest.questions = selectedQuestions.slice(0, testConfig.questionCount);
             
+            // Reset test state
             currentTest.currentIndex = 0;
             currentTest.answers = {};
             currentTest.startTime = Date.now();
             currentTest.timeRemaining = testConfig.timeLimit * 60;
-            currentTest.reviewMode = false;
             
+            // Update UI
             document.getElementById('testSetup').style.display = 'none';
             document.getElementById('testInterface').style.display = 'block';
             document.getElementById('totalQuestions').textContent = currentTest.questions.length;
             
+            // Start timer
             startTimer();
+            
+            // Load first question
             loadQuestion();
         }
 
@@ -673,17 +844,21 @@
             }
             
             const question = currentTest.questions[currentTest.currentIndex];
+            const questionDisplay = document.getElementById('questionDisplay');
             
+            // Update progress
             document.getElementById('currentQuestion').textContent = currentTest.currentIndex + 1;
             const progress = ((currentTest.currentIndex + 1) / currentTest.questions.length) * 100;
             document.getElementById('progressFill').style.width = progress + '%';
             
+            // Update navigation buttons
             document.getElementById('prevBtn').disabled = currentTest.currentIndex === 0;
             document.getElementById('nextBtn').style.display = 
                 currentTest.currentIndex === currentTest.questions.length - 1 ? 'none' : 'inline-block';
             document.getElementById('finishBtn').style.display = 
                 currentTest.currentIndex === currentTest.questions.length - 1 ? 'inline-block' : 'none';
             
+            // Render question based on type
             if (question.type === 'multiple') {
                 renderMultipleChoice(question);
             } else if (question.type === 'truefalse') {
@@ -699,150 +874,4 @@
             const questionDisplay = document.getElementById('questionDisplay');
             const savedAnswer = currentTest.answers[question.id];
             
-            questionDisplay.innerHTML = `
-                <h2>${question.question}</h2>
-                <div class="answers">
-                    ${question.options.map((option, index) => `
-                        <div class="answer ${savedAnswer === index ? 'selected' : ''}" 
-                             onclick="selectAnswer(${question.id}, ${index})">
-                            <span>${String.fromCharCode(65 + index)}</span>
-                            <span class="answer-text">${option}</span>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
-        }
-
-        function renderTrueFalse(question) {
-            const questionDisplay = document.getElementById('questionDisplay');
-            const savedAnswer = currentTest.answers[question.id];
-            
-            questionDisplay.innerHTML = `
-                <h2>${question.question}</h2>
-                <div class="answers">
-                    <div class="answer ${savedAnswer === true ? 'selected' : ''}" 
-                         onclick="selectAnswer(${question.id}, true)">
-                        <span>✓</span>
-                        <span class="answer-text">Đúng / True</span>
-                    </div>
-                    <div class="answer ${savedAnswer === false ? 'selected' : ''}" 
-                         onclick="selectAnswer(${question.id}, false)">
-                        <span>✗</span>
-                        <span class="answer-text">Sai / False</span>
-                    </div>
-                </div>
-            `;
-        }
-
-        function renderFillBlank(question) {
-            const questionDisplay = document.getElementById('questionDisplay');
-            const savedAnswer = currentTest.answers[question.id] || '';
-            
-            const questionText = question.question.replace('_____', 
-                `<input type="text" class="fill-blank" value="${savedAnswer}" 
-                 onchange="selectAnswer(${question.id}, this.value)" placeholder="Nhập câu trả lời">`);
-            
-            questionDisplay.innerHTML = `<h2>${questionText}</h2>`;
-        }
-
-        function renderShortAnswer(question) {
-            const questionDisplay = document.getElementById('questionDisplay');
-            const savedAnswer = currentTest.answers[question.id] || '';
-            
-            questionDisplay.innerHTML = `
-                <h2>${question.question}</h2>
-                <div class="hints">
-                    <h4>💡 Gợi ý / Hints:</h4>
-                    <div class="hint-tags">
-                        ${question.hints.map(hint => `<span class="hint-tag">${hint}</span>`).join('')}
-                    </div>
-                </div>
-                <textarea class="short-answer" 
-                    placeholder="Nhập câu trả lời của bạn (tối đa 150 từ)..." 
-                    onchange="selectAnswer(${question.id}, this.value)"
-                    maxlength="1000">${savedAnswer}</textarea>
-                <div style="text-align: right; color: #6c757d; font-size: 0.9em; margin-top: 5px;">
-                    <span id="wordCount_${question.id}">${savedAnswer.split(' ').filter(word => word.length > 0).length}</span>/150 từ
-                </div>
-            `;
-            
-            const textarea = questionDisplay.querySelector('.short-answer');
-            textarea.addEventListener('input', function() {
-                const wordCount = this.value.split(' ').filter(word => word.length > 0).length;
-                document.getElementById(`wordCount_${question.id}`).textContent = wordCount;
-                document.getElementById(`wordCount_${question.id}`).style.color = wordCount > 150 ? '#dc3545' : '#6c757d';
-            });
-        }
-
-        function selectAnswer(questionId, answer) {
-            currentTest.answers[questionId] = answer;
-            
-            const answers = document.querySelectorAll('.answer');
-            answers.forEach(el => el.classList.remove('selected'));
-            
-            if (typeof answer === 'number') {
-                answers[answer].classList.add('selected');
-            } else if (typeof answer === 'boolean') {
-                answers[answer ? 0 : 1].classList.add('selected');
-            }
-        }
-
-        function previousQuestion() {
-            if (currentTest.currentIndex > 0) {
-                currentTest.currentIndex--;
-                loadQuestion();
-            }
-        }
-
-        function nextQuestion() {
-            if (currentTest.currentIndex < currentTest.questions.length - 1) {
-                currentTest.currentIndex++;
-                loadQuestion();
-            }
-        }
-
-        function finishTest() {
-            if (currentTest.reviewMode) {
-                currentTest.reviewMode = false;
-                document.getElementById('testInterface').style.display = 'none';
-                document.getElementById('resultsDisplay').style.display = 'block';
-                return;
-            }
-            
-            clearInterval(currentTest.timer);
-            
-            const results = calculateResults();
-            
-            document.getElementById('testInterface').style.display = 'none';
-            document.getElementById('resultsDisplay').style.display = 'block';
-            
-            document.getElementById('scorePercentage').textContent = results.percentage + '%';
-            document.getElementById('correctCount').textContent = results.correct;
-            document.getElementById('incorrectCount').textContent = results.incorrect;
-            
-            const timeSpent = testConfig.timeLimit * 60 - currentTest.timeRemaining;
-            const minutes = Math.floor(timeSpent / 60);
-            const seconds = timeSpent % 60;
-            document.getElementById('timeSpent').textContent = 
-                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-        }
-
-        function calculateResults() {
-            let correct = 0;
-            let incorrect = 0;
-            let pending = 0;
-            
-            currentTest.questions.forEach(question => {
-                const userAnswer = currentTest.answers[question.id];
-                
-                if (question.type === 'shortanswer') {
-                    pending++;
-                } else {
-                    let isCorrect = false;
-                    if (question.type === 'multiple') {
-                        isCorrect = userAnswer === question.correct;
-                    } else if (question.type === 'truefalse') {
-                        isCorrect = userAnswer === question.correct;
-                    } else if (question.type === 'fillblank') {
-                        isCorrect = userAnswer && userAnswer.toLowerCase().trim() === question.correct.toLowerCase();
-                    }
+            question
