@@ -490,6 +490,13 @@
             },
             {
                 id: 5,
+                type: "fillblank",
+                question: "Quốc hoa của Việt Nam là hoa _____.",
+                correct: "sen",
+                explanation: "Hoa sen là quốc hoa của Việt Nam."
+            },
+            {
+                id: 5,
                 type: "shortanswer",
                 question: "Mô tả ý nghĩa và chức năng của một cuộc kiểm toán thương hiệu?",
                 hints: ["đánh giá sức khỏe của thương hiệu", "thương hiệu dài hạn", "nhận thức khách hàng", "vị thế thị trường"],
@@ -554,8 +561,7 @@
             answers: {},
             startTime: null,
             timer: null,
-            timeRemaining: 0,
-            reviewMode: false
+            timeRemaining: 0
         };
 
         // Initialize
@@ -756,6 +762,34 @@
             });
         }
 
+        function selectAnswer(questionId, answer) {
+            currentTest.answers[questionId] = answer;
+            
+            // Update visual feedback for multiple choice and true/false
+            const answers = document.querySelectorAll('.answer');
+            answers.forEach(el => el.classList.remove('selected'));
+            
+            if (typeof answer === 'number') {
+                answers[answer].classList.add('selected');
+            } else if (typeof answer === 'boolean') {
+                answers[answer ? 0 : 1].classList.add('selected');
+            }
+        }
+
+        function previousQuestion() {
+            if (currentTest.currentIndex > 0) {
+                currentTest.currentIndex--;
+                loadQuestion();
+            }
+        }
+
+        function nextQuestion() {
+            if (currentTest.currentIndex < currentTest.questions.length - 1) {
+                currentTest.currentIndex++;
+                loadQuestion();
+            }
+        }
+
         function loadQuestionReview() {
             const question = currentTest.questions[currentTest.currentIndex];
             const userAnswer = currentTest.answers[question.id];
@@ -804,3 +838,247 @@
                             indicator = '✓ ';
                         } else if (index === userAnswer && !isCorrect) {
                             indicator = '✗ ';
+                        }
+                        
+                        return `
+                            <div class="${classes}">
+                                <span>${String.fromCharCode(65 + index)}</span>
+                                <span class="answer-text">${indicator}${option}</span>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+                <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid ${isCorrect ? '#28a745' : '#dc3545'};">
+                    <strong>${isCorrect ? '✅ Đúng!' : '❌ Sai!'}</strong>
+                    <p style="margin: 10px 0 0 0; color: #666;">${question.explanation}</p>
+                </div>
+            `;
+        }
+
+        function renderTrueFalseReview(question, userAnswer) {
+            const questionDisplay = document.getElementById('questionDisplay');
+            const isCorrect = userAnswer === question.correct;
+            
+            questionDisplay.innerHTML = `
+                <h2>${question.question}</h2>
+                <div class="answers">
+                    <div class="answer ${question.correct === true ? 'correct' : ''} ${userAnswer === true && !isCorrect ? 'incorrect' : ''}">
+                        <span>✓</span>
+                        <span class="answer-text">${question.correct === true ? '✓ ' : ''}${userAnswer === true && !isCorrect ? '✗ ' : ''}Đúng / True</span>
+                    </div>
+                    <div class="answer ${question.correct === false ? 'correct' : ''} ${userAnswer === false && !isCorrect ? 'incorrect' : ''}">
+                        <span>✗</span>
+                        <span class="answer-text">${question.correct === false ? '✓ ' : ''}${userAnswer === false && !isCorrect ? '✗ ' : ''}Sai / False</span>
+                    </div>
+                </div>
+                <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid ${isCorrect ? '#28a745' : '#dc3545'};">
+                    <strong>${isCorrect ? '✅ Đúng!' : '❌ Sai!'}</strong>
+                    <p style="margin: 10px 0 0 0; color: #666;">${question.explanation}</p>
+                </div>
+            `;
+        }
+
+        function renderFillBlankReview(question, userAnswer) {
+            const questionDisplay = document.getElementById('questionDisplay');
+            const isCorrect = userAnswer && userAnswer.toLowerCase().trim() === question.correct.toLowerCase();
+            
+            const questionText = question.question.replace('_____', 
+                `<span style="background: ${isCorrect ? '#d4edda' : '#f8d7da'}; padding: 5px 10px; border-radius: 5px; font-weight: bold;">
+                    ${userAnswer || '(Không trả lời)'} ${isCorrect ? '✓' : '✗'}
+                </span>`);
+            
+            questionDisplay.innerHTML = `
+                <h2>${questionText}</h2>
+                <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid ${isCorrect ? '#28a745' : '#dc3545'};">
+                    <strong>${isCorrect ? '✅ Đúng!' : '❌ Sai!'}</strong>
+                    <p style="margin: 10px 0 5px 0; color: #666;">Đáp án đúng: <strong>${question.correct}</strong></p>
+                    <p style="margin: 5px 0 0 0; color: #666;">${question.explanation}</p>
+                </div>
+            `;
+        }
+
+        function renderShortAnswerReview(question, userAnswer) {
+            const questionDisplay = document.getElementById('questionDisplay');
+            const wordCount = userAnswer ? userAnswer.split(' ').filter(word => word.length > 0).length : 0;
+            
+            questionDisplay.innerHTML = `
+                <h2>${question.question}</h2>
+                <div class="hints">
+                    <h4>💡 Gợi ý đã cho / Given Hints:</h4>
+                    <div class="hint-tags">
+                        ${question.hints.map(hint => `<span class="hint-tag">${hint}</span>`).join('')}
+                    </div>
+                </div>
+                <div style="background: #f8f9fa; border: 2px solid #e9ecef; border-radius: 10px; padding: 15px; margin: 15px 0;">
+                    <h4 style="margin-bottom: 10px; color: #495057;">📝 Câu trả lời của bạn / Your Answer:</h4>
+                    <div style="background: white; padding: 15px; border-radius: 5px; min-height: 60px; border: 1px solid #dee2e6;">
+                        ${userAnswer || '<em style="color: #6c757d;">Không có câu trả lời / No answer provided</em>'}
+                    </div>
+                    <div style="text-align: right; color: #6c757d; font-size: 0.9em; margin-top: 5px;">
+                        ${wordCount}/150 từ
+                    </div>
+                </div>
+                <div class="pending-review" style="margin-top: 20px; padding: 15px; border-radius: 10px;">
+                    <strong>⏳ Đang chờ xem xét / Pending for Review</strong>
+                    <p style="margin: 10px 0 0 0;">Câu trả lời này sẽ được giáo viên chấm điểm thủ công. / This answer will be manually graded by the instructor.</p>
+                    <p style="margin: 5px 0 0 0; color: #666;"><strong>Gợi ý đánh giá:</strong> ${question.explanation}</p>
+                </div>
+            `;
+        }
+
+        function finishTest() {
+            if (currentTest.reviewMode) {
+                // Return to results from review mode
+                currentTest.reviewMode = false;
+                document.getElementById('testInterface').style.display = 'none';
+                document.getElementById('resultsDisplay').style.display = 'block';
+                
+                // Reset navigation buttons
+                document.getElementById('nextBtn').textContent = 'Câu tiếp →';
+                document.getElementById('finishBtn').textContent = 'Hoàn thành';
+                return;
+            }
+            
+            clearInterval(currentTest.timer);
+            
+            // Calculate results
+            const results = calculateResults();
+            
+            // Show results
+            document.getElementById('testInterface').style.display = 'none';
+            document.getElementById('resultsDisplay').style.display = 'block';
+            
+            // Update result displays
+            document.getElementById('scorePercentage').textContent = results.percentage + '%';
+            document.getElementById('correctCount').textContent = results.correct;
+            document.getElementById('incorrectCount').textContent = results.incorrect;
+            
+            // Update results details to show pending answers
+            const resultsDetails = document.querySelector('.results-details');
+            if (results.pending > 0) {
+                resultsDetails.innerHTML = `
+                    <div class="result-item">
+                        <h3 style="color: #28a745;">${results.correct}</h3>
+                        <p>Đúng / Correct</p>
+                    </div>
+                    <div class="result-item">
+                        <h3 style="color: #dc3545;">${results.incorrect}</h3>
+                        <p>Sai / Incorrect</p>
+                    </div>
+                    <div class="result-item">
+                        <h3 style="color: #ffc107;">${results.pending}</h3>
+                        <p>Chờ xem xét / Pending</p>
+                    </div>
+                    <div class="result-item">
+                        <h3 id="timeSpent">15:30</h3>
+                        <p>Thời gian / Time</p>
+                    </div>
+                `;
+            } else {
+                resultsDetails.innerHTML = `
+                    <div class="result-item">
+                        <h3>${results.correct}</h3>
+                        <p>Đúng / Correct</p>
+                    </div>
+                    <div class="result-item">
+                        <h3>${results.incorrect}</h3>
+                        <p>Sai / Incorrect</p>
+                    </div>
+                    <div class="result-item">
+                        <h3 id="timeSpent">15:30</h3>
+                        <p>Thời gian / Time</p>
+                    </div>
+                `;
+            }
+            
+            const timeSpent = testConfig.timeLimit * 60 - currentTest.timeRemaining;
+            const minutes = Math.floor(timeSpent / 60);
+            const seconds = timeSpent % 60;
+            document.getElementById('timeSpent').textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function calculateResults() {
+            let correct = 0;
+            let incorrect = 0;
+            let pending = 0;
+            
+            currentTest.questions.forEach(question => {
+                const userAnswer = currentTest.answers[question.id];
+                let isCorrect = false;
+                
+                if (question.type === 'multiple') {
+                    isCorrect = userAnswer === question.correct;
+                    if (isCorrect) {
+                        correct++;
+                    } else {
+                        incorrect++;
+                    }
+                } else if (question.type === 'truefalse') {
+                    isCorrect = userAnswer === question.correct;
+                    if (isCorrect) {
+                        correct++;
+                    } else {
+                        incorrect++;
+                    }
+                } else if (question.type === 'fillblank') {
+                    isCorrect = userAnswer && userAnswer.toLowerCase().trim() === question.correct.toLowerCase();
+                    if (isCorrect) {
+                        correct++;
+                    } else {
+                        incorrect++;
+                    }
+                } else if (question.type === 'shortanswer') {
+                    // Short answers are always pending for manual review
+                    pending++;
+                }
+            });
+            
+            // Calculate percentage only for auto-graded questions
+            const autoGradedTotal = currentTest.questions.length - pending;
+            const percentage = autoGradedTotal > 0 ? Math.round((correct / autoGradedTotal) * 100) : 0;
+            
+            return { correct, incorrect, pending, percentage, autoGradedTotal };
+        }
+
+        function reviewAnswers() {
+            // Hide results and show review interface
+            document.getElementById('resultsDisplay').style.display = 'none';
+            document.getElementById('testInterface').style.display = 'block';
+            
+            // Set up review mode
+            currentTest.reviewMode = true;
+            currentTest.currentIndex = 0;
+            
+            // Update navigation for review
+            document.getElementById('nextBtn').textContent = 'Câu tiếp →';
+            document.getElementById('finishBtn').textContent = 'Về kết quả';
+            document.getElementById('finishBtn').style.display = 'inline-block';
+            
+            loadQuestionReview();
+        }
+
+        function restartTest() {
+            // Reset everything
+            document.getElementById('resultsDisplay').style.display = 'none';
+            document.getElementById('testSetup').style.display = 'block';
+            
+            // Clear timer if exists
+            if (currentTest.timer) {
+                clearInterval(currentTest.timer);
+            }
+            
+            // Reset test state
+            currentTest = {
+                questions: [],
+                currentIndex: 0,
+                answers: {},
+                startTime: null,
+                timer: null,
+                timeRemaining: 0,
+                reviewMode: false
+            };
+        }
+    </script>
+</body>
+</html>
