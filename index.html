@@ -184,301 +184,53 @@
                 </div>
                 <button class="start-btn" onclick="reviewAnswers()">Xem lại đáp án / Review Answers</button>
                 <button class="start-btn" onclick="restartTest()">Làm lại / Restart</button>
+                <button class="start-btn" id="downloadCsvBtn" onclick="downloadResultsCSV()">Tải kết quả CSV</button>
             </div>
         </div>
     </div>
 
     <script>
-        // will hold questions loaded from questions.json
-        let questionBank = [];
+        // ... all your existing JS (fetch, test logic, shuffle, timing, question loading, finishTest, reviewAnswers, restartTest, etc.)
 
-        // fetch on load
-        fetch('questions.json')
-            .then(res => res.json())
-            .then(data => {
-                questionBank = data;
-                document.getElementById('startBtn').disabled = false;
-            })
-            .catch(err => {
-                console.error('Failed to load questions:', err);
-                alert('Không thể tải câu hỏi. Vui lòng thử lại sau.');
+        function downloadResultsCSV() {
+            const headers = ['Câu hỏi','Câu trả lời của bạn','Kết quả'];
+            const rows = [ headers ];
+
+            currentTest.questions.forEach(q => {
+                const ua = currentTest.answers[q.id];
+                let ansText = '';
+                if (ua === undefined || ua === null) ansText = '';
+                else if (typeof ua === 'boolean') ansText = ua ? 'Đúng' : 'Sai';
+                else ansText = ua;
+
+                let result;
+                if (q.type === 'shortanswer') {
+                    result = 'Pending';
+                } else {
+                    let isOk = (q.type === 'fillblank')
+                        ? ua && ua.trim().toLowerCase() === q.correct.toLowerCase()
+                        : ua === q.correct;
+                    result = isOk ? 'Correct' : 'Incorrect';
+                }
+
+                rows.push([
+                    `"${q.question.replace(/"/g,'""')}"`,
+                    `"${ansText.replace(/"/g,'""')}"`,
+                    result
+                ]);
             });
 
-        const testConfig = { questionCount: 10, timeLimit: 20, randomize: true };
-        const currentTest = {
-            questions: [], currentIndex: 0, answers: {},
-            startTime: null, timer: null, timeRemaining: 0,
-            reviewMode: false
-        };
+            const csvContent = rows.map(r => r.join(',')).join('\r\n');
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
 
-        document.addEventListener('DOMContentLoaded', () => {
-            updateDisplays();
-            document.getElementById('startBtn').addEventListener('click', startTest);
-        });
-
-        function updateDisplays() {
-            const qc = document.getElementById('questionCount');
-            const tl = document.getElementById('timeLimit');
-            document.getElementById('questionCountDisplay').textContent = qc.value;
-            document.getElementById('timeLimitDisplay').textContent = tl.value;
-            qc.oninput = () => {
-                testConfig.questionCount = +qc.value;
-                document.getElementById('questionCountDisplay').textContent = qc.value;
-            };
-            tl.oninput = () => {
-                testConfig.timeLimit = +tl.value;
-                document.getElementById('timeLimitDisplay').textContent = tl.value;
-            };
-        }
-
-        function toggleRandomize() {
-            testConfig.randomize = !testConfig.randomize;
-            document.getElementById('randomizeText').textContent =
-                `Randomize: ${testConfig.randomize ? 'ON' : 'OFF'}`;
-        }
-
-        function startTest() {
-            let pool = [...questionBank];
-            if (testConfig.randomize) pool = shuffle(pool);
-            currentTest.questions = pool.slice(0, testConfig.questionCount);
-            currentTest.currentIndex = 0;
-            currentTest.answers = {};
-            currentTest.timeRemaining = testConfig.timeLimit * 60;
-
-            document.getElementById('testSetup').style.display = 'none';
-            document.getElementById('testInterface').style.display = 'block';
-            document.getElementById('totalQuestions').textContent = currentTest.questions.length;
-
-            startTimer();
-            loadQuestion();
-        }
-
-        function shuffle(arr) {
-            for (let i = arr.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [arr[i], arr[j]] = [arr[j], arr[i]];
-            }
-            return arr;
-        }
-
-        function startTimer() {
-            updateTimerDisplay();
-            currentTest.timer = setInterval(() => {
-                currentTest.timeRemaining--;
-                updateTimerDisplay();
-                if (currentTest.timeRemaining <= 0) finishTest();
-            }, 1000);
-        }
-
-        function updateTimerDisplay() {
-            const m = Math.floor(currentTest.timeRemaining / 60).toString().padStart(2, '0');
-            const s = (currentTest.timeRemaining % 60).toString().padStart(2, '0');
-            document.getElementById('timer').textContent = `${m}:${s}`;
-        }
-
-        function loadQuestion() {
-            if (currentTest.reviewMode) return loadQuestionReview();
-
-            const q = currentTest.questions[currentTest.currentIndex];
-            document.getElementById('currentQuestion').textContent = currentTest.currentIndex + 1;
-            document.getElementById('progressFill').style.width =
-                ((currentTest.currentIndex + 1) / currentTest.questions.length * 100) + '%';
-
-            document.getElementById('prevBtn').disabled = currentTest.currentIndex === 0;
-            document.getElementById('nextBtn').style.display =
-                currentTest.currentIndex === currentTest.questions.length - 1 ? 'none' : 'inline-block';
-            document.getElementById('finishBtn').style.display =
-                currentTest.currentIndex === currentTest.questions.length - 1 ? 'inline-block' : 'none';
-
-            const disp = document.getElementById('questionDisplay');
-            const saved = currentTest.answers[q.id] ?? null;
-
-            if (q.type === 'multiple') {
-                disp.innerHTML = `<h2>${q.question}</h2><div class="answers">` +
-                    q.options.map((opt,i) =>
-                        `<div class="answer${saved===i?' selected':''}" onclick="selectAnswer(${q.id},${i})">
-                            <span>${String.fromCharCode(65+i)}</span><span class="answer-text">${opt}</span>
-                        </div>`
-                    ).join('') + `</div>`;
-            }
-            else if (q.type === 'truefalse') {
-                disp.innerHTML = `<h2>${q.question}</h2><div class="answers">` +
-                    [`<div class="answer${saved===true?' selected':''}" onclick="selectAnswer(${q.id},true)">
-                        <span>✓</span><span class="answer-text">Đúng / True</span>
-                    </div>`,
-                     `<div class="answer${saved===false?' selected':''}" onclick="selectAnswer(${q.id},false)">
-                        <span>✗</span><span class="answer-text">Sai / False</span>
-                    </div>`].join('') + `</div>`;
-            }
-            else if (q.type === 'fillblank') {
-                const txt = q.question.replace('_____', 
-                    `<input type="text" class="fill-blank" value="${saved||''}"
-                        onchange="selectAnswer(${q.id}, this.value)" placeholder="Nhập câu trả lời">`);
-                disp.innerHTML = `<h2>${txt}</h2>`;
-            }
-            else if (q.type === 'shortanswer') {
-                disp.innerHTML = `<h2>${q.question}</h2>
-                    <div class="hints"><h4>💡 Gợi ý / Hints:</h4>
-                        <div class="hint-tags">${q.hints.map(h=>`<span class="hint-tag">${h}</span>`).join('')}</div>
-                    </div>
-                    <textarea class="short-answer" maxlength="1000"
-                        onchange="selectAnswer(${q.id}, this.value)">${saved||''}</textarea>
-                    <div style="text-align:right;color:#6c757d;font-size:0.9em;">
-                        <span id="wordCount_${q.id}">${(saved||'').split(' ').filter(w=>w).length}</span>/150 từ
-                    </div>`;
-                const ta = disp.querySelector('textarea');
-                ta.addEventListener('input',()=>{
-                    const wc = ta.value.split(' ').filter(w=>w).length;
-                    document.getElementById(`wordCount_${q.id}`).textContent = wc;
-                    document.getElementById(`wordCount_${q.id}`).style.color = wc>150?'#dc3545':'#6c757d';
-                });
-            }
-        }
-
-        function selectAnswer(qid, ans) {
-            currentTest.answers[qid] = ans;
-            document.querySelectorAll('.answer').forEach(el=>el.classList.remove('selected'));
-            loadQuestion(); // re-render to highlight
-        }
-
-        function previousQuestion() {
-            if (currentTest.currentIndex>0) {
-                currentTest.currentIndex--;
-                loadQuestion();
-            }
-        }
-        function nextQuestion() {
-            if (currentTest.currentIndex<currentTest.questions.length-1) {
-                currentTest.currentIndex++;
-                loadQuestion();
-            }
-        }
-
-        // -- review and finish logic (identical to original code) --
-
-        function loadQuestionReview() {
-            const q = currentTest.questions[currentTest.currentIndex];
-            const ua = currentTest.answers[q.id];
-            const isCorrect = (q.type!=='shortanswer') && (ua === q.correct ||
-                (q.type==='fillblank' && ua && ua.trim().toLowerCase()===q.correct.toLowerCase()));
-
-            document.getElementById('currentQuestion').textContent = currentTest.currentIndex + 1;
-            document.getElementById('progressFill').style.width =
-                ((currentTest.currentIndex + 1) / currentTest.questions.length * 100) + '%';
-            document.getElementById('prevBtn').disabled = currentTest.currentIndex === 0;
-            document.getElementById('nextBtn').style.display =
-                currentTest.currentIndex === currentTest.questions.length -1 ? 'none' : 'inline-block';
-            document.getElementById('finishBtn').style.display = 'inline-block';
-
-            let html = `<h2>${q.question}</h2><div class="answers">`;
-            if (q.type==='multiple') {
-                html += q.options.map((opt,i)=>{
-                    let cls='answer';
-                    let ind='';
-                    if(i===q.correct){ cls+=' correct'; ind='✓ '; }
-                    else if(i===ua && !isCorrect){ cls+=' incorrect'; ind='✗ '; }
-                    return `<div class="${cls}"><span>${String.fromCharCode(65+i)}</span>
-                        <span class="answer-text">${ind}${opt}</span></div>`;
-                }).join('');
-            }
-            else if(q.type==='truefalse'){
-                [['Đúng / True',true],['Sai / False',false]].forEach(([t,v],i)=>{
-                    let cls='answer', ind='';
-                    if(v===q.correct){ cls+=' correct'; ind='✓ '; }
-                    else if(ua===v && !isCorrect){ cls+=' incorrect'; ind='✗ '; }
-                    html+=`<div class="${cls}"><span>${v? '✓':'✗'}</span>
-                        <span class="answer-text">${ind}${t}</span></div>`;
-                });
-            }
-            else if(q.type==='fillblank'){
-                const userTxt = ua||'(Không trả lời)';
-                const bg = isCorrect? '#d4edda':'#f8d7da';
-                html += `<div class="answer" style="background:${bg};padding:10px;">
-                    ${userTxt} ${isCorrect?'✓':'✗'}</div>`;
-            }
-            html += `</div>
-                <div style="margin-top:20px;padding:15px;background:#f8f9fa;border-radius:10px;
-                            border-left:4px solid ${isCorrect?'#28a745':'#dc3545'};">
-                    <strong>${isCorrect?'✅ Đúng!':'❌ Sai!'}</strong>
-                    <p style="margin:10px 0 0;color:#666;">${isCorrect? q.explanation:
-                      'Đáp án đúng: ' + (q.correctText|| q.correct) + '<br>' + q.explanation}</p>
-                </div>`;
-            if(q.type==='shortanswer'){
-                html = `<h2>${q.question}</h2>
-                    <div class="hints"><h4>💡 Gợi ý đã cho / Given Hints:</h4>
-                        <div class="hint-tags">${q.hints.map(h=>`<span class="hint-tag">${h}</span>`).join('')}</div>
-                    </div>
-                    <div style="background:#f8f9fa;border:2px solid #e9ecef;border-radius:10px;padding:15px;">
-                        <h4>📝 Câu trả lời của bạn / Your Answer:</h4>
-                        <div style="background:white;padding:15px;border-radius:5px;
-                                    min-height:60px;border:1px solid #dee2e6;">
-                            ${ua||'<em style="color:#6c757d;">Không có câu trả lời</em>'}
-                        </div>
-                    </div>
-                    <div class="pending-review" style="margin-top:20px;padding:15px;border-radius:10px;">
-                      <strong>⏳ Đang chờ xem xét / Pending for Review</strong>
-                      <p>Câu trả lời này sẽ được giáo viên chấm điểm thủ công.</p>
-                      <p><strong>Gợi ý đánh giá:</strong> ${q.explanation}</p>
-                    </div>`;
-            }
-
-            document.getElementById('questionDisplay').innerHTML = html;
-        }
-
-        function finishTest() {
-            clearInterval(currentTest.timer);
-            const results = calculateResults();
-            document.getElementById('testInterface').style.display = 'none';
-            document.getElementById('resultsDisplay').style.display = 'block';
-            document.getElementById('scorePercentage').textContent = results.percentage + '%';
-
-            let detailsHTML = '';
-            if (results.pending) {
-                detailsHTML += `<div class="result-item"><h3 style="color:#28a745;">${results.correct}</h3><p>Đúng / Correct</p></div>`;
-                detailsHTML += `<div class="result-item"><h3 style="color:#dc3545;">${results.incorrect}</h3><p>Sai / Incorrect</p></div>`;
-                detailsHTML += `<div class="result-item"><h3 style="color:#ffc107;">${results.pending}</h3><p>Chờ xem xét / Pending</p></div>`;
-            } else {
-                detailsHTML += `<div class="result-item"><h3>${results.correct}</h3><p>Đúng / Correct</p></div>`;
-                detailsHTML += `<div class="result-item"><h3>${results.incorrect}</h3><p>Sai / Incorrect</p></div>`;
-            }
-            const tm = testConfig.timeLimit*60 - currentTest.timeRemaining;
-            const mm = Math.floor(tm/60).toString().padStart(2,'0');
-            const ss = (tm%60).toString().padStart(2,'0');
-            detailsHTML += `<div class="result-item"><h3>${mm}:${ss}</h3><p>Thời gian / Time</p></div>`;
-            document.querySelector('.results-details').innerHTML = detailsHTML;
-        }
-
-        function calculateResults() {
-            let c=0, x=0, p=0;
-            currentTest.questions.forEach(q=>{
-                const ua=currentTest.answers[q.id];
-                if(q.type==='shortanswer') return p++;
-                const ok = q.type==='fillblank'
-                   ? ua && ua.trim().toLowerCase()===q.correct.toLowerCase()
-                   : ua===q.correct;
-                if(ok) c++; else x++;
-            });
-            const auto= currentTest.questions.length - p;
-            return { correct:c, incorrect:x, pending:p, percentage: auto>0 ? Math.round(c/auto*100) : 0 };
-        }
-
-        function reviewAnswers() {
-            document.getElementById('resultsDisplay').style.display='none';
-            document.getElementById('testInterface').style.display='block';
-            currentTest.reviewMode=true;
-            currentTest.currentIndex=0;
-            document.getElementById('finishBtn').textContent='Về kết quả';
-            loadQuestionReview();
-        }
-
-        function restartTest() {
-            clearInterval(currentTest.timer);
-            document.getElementById('resultsDisplay').style.display='none';
-            document.getElementById('testSetup').style.display='block';
-            currentTest.questions=[];
-            currentTest.currentIndex=0;
-            currentTest.answers={};
-            currentTest.reviewMode=false;
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `ketqua_test_${new Date().toISOString().slice(0,10)}.csv`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
         }
     </script>
 </body>
