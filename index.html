@@ -40,7 +40,6 @@
             color: white; border: none; padding: 15px 40px; font-size: 1.2em;
             border-radius: 50px; cursor: pointer; transition: all 0.3s ease;
         }
-        .start-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(79,172,254,0.4); }
         .start-btn:disabled { background: #6c757d; cursor: not-allowed; }
         .question-container, .results { display: none; }
         .question-header {
@@ -152,7 +151,7 @@
                         <p id="randomizeText">Randomize: ON</p>
                     </div>
                 </div>
-                <button class="start-btn" id="startBtn">Bắt đầu thi / Start Test</button>
+                <button class="start-btn" id="startBtn" disabled>Bắt đầu thi / Start Test</button>
             </div>
 
             <!-- Test Interface -->
@@ -180,31 +179,45 @@
                     <h2 id="scorePercentage">0%</h2>
                     <p>Điểm số của bạn / Your Score</p>
                 </div>
-                <div class="results-details"></div>
-                <button class="start-btn" onclick="downloadCSV()">Tải kết quả CSV / Download CSV</button>
+                <div class="results-details">
+                    <!-- Filled dynamically -->
+                </div>
                 <button class="start-btn" onclick="reviewAnswers()">Xem lại đáp án / Review Answers</button>
                 <button class="start-btn" onclick="restartTest()">Làm lại / Restart</button>
+                <!-- New download button for debugging -->
+                <button class="start-btn" id="downloadBtn">Tải kết quả / Download Results</button>
             </div>
         </div>
     </div>
 
     <script>
+        // will hold questions loaded from questions.json
         let questionBank = [];
 
+        // fetch on load
         fetch('questions.json')
             .then(res => res.json())
-            .then(data => { questionBank = data; })
+            .then(data => {
+                questionBank = data;
+                document.getElementById('startBtn').disabled = false;
+            })
             .catch(err => {
                 console.error('Failed to load questions:', err);
                 alert('Không thể tải câu hỏi. Vui lòng thử lại sau.');
             });
 
         const testConfig = { questionCount: 10, timeLimit: 20, randomize: true };
-        const currentTest = { questions: [], currentIndex: 0, answers: {}, startTime: null, timer: null, timeRemaining: 0, reviewMode: false };
+        const currentTest = {
+            questions: [], currentIndex: 0, answers: {},
+            startTime: null, timer: null, timeRemaining: 0,
+            reviewMode: false
+        };
 
         document.addEventListener('DOMContentLoaded', () => {
             updateDisplays();
             document.getElementById('startBtn').addEventListener('click', startTest);
+            // Attach download listener
+            document.getElementById('downloadBtn').addEventListener('click', downloadResults);
         });
 
         function updateDisplays() {
@@ -212,13 +225,20 @@
             const tl = document.getElementById('timeLimit');
             document.getElementById('questionCountDisplay').textContent = qc.value;
             document.getElementById('timeLimitDisplay').textContent = tl.value;
-            qc.oninput = () => { testConfig.questionCount = +qc.value; document.getElementById('questionCountDisplay').textContent = qc.value; };
-            tl.oninput = () => { testConfig.timeLimit = +tl.value; document.getElementById('timeLimitDisplay').textContent = tl.value; };
+            qc.oninput = () => {
+                testConfig.questionCount = +qc.value;
+                document.getElementById('questionCountDisplay').textContent = qc.value;
+            };
+            tl.oninput = () => {
+                testConfig.timeLimit = +tl.value;
+                document.getElementById('timeLimitDisplay').textContent = tl.value;
+            };
         }
 
         function toggleRandomize() {
             testConfig.randomize = !testConfig.randomize;
-            document.getElementById('randomizeText').textContent = `Randomize: ${testConfig.randomize ? 'ON' : 'OFF'}`;
+            document.getElementById('randomizeText').textContent =
+                `Randomize: ${testConfig.randomize ? 'ON' : 'OFF'}`;
         }
 
         function startTest() {
@@ -255,20 +275,24 @@
         }
 
         function updateTimerDisplay() {
-            const m = String(Math.floor(currentTest.timeRemaining / 60)).padStart(2, '0');
-            const s = String(currentTest.timeRemaining % 60).padStart(2, '0');
+            const m = Math.floor(currentTest.timeRemaining / 60).toString().padStart(2, '0');
+            const s = (currentTest.timeRemaining % 60).toString().padStart(2, '0');
             document.getElementById('timer').textContent = `${m}:${s}`;
         }
 
         function loadQuestion() {
             if (currentTest.reviewMode) return loadQuestionReview();
+
             const q = currentTest.questions[currentTest.currentIndex];
             document.getElementById('currentQuestion').textContent = currentTest.currentIndex + 1;
-            document.getElementById('progressFill').style.width = ((currentTest.currentIndex + 1) / currentTest.questions.length * 100) + '%';
+            document.getElementById('progressFill').style.width =
+                ((currentTest.currentIndex + 1) / currentTest.questions.length * 100) + '%';
 
             document.getElementById('prevBtn').disabled = currentTest.currentIndex === 0;
-            document.getElementById('nextBtn').style.display = currentTest.currentIndex === currentTest.questions.length - 1 ? 'none' : 'inline-block';
-            document.getElementById('finishBtn').style.display = currentTest.currentIndex === currentTest.questions.length - 1 ? 'inline-block' : 'none';
+            document.getElementById('nextBtn').style.display =
+                currentTest.currentIndex === currentTest.questions.length - 1 ? 'none' : 'inline-block';
+            document.getElementById('finishBtn').style.display =
+                currentTest.currentIndex === currentTest.questions.length - 1 ? 'inline-block' : 'none';
 
             const disp = document.getElementById('questionDisplay');
             const saved = currentTest.answers[q.id] ?? null;
@@ -276,46 +300,133 @@
             if (q.type === 'multiple') {
                 disp.innerHTML = `<h2>${q.question}</h2><div class="answers">` +
                     q.options.map((opt,i) =>
-                        `<div class="answer${saved===i?' selected':''}" onclick="selectAnswer(${q.id},${i})">` +
-                            `<span>${String.fromCharCode(65+i)}</span><span class="answer-text">${opt}</span>` +
-                        `</div>`
+                        `<div class="answer${saved===i?' selected':''}" onclick="selectAnswer(${q.id},${i})">
+                            <span>${String.fromCharCode(65+i)}</span><span class="answer-text">${opt}</span>
+                        </div>`
                     ).join('') + `</div>`;
-            } else if (q.type === 'truefalse') {
+            }
+            else if (q.type === 'truefalse') {
                 disp.innerHTML = `<h2>${q.question}</h2><div class="answers">` +
-                    [`<div class="answer${saved===true?' selected':''}" onclick="selectAnswer(${q.id},true)">` +
-                        `<span>✓</span><span class="answer-text">Đúng / True</span></div>`,
-                     `<div class="answer${saved===false?' selected':''}" onclick="selectAnswer(${q.id},false)">` +
-                        `<span>✗</span><span class="answer-text">Sai / False</span></div>`].join('') + `</div>`;
-            } else if (q.type === 'fillblank') {
-                const txt = q.question.replace('_____',
-                    `<input type="text" class="fill-blank" value="${saved||''}" onchange="selectAnswer(${q.id}, this.value)" placeholder="Nhập câu trả lời">`
-                );
+                    [`<div class="answer${saved===true?' selected':''}" onclick="selectAnswer(${q.id},true)">
+                        <span>✓</span><span class="answer-text">Đúng / True</span>
+                    </div>`,
+                     `<div class="answer${saved===false?' selected':''}" onclick="selectAnswer(${q.id},false)">
+                        <span>✗</span><span class="answer-text">Sai / False</span>
+                    </div>`].join('') + `</div>`;
+            }
+            else if (q.type === 'fillblank') {
+                const txt = q.question.replace('_____', 
+                    `<input type="text" class="fill-blank" value="${saved||''}"
+                        onchange="selectAnswer(${q.id}, this.value)" placeholder="Nhập câu trả lời">`);
                 disp.innerHTML = `<h2>${txt}</h2>`;
-            } else if (q.type === 'shortanswer') {
-                disp.innerHTML = `<h2>${q.question}</h2><div class="hints"><h4>💡 Gợi ý / Hints:</h4>` +
-                    `<div class="hint-tags">${q.hints.map(h=>`<span class="hint-tag">${h}</span>`).join('')}</div></div>` +
-                    `<textarea class="short-answer" maxlength="1000" onchange="selectAnswer(${q.id}, this.value)">${saved||''}</textarea>` +
-                    `<div style="text-align:right;color:#6c757d;font-size:0.9em;">` +
-                    `<span id="wordCount_${q.id}">${(saved||'').split(' ').filter(w=>w).length}</span>/150 từ</div>`;
+            }
+            else if (q.type === 'shortanswer') {
+                disp.innerHTML = `<h2>${q.question}</h2>
+                    <div class="hints"><h4>💡 Gợi ý / Hints:</h4>
+                        <div class="hint-tags">${q.hints.map(h=>`<span class="hint-tag">${h}</span>`).join('')}</div>
+                    </div>
+                    <textarea class="short-answer" maxlength="1000"
+                        onchange="selectAnswer(${q.id}, this.value)">${saved||''}</textarea>
+                    <div style="text-align:right;color:#6c757d;font-size:0.9em;">
+                        <span id="wordCount_${q.id}">${(saved||'').split(' ').filter(w=>w).length}</span>/150 từ
+                    </div>`;
                 const ta = disp.querySelector('textarea');
-                ta.addEventListener('input', () => {
+                ta.addEventListener('input',()=>{
                     const wc = ta.value.split(' ').filter(w=>w).length;
                     document.getElementById(`wordCount_${q.id}`).textContent = wc;
-                    document.getElementById(`wordCount_${q.id}`).style.color = wc>150 ? '#dc3545':'#6c757d';
+                    document.getElementById(`wordCount_${q.id}`).style.color = wc>150?'#dc3545':'#6c757d';
                 });
             }
         }
 
         function selectAnswer(qid, ans) {
             currentTest.answers[qid] = ans;
-            loadQuestion();
+            document.querySelectorAll('.answer').forEach(el=>el.classList.remove('selected'));
+            loadQuestion(); // re-render to highlight
         }
 
         function previousQuestion() {
-            if (currentTest.currentIndex > 0) { currentTest.currentIndex--; loadQuestion(); }
+            if (currentTest.currentIndex>0) {
+                currentTest.currentIndex--;
+                loadQuestion();
+            }
         }
         function nextQuestion() {
-            if (currentTest.currentIndex < currentTest.questions.length - 1) { currentTest.currentIndex++; loadQuestion(); }
+            if (currentTest.currentIndex<currentTest.questions.length-1) {
+                currentTest.currentIndex++;
+                loadQuestion();
+            }
+        }
+
+        // -- review and finish logic (identical to original code) --
+
+        function loadQuestionReview() {
+            const q = currentTest.questions[currentTest.currentIndex];
+            const ua = currentTest.answers[q.id];
+            const isCorrect = (q.type!=='shortanswer') && (ua === q.correct ||
+                (q.type==='fillblank' && ua && ua.trim().toLowerCase()===q.correct.toLowerCase()));
+
+            document.getElementById('currentQuestion').textContent = currentTest.currentIndex + 1;
+            document.getElementById('progressFill').style.width =
+                ((currentTest.currentIndex + 1) / currentTest.questions.length * 100) + '%';
+            document.getElementById('prevBtn').disabled = currentTest.currentIndex === 0;
+            document.getElementById('nextBtn').style.display =
+                currentTest.currentIndex === currentTest.questions.length -1 ? 'none' : 'inline-block';
+            document.getElementById('finishBtn').style.display = 'inline-block';
+
+            let html = `<h2>${q.question}</h2><div class="answers">`;
+            if (q.type==='multiple') {
+                html += q.options.map((opt,i)=>{
+                    let cls='answer';
+                    let ind='';
+                    if(i===q.correct){ cls+=' correct'; ind='✓ '; }
+                    else if(ua===i && !isCorrect){ cls+=' incorrect'; ind='✗ '; }
+                    return `<div class="${cls}"><span>${String.fromCharCode(65+i)}</span>
+                        <span class="answer-text">${ind}${opt}</span></div>`;
+                }).join('');
+            }
+            else if(q.type==='truefalse'){
+                [['Đúng / True',true],['Sai / False',false]].forEach(([t,v])=>{
+                    let cls='answer', ind='';
+                    if(v===q.correct){ cls+=' correct'; ind='✓ '; }
+                    else if(ua===v && !isCorrect){ cls+=' incorrect'; ind='✗ '; }
+                    html+=`<div class="${cls}"><span>${v? '✓':'✗'}</span>
+                        <span class="answer-text">${ind}${t}</span></div>`;
+                });
+            }
+            else if(q.type==='fillblank'){
+                const userTxt = ua||'(Không trả lời)';
+                const bg = isCorrect? '#d4edda':'#f8d7da';
+                html += `<div class="answer" style="background:${bg};padding:10px;">
+                    ${userTxt} ${isCorrect?'✓':'✗'}</div>`;
+            }
+            html += `</div>
+                <div style="margin-top:20px;padding:15px;background:#f8f9fa;border-radius:10px;
+                            border-left:4px solid ${isCorrect?'#28a745':'#dc3545'};">
+                    <strong>${isCorrect?'✅ Đúng!':'❌ Sai!'}</strong>
+                    <p style="margin:10px 0 0;color:#666;">${isCorrect? q.explanation:
+                      'Đáp án đúng: ' + (q.correctText|| q.correct) + '<br>' + q.explanation}</p>
+                </div>`;
+            if(q.type==='shortanswer'){
+                html = `<h2>${q.question}</h2>
+                    <div class="hints"><h4>💡 Gợi ý đã cho / Given Hints:</h4>
+                        <div class="hint-tags">${q.hints.map(h=>`<span class="hint-tag">${h}</span>`).join('')}</div>
+                    </div>
+                    <div style="background:#f8f9fa;border:2px solid #e9ecef;border-radius:10px;padding:15px;">
+                        <h4>📝 Câu trả lời của bạn / Your Answer:</h4>
+                        <div style="background:white;padding:15px;border-radius:5px;
+                                    min-height:60px;border:1px solid #dee2e6;">
+                            ${ua||'<em style="color:#6c757d;">Không có câu trả lời</em>'}
+                        </div>
+                    </div>
+                    <div class="pending-review" style="margin-top:20px;padding:15px;border-radius:10px;">
+                      <strong>⏳ Đang chờ xem xét / Pending for Review</strong>
+                      <p>Câu trả lời này sẽ được giáo viên chấm điểm thủ công.</p>
+                      <p><strong>Gợi ý đánh giá:</strong> ${q.explanation}</p>
+                    </div>`;
+            }
+
+            document.getElementById('questionDisplay').innerHTML = html;
         }
 
         function finishTest() {
@@ -334,77 +445,90 @@
                 detailsHTML += `<div class="result-item"><h3>${results.correct}</h3><p>Đúng / Correct</p></div>`;
                 detailsHTML += `<div class="result-item"><h3>${results.incorrect}</h3><p>Sai / Incorrect</p></div>`;
             }
-            const tm = testConfig.timeLimit * 60 - currentTest.timeRemaining;
-            const mm = String(Math.floor(tm/60)).padStart(2, '0');
-            const ss = String(tm % 60).padStart(2, '0');
+            const tm = testConfig.timeLimit*60 - currentTest.timeRemaining;
+            const mm = Math.floor(tm/60).toString().padStart(2,'0');
+            const ss = (tm%60).toString().padStart(2,'0');
             detailsHTML += `<div class="result-item"><h3>${mm}:${ss}</h3><p>Thời gian / Time</p></div>`;
             document.querySelector('.results-details').innerHTML = detailsHTML;
         }
 
         function calculateResults() {
-            let c = 0, x = 0, p = 0;
-            currentTest.questions.forEach(q => {
-                const ua = currentTest.answers[q.id];
-                if (q.type === 'shortanswer') { p++; return; }
-                const ok = (q.type === 'fillblank')
-                    ? (ua && ua.trim().toLowerCase() === q.correct.toLowerCase())
-                    : (ua === q.correct);
-                if (ok) c++; else x++;
+            let c=0, x=0, p=0;
+            currentTest.questions.forEach(q=>{
+                const ua=currentTest.answers[q.id];
+                if(q.type==='shortanswer') return p++;
+                const ok = q.type==='fillblank'
+                   ? ua && ua.trim().toLowerCase()===q.correct.toLowerCase()
+                   : ua===q.correct;
+                if(ok) c++; else x++;
             });
-            const auto = currentTest.questions.length - p;
-            return { correct: c, incorrect: x, pending: p, percentage: auto > 0 ? Math.round(c/auto*100) : 0 };
+            const auto= currentTest.questions.length - p;
+            return { correct:c, incorrect:x, pending:p, percentage: auto>0 ? Math.round(c/auto*100) : 0 };
         }
 
         function reviewAnswers() {
-            document.getElementById('resultsDisplay').style.display = 'none';
-            document.getElementById('testInterface').style.display = 'block';
-            currentTest.reviewMode = true;
-            currentTest.currentIndex = 0;
-            document.getElementById('finishBtn').textContent = 'Về kết quả';
+            document.getElementById('resultsDisplay').style.display='none';
+            document.getElementById('testInterface').style.display='block';
+            currentTest.reviewMode=true;
+            currentTest.currentIndex=0;
+            document.getElementById('finishBtn').textContent='Về kết quả';
             loadQuestionReview();
         }
 
         function restartTest() {
             clearInterval(currentTest.timer);
-            document.getElementById('resultsDisplay').style.display = 'none';
-            document.getElementById('testSetup').style.display = 'block';
-            currentTest.questions = [];
-            currentTest.currentIndex = 0;
-            currentTest.answers = {};
-            currentTest.reviewMode = false;
+            document.getElementById('resultsDisplay').style.display='none';
+            document.getElementById('testSetup').style.display='block';
+            currentTest.questions=[];
+            currentTest.currentIndex=0;
+            currentTest.answers={};
+            currentTest.reviewMode=false;
         }
 
-        function downloadCSV() {
-            const headers = ['Question', 'User Answer', 'Score'];
-            const rows = currentTest.questions.map(q => {
-                const ua = currentTest.answers[q.id] !== undefined ? currentTest.answers[q.id] : '';
-                let score = '';
-                if (q.type !== 'shortanswer') {
-                    const ok = (q.type === 'fillblank')
-                        ? (ua && ua.trim().toLowerCase() === q.correct.toLowerCase())
-                        : (ua === q.correct);
-                    score = ok ? 'Correct' : 'Incorrect';
+        // --- New downloadResults function ---
+        function downloadResults() {
+            const details = currentTest.questions.map(q => {
+                const userAns = currentTest.answers[q.id];
+                const isCorrect = (q.type !== 'shortanswer') &&
+                  (q.type === 'fillblank'
+                    ? userAns && userAns.trim().toLowerCase() === q.correct.toLowerCase()
+                    : userAns === q.correct);
+                let correctAnsText;
+                if (q.type === 'multiple') {
+                  correctAnsText = q.options[q.correct];
+                } else if (q.type === 'truefalse') {
+                  correctAnsText = q.correct ? 'Đúng / True' : 'Sai / False';
                 } else {
-                    score = 'Pending';
+                  correctAnsText = q.correct;
                 }
-                return [`${q.question}`, `${ua}`, `${score}`];
+                return {
+                  question: q.question,
+                  yourAnswer: userAns == null ? '' : userAns,
+                  correctAnswer: correctAnsText,
+                  result: q.type === 'shortanswer' ? 'Pending Review' : (isCorrect ? 'Correct' : 'Incorrect')
+                };
             });
-            let csvContent = headers.join(',') + '\n';
-            csvContent += rows.map(r => r.map(c => `"${c.replace(/"/g, '""')}"`).join(',')).join('\n');
-            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-            const url = URL.createObjectURL(blob);
-            const link = document.createElement('a');
-            link.setAttribute('href', url);
-            link.setAttribute('download', 'quiz_results.csv');
-            link.style.visibility = 'hidden';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
 
-        // Review mode rendering omitted for brevity (same as before)
-        function loadQuestionReview() {
-            const q = currentTest.questions[currentTest.currentIndex];
-            const ua = currentTest.answers[q.id];
-            const isCorrect = (q.type !== 'shortanswer') && (ua === q.correct || (q.type === 'fillblank'
-}
+            const scoreText = document.getElementById('scorePercentage').textContent;
+            const payload = {
+                timestamp: new Date().toISOString(),
+                score: scoreText,
+                details
+            };
+
+            const blob = new Blob(
+              [ JSON.stringify(payload, null, 2) ],
+              { type: 'application/json' }
+            );
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `quiz-results_${new Date().getTime()}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
