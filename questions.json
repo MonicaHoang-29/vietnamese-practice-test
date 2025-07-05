@@ -1,0 +1,85 @@
+[
+    {
+        "id": 1,
+        "type": "multiple",
+        "question": "Thủ đô của Việt Nam là gì?",
+        "options": ["Hà Nội", "Hồ Chí Minh", "Đà Nẵng", "Huế"],
+        "correct": 0,
+        "explanation": "Hà Nội là thủ đô của Việt Nam từ năm 1010."
+    },
+    {
+        "id": 2,
+        "type": "multiple",
+        "question": "Sông nào dài nhất ở Việt Nam?",
+        "options": ["Sông Hồng", "Sông Mê Kông", "Sông Đồng Nai", "Sông Cửu Long"],
+        "correct": 1,
+        "explanation": "Sông Mê Kông là sông dài nhất chảy qua Việt Nam."
+    },
+    {
+        "id": 3,
+        "type": "truefalse",
+        "question": "Việt Nam có 63 tỉnh thành.",
+        "correct": true,
+        "explanation": "Việt Nam hiện có 63 tỉnh thành phố."
+    },
+    {
+        "id": 4,
+        "type": "multiple",
+        "question": "Ai là người sáng lập Đảng Cộng sản Việt Nam?",
+        "options": ["Hồ Chí Minh", "Võ Nguyên Giáp", "Trần Hưng Đạo", "Lê Lợi"],
+        "correct": 0,
+        "explanation": "Hồ Chí Minh là người sáng lập Đảng Cộng sản Việt Nam."
+    },
+    {
+        "id": 5,
+        "type": "shortanswer",
+        "question": "Mô tả ý nghĩa và chức năng của một cuộc kiểm toán thương hiệu?",
+        "hints": ["đánh giá sức khỏe của thương hiệu", "thương hiệu dài hạn", "nhận thức khách hàng", "vị thế thị trường"],
+        "explanation": "Kiểm toán thương hiệu giúp đánh giá sức khỏe tổng thể của thương hiệu, xác định vị thế trong thị trường, và phát triển chiến lược dài hạn."
+    },
+    {
+        "id": 6,
+        "type": "fillblank",
+        "question": "Quốc hoa của Việt Nam là hoa _____.",
+        "correct": "sen",
+        "explanation": "Hoa sen là quốc hoa của Việt Nam."
+    },
+    {
+        "id": 7,
+        "type": "multiple",
+        "question": "Ngôn ngữ chính thức của Việt Nam là gì?",
+        "options": ["Tiếng Việt", "Tiếng Anh", "Tiếng Trung", "Tiếng Pháp"],
+        "correct": 0,
+        "explanation": "Tiếng Việt là ngôn ngữ chính thức của Việt Nam."
+    },
+    {
+        "id": 8,
+        "type": "truefalse",
+        "question": "Việt Nam giành độc lập vào năm 1945.",
+        "correct": true,
+        "explanation": "Việt Nam tuyên bố độc lập vào ngày 2/9/1945."
+    },
+    {
+        "id": 9,
+        "type": "multiple",
+        "question": "Đỉnh núi cao nhất Việt Nam là gì?",
+        "options": ["Phan Xi Păng", "Putaleng", "Tà Chì Nhù", "Ngọc Linh"],
+        "correct": 0,
+        "explanation": "Phan Xi Păng là đỉnh núi cao nhất Việt Nam với độ cao 3.143m."
+    },
+    {
+        "id": 10,
+        "type": "fillblank",
+        "question": "Việt Nam nằm ở châu lục _____.",
+        "correct": "Á",
+        "explanation": "Việt Nam nằm ở châu Á."
+    },
+    {
+        "id": 11,
+        "type": "multiple",
+        "question": "Múi giờ của Việt Nam là gì?",
+        "options": ["UTC+7", "UTC+8", "UTC+6", "UTC+9"],
+        "correct": 0,
+        "explanation": "Việt Nam sử dụng múi giờ UTC+7."
+    }
+]
