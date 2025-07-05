@@ -52,84 +52,6 @@
             padding: 40px;
         }
 
-        .loading {
-            text-align: center;
-            padding: 40px;
-        }
-
-        .loading-spinner {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #4facfe;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .error {
-            background: #f8d7da;
-            border: 1px solid #f5c6cb;
-            color: #721c24;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-
-        .config-section {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        .config-section h3 {
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        .url-input {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e9ecef;
-            border-radius: 8px;
-            font-size: 1em;
-            margin-bottom: 10px;
-        }
-
-        .url-input:focus {
-            outline: none;
-            border-color: #4facfe;
-        }
-
-        .load-btn {
-            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1em;
-            transition: all 0.3s ease;
-        }
-
-        .load-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
-        }
-
-        .load-btn:disabled {
-            background: #6c757d;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-
         .test-setup {
             text-align: center;
         }
@@ -159,6 +81,99 @@
         .option-card.selected {
             border-color: #4facfe;
             background: rgba(79, 172, 254, 0.1);
+        }
+
+        .data-source-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .data-source-section h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .url-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1em;
+            margin: 10px 0;
+        }
+
+        .url-input:focus {
+            outline: none;
+            border-color: #4facfe;
+            box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+        }
+
+        .load-btn {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+        }
+
+        .load-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+        }
+
+        .status-message {
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-size: 0.9em;
+        }
+
+        .status-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .status-loading {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .file-drop-zone {
+            border: 2px dashed #4facfe;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 15px 0;
+        }
+
+        .file-drop-zone:hover {
+            background: rgba(79, 172, 254, 0.05);
+        }
+
+        .file-drop-zone.dragover {
+            background: rgba(79, 172, 254, 0.1);
+            border-color: #007bff;
         }
 
         .start-btn {
@@ -422,15 +437,6 @@
             color: #856404;
         }
 
-        .questions-info {
-            background: #d1ecf1;
-            border: 1px solid #bee5eb;
-            color: #0c5460;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 15px 0;
-        }
-
         @media (max-width: 768px) {
             .container {
                 margin: 10px;
@@ -472,40 +478,50 @@
         </div>
 
         <div class="content">
-            <!-- Loading State -->
-            <div class="loading" id="loadingState">
-                <div class="loading-spinner"></div>
-                <p>Đang tải câu hỏi... / Loading questions...</p>
-            </div>
-
-            <!-- Configuration Section -->
-            <div class="config-section" id="configSection" style="display: none;">
-                <h3>⚙️ Cấu hình nguồn câu hỏi / Configure Question Source</h3>
-                <input type="text" 
-                       class="url-input" 
-                       id="jsonUrl" 
-                       placeholder="Nhập URL file JSON câu hỏi / Enter JSON URL (e.g., https://raw.githubusercontent.com/username/repo/main/questions.json)"
-                       value="">
-                <button class="load-btn" onclick="loadQuestions()" id="loadQuestionsBtn">
-                    📥 Tải câu hỏi / Load Questions
-                </button>
-                <div id="questionsInfo" class="questions-info" style="display: none;">
-                    <strong>✅ Đã tải thành công!</strong>
-                    <p>Số câu hỏi: <span id="questionCount">0</span></p>
-                    <p>Loại câu hỏi: <span id="questionTypes"></span></p>
-                </div>
-                <div id="errorMessage" style="display: none;"></div>
-            </div>
-
             <!-- Test Setup -->
-            <div class="test-setup" id="testSetup" style="display: none;">
+            <div class="test-setup" id="testSetup">
                 <h2>Thiết lập bài thi / Test Setup</h2>
+                
+                <!-- Data Source Configuration -->
+                <div class="data-source-section">
+                    <h3>📊 Nguồn dữ liệu câu hỏi / Question Data Source</h3>
+                    
+                    <!-- GitHub JSON URL -->
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; text-align: left; margin-bottom: 8px; font-weight: 500;">GitHub JSON URL:</label>
+                        <input type="url" 
+                               class="url-input" 
+                               id="githubUrl" 
+                               placeholder="https://raw.githubusercontent.com/username/repo/main/questions.json"
+                               value="">
+                        <button class="load-btn" onclick="loadFromGitHub()">📥 Tải từ GitHub</button>
+                    </div>
+                    
+                    <!-- File Upload -->
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; text-align: left; margin-bottom: 8px; font-weight: 500;">Hoặc tải lên file JSON:</label>
+                        <div class="file-drop-zone" onclick="document.getElementById('jsonFile').click()">
+                            <div style="font-size: 2em; margin-bottom: 10px;">📁</div>
+                            <div>Kéo thả file JSON vào đây hoặc click để chọn</div>
+                            <div style="font-size: 0.9em; color: #666; margin-top: 5px;">Định dạng: .json</div>
+                        </div>
+                        <input type="file" id="jsonFile" class="file-input" accept=".json" onchange="loadFromFile(this)">
+                    </div>
+                    
+                    <!-- Status Message -->
+                    <div id="statusMessage" class="status-message" style="display: none;"></div>
+                    
+                    <!-- Sample JSON Button -->
+                    <button class="load-btn" onclick="loadSampleData()" style="background: linear-gradient(135deg, #6f42c1 0%, #e83e8c 100%);">
+                        🎯 Sử dụng dữ liệu mẫu
+                    </button>
+                </div>
                 
                 <div class="setup-options">
                     <div class="option-card" data-option="questionCount">
                         <h3>📝 Số câu hỏi</h3>
                         <p>Questions: <span id="questionCountDisplay">10</span></p>
-                        <input type="range" id="questionCountSlider" min="5" max="50" value="10" style="width: 100%; margin-top: 10px;">
+                        <input type="range" id="questionCount" min="5" max="50" value="10" style="width: 100%; margin-top: 10px;">
                     </div>
                     
                     <div class="option-card" data-option="timeLimit">
@@ -520,7 +536,8 @@
                     </div>
                 </div>
                 
-                <button class="start-btn" onclick="startTest()" id="startTestBtn">Bắt đầu thi / Start Test</button>
+                <button class="start-btn" id="startButton" onclick="startTest()" disabled>Bắt đầu thi / Start Test</button>
+                <p style="color: #666; margin-top: 10px; font-size: 0.9em;">Vui lòng tải dữ liệu câu hỏi trước khi bắt đầu</p>
             </div>
 
             <!-- Test Interface -->
@@ -593,176 +610,15 @@
 
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
-            // Try to load default questions first, then show config
-            loadDefaultQuestions();
+            updateDisplays();
+            setupFileDropZone();
         });
 
-        async function loadDefaultQuestions() {
-            const defaultUrl = getDefaultQuestionUrl();
-            if (defaultUrl) {
-                document.getElementById('jsonUrl').value = defaultUrl;
-                try {
-                    await loadQuestionsFromUrl(defaultUrl);
-                    showTestSetup();
-                } catch (error) {
-                    showConfigSection();
-                }
-            } else {
-                showConfigSection();
-            }
-        }
-
-        function getDefaultQuestionUrl() {
-            // You can set a default GitHub raw URL here
-            // For example: 'https://raw.githubusercontent.com/username/repo/main/questions.json'
-            return '';
-        }
-
-        function showConfigSection() {
-            document.getElementById('loadingState').style.display = 'none';
-            document.getElementById('configSection').style.display = 'block';
-        }
-
-        function showTestSetup() {
-            document.getElementById('loadingState').style.display = 'none';
-            document.getElementById('configSection').style.display = 'none';
-            document.getElementById('testSetup').style.display = 'block';
-            updateDisplays();
-        }
-
-        async function loadQuestions() {
-            const url = document.getElementById('jsonUrl').value.trim();
-            if (!url) {
-                showError('Vui lòng nhập URL file JSON / Please enter JSON URL');
-                return;
-            }
-
-            document.getElementById('loadQuestionsBtn').disabled = true;
-            document.getElementById('loadQuestionsBtn').textContent = 'Đang tải... / Loading...';
-            
-            try {
-                await loadQuestionsFromUrl(url);
-                showTestSetup();
-            } catch (error) {
-                showError(`Lỗi tải câu hỏi: ${error.message} / Error loading questions: ${error.message}`);
-            } finally {
-                document.getElementById('loadQuestionsBtn').disabled = false;
-                document.getElementById('loadQuestionsBtn').textContent = '📥 Tải câu hỏi / Load Questions';
-            }
-        }
-
-        async function loadQuestionsFromUrl(url) {
-            try {
-                const response = await fetch(url);
-                if (!response.ok) {
-                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-                }
-                
-                const data = await response.json();
-                
-                // Validate the JSON structure
-                if (!Array.isArray(data)) {
-                    throw new Error('JSON phải là một mảng câu hỏi / JSON must be an array of questions');
-                }
-                
-                if (data.length === 0) {
-                    throw new Error('Không có câu hỏi nào trong file / No questions found in file');
-                }
-                
-                // Validate each question
-                for (let i = 0; i < data.length; i++) {
-                    validateQuestion(data[i], i);
-                }
-                
-                questionBank = data;
-                hideError();
-                showQuestionsInfo();
-                
-            } catch (error) {
-                if (error instanceof SyntaxError) {
-                    throw new Error('File JSON không hợp lệ / Invalid JSON file');
-                }
-                throw error;
-            }
-        }
-
-        function validateQuestion(question, index) {
-            const required = ['id', 'type', 'question'];
-            for (const field of required) {
-                if (!question[field]) {
-                    throw new Error(`Câu hỏi ${index + 1} thiếu trường "${field}" / Question ${index + 1} missing "${field}" field`);
-                }
-            }
-            
-            const validTypes = ['multiple', 'truefalse', 'fillblank', 'shortanswer'];
-            if (!validTypes.includes(question.type)) {
-                throw new Error(`Câu hỏi ${index + 1} có loại không hợp lệ: ${question.type} / Question ${index + 1} has invalid type: ${question.type}`);
-            }
-            
-            // Type-specific validation
-            if (question.type === 'multiple') {
-                if (!question.options || !Array.isArray(question.options) || question.options.length < 2) {
-                    throw new Error(`Câu hỏi ${index + 1} (multiple choice) cần ít nhất 2 lựa chọn / Question ${index + 1} (multiple choice) needs at least 2 options`);
-                }
-                if (typeof question.correct !== 'number' || question.correct < 0 || question.correct >= question.options.length) {
-                    throw new Error(`Câu hỏi ${index + 1} có chỉ số đáp án đúng không hợp lệ / Question ${index + 1} has invalid correct answer index`);
-                }
-            }
-            
-            if (question.type === 'truefalse') {
-                if (typeof question.correct !== 'boolean') {
-                    throw new Error(`Câu hỏi ${index + 1} (true/false) cần đáp án là true hoặc false / Question ${index + 1} (true/false) needs correct answer as true or false`);
-                }
-            }
-            
-            if (question.type === 'fillblank') {
-                if (!question.correct || typeof question.correct !== 'string') {
-                    throw new Error(`Câu hỏi ${index + 1} (fill blank) cần đáp án là chuỗi / Question ${index + 1} (fill blank) needs correct answer as string`);
-                }
-            }
-            
-            if (question.type === 'shortanswer') {
-                if (!question.hints || !Array.isArray(question.hints)) {
-                    throw new Error(`Câu hỏi ${index + 1} (short answer) cần mảng gợi ý / Question ${index + 1} (short answer) needs hints array`);
-                }
-            }
-        }
-
-        function showQuestionsInfo() {
-            const types = [...new Set(questionBank.map(q => q.type))];
-            const typeNames = {
-                'multiple': 'Trắc nghiệm',
-                'truefalse': 'Đúng/Sai', 
-                'fillblank': 'Điền khuyết',
-                'shortanswer': 'Tự luận'
-            };
-            
-            document.getElementById('questionCount').textContent = questionBank.length;
-            document.getElementById('questionTypes').textContent = types.map(t => typeNames[t] || t).join(', ');
-            document.getElementById('questionsInfo').style.display = 'block';
-        }
-
-        function showError(message) {
-            const errorDiv = document.getElementById('errorMessage');
-            errorDiv.innerHTML = `<div class="error">${message}</div>`;
-            errorDiv.style.display = 'block';
-        }
-
-        function hideError() {
-            document.getElementById('errorMessage').style.display = 'none';
-        }
-
         function updateDisplays() {
-            const maxQuestions = Math.min(questionBank.length, 50);
-            const questionCountSlider = document.getElementById('questionCountSlider');
-            questionCountSlider.max = maxQuestions;
-            questionCountSlider.value = Math.min(testConfig.questionCount, maxQuestions);
-            testConfig.questionCount = parseInt(questionCountSlider.value);
-            
             document.getElementById('questionCountDisplay').textContent = testConfig.questionCount;
             document.getElementById('timeLimitDisplay').textContent = testConfig.timeLimit;
             
-            questionCountSlider.oninput = function() {
+            document.getElementById('questionCount').oninput = function() {
                 testConfig.questionCount = parseInt(this.value);
                 document.getElementById('questionCountDisplay').textContent = this.value;
             };
@@ -773,105 +629,225 @@
             };
         }
 
-        function toggleRandomize() {
-            testConfig.randomize = !testConfig.randomize;
-            document.getElementById('randomizeText').textContent = 
-                `Randomize: ${testConfig.randomize ? 'ON' : 'OFF'}`;
-        }
-
-        function startTest() {
-            if (questionBank.length === 0) {
-                showError('Chưa có câu hỏi nào được tải / No questions loaded');
-                return;
-            }
-
-            // Prepare questions
-            let selectedQuestions = [...questionBank];
-            if (testConfig.randomize) {
-                selectedQuestions = shuffle(selectedQuestions);
-            }
-            currentTest.questions = selectedQuestions.slice(0, testConfig.questionCount);
+        function setupFileDropZone() {
+            const dropZone = document.querySelector('.file-drop-zone');
             
-            // Reset test state
-            currentTest.currentIndex = 0;
-            currentTest.answers = {};
-            currentTest.startTime = Date.now();
-            currentTest.timeRemaining = testConfig.timeLimit * 60;
+            dropZone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                dropZone.classList.add('dragover');
+            });
             
-            // Update UI
-            document.getElementById('testSetup').style.display = 'none';
-            document.getElementById('testInterface').style.display = 'block';
-            document.getElementById('totalQuestions').textContent = currentTest.questions.length;
+            dropZone.addEventListener('dragleave', () => {
+                dropZone.classList.remove('dragover');
+            });
             
-            // Start timer
-            startTimer();
-            
-            // Load first question
-            loadQuestion();
-        }
-
-        function shuffle(array) {
-            const shuffled = [...array];
-            for (let i = shuffled.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-            }
-            return shuffled;
-        }
-
-        function startTimer() {
-            currentTest.timer = setInterval(() => {
-                currentTest.timeRemaining--;
-                updateTimerDisplay();
+            dropZone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dropZone.classList.remove('dragover');
                 
-                if (currentTest.timeRemaining <= 0) {
-                    finishTest();
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    const file = files[0];
+                    if (file.type === 'application/json') {
+                        handleFileLoad(file);
+                    } else {
+                        showStatus('Vui lòng chọn file JSON hợp lệ', 'error');
+                    }
                 }
-            }, 1000);
+            });
         }
 
-        function updateTimerDisplay() {
-            const minutes = Math.floor(currentTest.timeRemaining / 60);
-            const seconds = currentTest.timeRemaining % 60;
-            document.getElementById('timer').textContent = 
-                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        function showStatus(message, type) {
+            const statusEl = document.getElementById('statusMessage');
+            statusEl.textContent = message;
+            statusEl.className = `status-message status-${type}`;
+            statusEl.style.display = 'block';
+            
+            if (type === 'success') {
+                setTimeout(() => {
+                    statusEl.style.display = 'none';
+                }, 3000);
+            }
         }
 
-        function loadQuestion() {
-            if (currentTest.reviewMode) {
-                loadQuestionReview();
+        async function loadFromGitHub() {
+            const url = document.getElementById('githubUrl').value.trim();
+            
+            if (!url) {
+                showStatus('Vui lòng nhập URL GitHub', 'error');
                 return;
             }
             
-            const question = currentTest.questions[currentTest.currentIndex];
-            const questionDisplay = document.getElementById('questionDisplay');
+            showStatus('Đang tải dữ liệu từ GitHub...', 'loading');
             
-            // Update progress
-            document.getElementById('currentQuestion').textContent = currentTest.currentIndex + 1;
-            const progress = ((currentTest.currentIndex + 1) / currentTest.questions.length) * 100;
-            document.getElementById('progressFill').style.width = progress + '%';
-            
-            // Update navigation buttons
-            document.getElementById('prevBtn').disabled = currentTest.currentIndex === 0;
-            document.getElementById('nextBtn').style.display = 
-                currentTest.currentIndex === currentTest.questions.length - 1 ? 'none' : 'inline-block';
-            document.getElementById('finishBtn').style.display = 
-                currentTest.currentIndex === currentTest.questions.length - 1 ? 'inline-block' : 'none';
-            
-            // Render question based on type
-            if (question.type === 'multiple') {
-                renderMultipleChoice(question);
-            } else if (question.type === 'truefalse') {
-                renderTrueFalse(question);
-            } else if (question.type === 'fillblank') {
-                renderFillBlank(question);
-            } else if (question.type === 'shortanswer') {
-                renderShortAnswer(question);
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                
+                if (validateQuestionData(data)) {
+                    questionBank = data;
+                    showStatus(`Đã tải thành công ${data.length} câu hỏi từ GitHub`, 'success');
+                    enableStartButton();
+                } else {
+                    throw new Error('Định dạng dữ liệu không hợp lệ');
+                }
+                
+            } catch (error) {
+                showStatus(`Lỗi tải dữ liệu: ${error.message}`, 'error');
+                console.error('Error loading from GitHub:', error);
             }
         }
 
-        function renderMultipleChoice(question) {
-            const questionDisplay = document.getElementById('questionDisplay');
-            const savedAnswer = currentTest.answers[question.id];
+        function loadFromFile(input) {
+            const file = input.files[0];
+            if (file) {
+                handleFileLoad(file);
+            }
+        }
+
+        function handleFileLoad(file) {
+            showStatus('Đang đọc file...', 'loading');
             
-            question
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    
+                    if (validateQuestionData(data)) {
+                        questionBank = data;
+                        showStatus(`Đã tải thành công ${data.length} câu hỏi từ file`, 'success');
+                        enableStartButton();
+                    } else {
+                        throw new Error('Định dạng dữ liệu không hợp lệ');
+                    }
+                    
+                } catch (error) {
+                    showStatus(`Lỗi đọc file: ${error.message}`, 'error');
+                    console.error('Error parsing JSON:', error);
+                }
+            };
+            
+            reader.onerror = function() {
+                showStatus('Lỗi đọc file', 'error');
+            };
+            
+            reader.readAsText(file);
+        }
+
+        function validateQuestionData(data) {
+            if (!Array.isArray(data)) {
+                console.error('Data must be an array');
+                return false;
+            }
+            
+            if (data.length === 0) {
+                console.error('Data array is empty');
+                return false;
+            }
+            
+            // Validate each question
+            for (let i = 0; i < data.length; i++) {
+                const question = data[i];
+                
+                if (!question.id || !question.type || !question.question) {
+                    console.error(`Question ${i + 1} missing required fields: id, type, question`);
+                    return false;
+                }
+                
+                if (!['multiple', 'truefalse', 'fillblank', 'shortanswer'].includes(question.type)) {
+                    console.error(`Question ${i + 1} has invalid type: ${question.type}`);
+                    return false;
+                }
+                
+                if (question.type === 'multiple' && (!question.options || !Array.isArray(question.options))) {
+                    console.error(`Question ${i + 1} of type 'multiple' must have options array`);
+                    return false;
+                }
+                
+                if (question.type === 'shortanswer' && (!question.hints || !Array.isArray(question.hints))) {
+                    console.error(`Question ${i + 1} of type 'shortanswer' must have hints array`);
+                    return false;
+                }
+            }
+            
+            return true;
+        }
+
+        function loadSampleData() {
+            // Sample question bank
+            questionBank = [
+                {
+                    id: 1,
+                    type: "multiple",
+                    question: "Thủ đô của Việt Nam là gì?",
+                    options: ["Hà Nội", "Hồ Chí Minh", "Đà Nẵng", "Huế"],
+                    correct: 0,
+                    explanation: "Hà Nội là thủ đô của Việt Nam từ năm 1010."
+                },
+                {
+                    id: 2,
+                    type: "multiple",
+                    question: "Sông nào dài nhất ở Việt Nam?",
+                    options: ["Sông Hồng", "Sông Mê Kông", "Sông Đồng Nai", "Sông Cửu Long"],
+                    correct: 1,
+                    explanation: "Sông Mê Kông là sông dài nhất chảy qua Việt Nam."
+                },
+                {
+                    id: 3,
+                    type: "truefalse",
+                    question: "Việt Nam có 63 tỉnh thành.",
+                    correct: true,
+                    explanation: "Việt Nam hiện có 63 tỉnh thành phố."
+                },
+                {
+                    id: 4,
+                    type: "multiple",
+                    question: "Ai là người sáng lập Đảng Cộng sản Việt Nam?",
+                    options: ["Hồ Chí Minh", "Võ Nguyên Giáp", "Trần Hưng Đạo", "Lê Lợi"],
+                    correct: 0,
+                    explanation: "Hồ Chí Minh là người sáng lập Đảng Cộng sản Việt Nam."
+                },
+                {
+                    id: 5,
+                    type: "fillblank",
+                    question: "Quốc hoa của Việt Nam là hoa _____.",
+                    correct: "sen",
+                    explanation: "Hoa sen là quốc hoa của Việt Nam."
+                },
+                {
+                    id: 6,
+                    type: "shortanswer",
+                    question: "Mô tả ý nghĩa và chức năng của một cuộc kiểm toán thương hiệu?",
+                    hints: ["đánh giá sức khỏe của thương hiệu", "thương hiệu dài hạn", "nhận thức khách hàng", "vị thế thị trường"],
+                    explanation: "Kiểm toán thương hiệu giúp đánh giá sức khỏe tổng thể của thương hiệu, xác định vị thế trong thị trường, và phát triển chiến lược dài hạn."
+                },
+                {
+                    id: 7,
+                    type: "multiple",
+                    question: "Ngôn ngữ chính thức của Việt Nam là gì?",
+                    options: ["Tiếng Việt", "Tiếng Anh", "Tiếng Trung", "Tiếng Pháp"],
+                    correct: 0,
+                    explanation: "Tiếng Việt là ngôn ngữ chính thức của Việt Nam."
+                },
+                {
+                    id: 8,
+                    type: "truefalse",
+                    question: "Việt Nam giành độc lập vào năm 1945.",
+                    correct: true,
+                    explanation: "Việt Nam tuyên bố độc lập vào ngày 2/9/1945."
+                },
+                {
+                    id: 9,
+                    type: "multiple",
+                    question: "Đỉnh núi cao nhất Việt Nam là gì?",
+                    options: ["Phan Xi Păng", "Putaleng", "Tà Chì Nhù", "Ngọc Linh"],
+                    correct: 0,
+                    explanation: "Phan Xi Păng là đỉnh núi cao nhất Việt Nam với độ cao 3.143m."
+                },
+                {
+                    id: 10,
+                    type: "fillblank
