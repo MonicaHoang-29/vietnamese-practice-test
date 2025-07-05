@@ -1,0 +1,8 @@
+# .staticman.yml
+branch: master
+path: "_results"          # where to commit files
+filename: "result-<timestamp>.json"
+fields:
+  - name
+  - score
+  - answers
