@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống Thi Thử - Practice Test System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 800px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .test-setup {
+            text-align: center;
+        }
+
+        .setup-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .option-card {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option-card:hover {
+            border-color: #4facfe;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .option-card.selected {
+            border-color: #4facfe;
+            background: rgba(79, 172, 254, 0.1);
+        }
+
+        .start-btn {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .start-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(79, 172, 254, 0.4);
+        }
+
+        .question-container {
+            display: none;
+        }
+
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+
+        .question-counter {
+            font-size: 1.1em;
+            color: #6c757d;
+        }
+
+        .timer {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #dc3545;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+            transition: width 0.3s ease;
+        }
+
+        .question {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .question h2 {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .answers {
+            display: grid;
+            gap: 15px;
+        }
+
+        .answer {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .answer:hover {
+            border-color: #4facfe;
+            transform: translateX(5px);
+        }
+
+        .answer.selected {
+            border-color: #4facfe;
+            background: rgba(79, 172, 254, 0.1);
+        }
+
+        .answer.correct {
+            border-color: #28a745;
+            background: rgba(40, 167, 69, 0.1);
+        }
+
+        .answer.incorrect {
+            border-color: #dc3545;
+            background: rgba(220, 53, 69, 0.1);
+        }
+
+        .answer-text {
+            flex: 1;
+            margin-left: 10px;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .nav-btn {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+        }
+
+        .nav-btn:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .results {
+            display: none;
+            text-align: center;
+        }
+
+        .score-display {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        .score-display h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .score-display p {
+            font-size: 1.3em;
+            opacity: 0.9;
+        }
+
+        .results-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .result-item {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .result-item h3 {
+            font-size: 2em;
+            margin-bottom: 5px;
+            color: #4facfe;
+        }
+
+        .fill-blank {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 5px;
+            min-width: 100px;
+            text-align: center;
+            font-size: 1em;
+        }
+
+        .fill-blank:focus {
+            outline: none;
+            border-color: #4facfe;
+        }
+
+        .short-answer {
+            width: 100%;
+            min-height: 120px;
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 1em;
+            font-family: inherit;
+            resize: vertical;
+            line-height: 1.5;
+        }
+
+        .short-answer:focus {
+            outline: none;
+            border-color: #4facfe;
+            box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+        }
+
+        .hints {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .hints h4 {
+            color: #856404;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .hint-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .hint-tag {
+            background: #ffeaa7;
+            color: #856404;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            border: 1px solid #f1c40f;
+        }
+
+        .pending-review {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            color: #856404;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .setup-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .question-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .navigation {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎓 Hệ thống Thi Thử</h1>
+            <p>Practice Test System for Vietnamese Learners</p>
+        </div>
+
+        <div class="content">
+            <!-- Test Setup -->
+            <div class="test-setup" id="testSetup">
+                <h2>Thiết lập bài thi / Test Setup</h2>
+                
+                <div class="setup-options">
+                    <div class="option-card" data-option="questionCount">
+                        <h3>📝 Số câu hỏi</h3>
+                        <p>Questions: <span id="questionCountDisplay">10</span></p>
+                        <input type="range" id="questionCount" min="5" max="50" value="10" style="width: 100%; margin-top: 10px;">
+                    </div>
+                    
+                    <div class="option-card" data-option="timeLimit">
+                        <h3>⏰ Thời gian</h3>
+                        <p>Time: <span id="timeLimitDisplay">20</span> phút</p>
+                        <input type="range" id="timeLimit" min="5" max="60" value="20" style="width: 100%; margin-top: 10px;">
+                    </div>
+                    
+                    <div class="option-card" data-option="randomize" onclick="toggleRandomize()">
+                        <h3>🔀 Xáo trộn</h3>
+                        <p id="randomizeText">Randomize: ON</p>
+                    </div>
+                </div>
+                
+                <button class="start-btn" onclick="startTest()">Bắt đầu thi / Start Test</button>
+            </div>
+
+            <!-- Test Interface -->
+            <div class="question-container" id="testInterface">
+                <div class="question-header">
+                    <div class="question-counter">
+                        Câu <span id="currentQuestion">1</span> / <span id="totalQuestions">10</span>
+                    </div>
+                    <div class="timer" id="timer">20:00</div>
+                </div>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                
+                <div class="question" id="questionDisplay"></div>
+                
+                <div class="navigation">
+                    <button class="nav-btn" id="prevBtn" onclick="previousQuestion()">← Câu trước</button>
+                    <button class="nav-btn" id="nextBtn" onclick="nextQuestion()">Câu tiếp →</button>
+                    <button class="nav-btn" id="finishBtn" onclick="finishTest()" style="display: none;">Hoàn thành</button>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="results" id="resultsDisplay">
+                <div class="score-display">
+                    <h2 id="scorePercentage">85%</h2>
+                    <p>Điểm số của bạn / Your Score</p>
+                </div>
+                
+                <div class="results-details">
+                    <div class="result-item">
+                        <h3 id="correctCount">8</h3>
+                        <p>Đúng / Correct</p>
+                    </div>
+                    <div class="result-item">
+                        <h3 id="incorrectCount">2</h3>
+                        <p>Sai / Incorrect</p>
+                    </div>
+                    <div class="result-item">
+                        <h3 id="timeSpent">15:30</h3>
+                        <p>Thời gian / Time</p>
+                    </div>
+                </div>
+                
+                <button class="start-btn" onclick="reviewAnswers()">Xem lại đáp án / Review Answers</button>
+                <button class="start-btn" onclick="restartTest()">Làm lại / Restart</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample Question Bank - Replace with your actual questions
+        const questionBank = [
+            {
+                id: 1,
+                type: "multiple",
+                question: "Thủ đô của Việt Nam là gì?",
+                options: ["Hà Nội", "Hồ Chí Minh", "Đà Nẵng", "Huế"],
+                correct: 0,
+                explanation: "Hà Nội là thủ đô của Việt Nam từ năm 1010."
+            },
+            {
+                id: 2,
+                type: "multiple",
+                question: "Sông nào dài nhất ở Việt Nam?",
+                options: ["Sông Hồng", "Sông Mê Kông", "Sông Đồng Nai", "Sông Cửu Long"],
+                correct: 1,
+                explanation: "Sông Mê Kông là sông dài nhất chảy qua Việt Nam."
+            },
+            {
+                id: 3,
+                type: "truefalse",
+                question: "Việt Nam có 63 tỉnh thành.",
+                correct: true,
+                explanation: "Việt Nam hiện có 63 tỉnh thành phố."
+            },
+            {
+                id: 4,
+                type: "multiple",
+                question: "Ai là người sáng lập Đảng Cộng sản Việt Nam?",
+                options: ["Hồ Chí Minh", "Võ Nguyên Giáp", "Trần Hưng Đạo", "Lê Lợi"],
+                correct: 0,
+                explanation: "Hồ Chí Minh là người sáng lập Đảng Cộng sản Việt Nam."
+            },
+            {
+                id: 5,
+                type: "fillblank",
+                question: "Quốc hoa của Việt Nam là hoa _____.",
+                correct: "sen",
+                explanation: "Hoa sen là quốc hoa của Việt Nam."
+            },
+            {
+                id: 5,
+                type: "shortanswer",
+                question: "Mô tả ý nghĩa và chức năng của một cuộc kiểm toán thương hiệu?",
+                hints: ["đánh giá sức khỏe của thương hiệu", "thương hiệu dài hạn", "nhận thức khách hàng", "vị thế thị trường"],
+                explanation: "Kiểm toán thương hiệu giúp đánh giá sức khỏe tổng thể của thương hiệu, xác định vị thế trong thị trường, và phát triển chiến lược dài hạn."
+            },
+            {
+                id: 6,
+                type: "fillblank",
+                question: "Quốc hoa của Việt Nam là hoa _____.",
+                correct: "sen",
+                explanation: "Hoa sen là quốc hoa của Việt Nam."
+            },
+            {
+                id: 7,
+                type: "multiple",
+                question: "Ngôn ngữ chính thức của Việt Nam là gì?",
+                options: ["Tiếng Việt", "Tiếng Anh", "Tiếng Trung", "Tiếng Pháp"],
+                correct: 0,
+                explanation: "Tiếng Việt là ngôn ngữ chính thức của Việt Nam."
+            },
+            {
+                id: 8,
+                type: "truefalse",
+                question: "Việt Nam giành độc lập vào năm 1945.",
+                correct: true,
+                explanation: "Việt Nam tuyên bố độc lập vào ngày 2/9/1945."
+            },
+            {
+                id: 9,
+                type: "multiple",
+                question: "Đỉnh núi cao nhất Việt Nam là gì?",
+                options: ["Phan Xi Păng", "Putaleng", "Tà Chì Nhù", "Ngọc Linh"],
+                correct: 0,
+                explanation: "Phan Xi Păng là đỉnh núi cao nhất Việt Nam với độ cao 3.143m."
+            },
+            {
+                id: 10,
+                type: "fillblank",
+                question: "Việt Nam nằm ở châu lục _____.",
+                correct: "Á",
+                explanation: "Việt Nam nằm ở châu Á."
+            },
+            {
+                id: 11,
+                type: "multiple",
+                question: "Múi giờ của Việt Nam là gì?",
+                options: ["UTC+7", "UTC+8", "UTC+6", "UTC+9"],
+                correct: 0,
+                explanation: "Việt Nam sử dụng múi giờ UTC+7."
+            }
+        ];
+
+        let testConfig = {
+            questionCount: 10,
+            timeLimit: 20,
+            randomize: true
+        };
+
+        let currentTest = {
+            questions: [],
+            currentIndex: 0,
+            answers: {},
+            startTime: null,
+            timer: null,
+            timeRemaining: 0
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDisplays();
+        });
+
+        function updateDisplays() {
+            document.getElementById('questionCountDisplay').textContent = testConfig.questionCount;
+            document.getElementById('timeLimitDisplay').textContent = testConfig.timeLimit;
+            
+            document.getElementById('questionCount').oninput = function() {
+                testConfig.questionCount = parseInt(this.value);
+                document.getElementById('questionCountDisplay').textContent = this.value;
+            };
+            
+            document.getElementById('timeLimit').oninput = function() {
+                testConfig.timeLimit = parseInt(this.value);
+                document.getElementById('timeLimitDisplay').textContent = this.value;
+            };
+        }
+
+        function toggleRandomize() {
+            testConfig.randomize = !testConfig.randomize;
+            document.getElementById('randomizeText').textContent = 
+                `Randomize: ${testConfig.randomize ? 'ON' : 'OFF'}`;
+        }
+
+        function startTest() {
+            // Prepare questions
+            let selectedQuestions = [...questionBank];
+            if (testConfig.randomize) {
+                selectedQuestions = shuffle(selectedQuestions);
+            }
+            currentTest.questions = selectedQuestions.slice(0, testConfig.questionCount);
+            
+            // Reset test state
+            currentTest.currentIndex = 0;
+            currentTest.answers = {};
+            currentTest.startTime = Date.now();
+            currentTest.timeRemaining = testConfig.timeLimit * 60;
+            
+            // Update UI
+            document.getElementById('testSetup').style.display = 'none';
+            document.getElementById('testInterface').style.display = 'block';
+            document.getElementById('totalQuestions').textContent = currentTest.questions.length;
+            
+            // Start timer
+            startTimer();
+            
+            // Load first question
+            loadQuestion();
+        }
+
+        function shuffle(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        function startTimer() {
+            currentTest.timer = setInterval(() => {
+                currentTest.timeRemaining--;
+                updateTimerDisplay();
+                
+                if (currentTest.timeRemaining <= 0) {
+                    finishTest();
+                }
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            const minutes = Math.floor(currentTest.timeRemaining / 60);
+            const seconds = currentTest.timeRemaining % 60;
+            document.getElementById('timer').textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function loadQuestion() {
+            if (currentTest.reviewMode) {
+                loadQuestionReview();
+                return;
+            }
+            
+            const question = currentTest.questions[currentTest.currentIndex];
+            const questionDisplay = document.getElementById('questionDisplay');
+            
+            // Update progress
+            document.getElementById('currentQuestion').textContent = currentTest.currentIndex + 1;
+            const progress = ((currentTest.currentIndex + 1) / currentTest.questions.length) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            
+            // Update navigation buttons
+            document.getElementById('prevBtn').disabled = currentTest.currentIndex === 0;
+            document.getElementById('nextBtn').style.display = 
+                currentTest.currentIndex === currentTest.questions.length - 1 ? 'none' : 'inline-block';
+            document.getElementById('finishBtn').style.display = 
+                currentTest.currentIndex === currentTest.questions.length - 1 ? 'inline-block' : 'none';
+            
+            // Render question based on type
+            if (question.type === 'multiple') {
+                renderMultipleChoice(question);
+            } else if (question.type === 'truefalse') {
+                renderTrueFalse(question);
+            } else if (question.type === 'fillblank') {
+                renderFillBlank(question);
+            } else if (question.type === 'shortanswer') {
+                renderShortAnswer(question);
+            }
+        }
+
+        function renderMultipleChoice(question) {
+            const questionDisplay = document.getElementById('questionDisplay');
+            const savedAnswer = currentTest.answers[question.id];
+            
+            questionDisplay.innerHTML = `
+                <h2>${question.question}</h2>
+                <div class="answers">
+                    ${question.options.map((option, index) => `
+                        <div class="answer ${savedAnswer === index ? 'selected' : ''}" 
+                             onclick="selectAnswer(${question.id}, ${index})">
+                            <span>${String.fromCharCode(65 + index)}</span>
+                            <span class="answer-text">${option}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function renderTrueFalse(question) {
+            const questionDisplay = document.getElementById('questionDisplay');
+            const savedAnswer = currentTest.answers[question.id];
+            
+            questionDisplay.innerHTML = `
+                <h2>${question.question}</h2>
+                <div class="answers">
+                    <div class="answer ${savedAnswer === true ? 'selected' : ''}" 
+                         onclick="selectAnswer(${question.id}, true)">
+                        <span>✓</span>
+                        <span class="answer-text">Đúng / True</span>
+                    </div>
+                    <div class="answer ${savedAnswer === false ? 'selected' : ''}" 
+                         onclick="selectAnswer(${question.id}, false)">
+                        <span>✗</span>
+                        <span class="answer-text">Sai / False</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderFillBlank(question) {
+            const questionDisplay = document.getElementById('questionDisplay');
+            const savedAnswer = currentTest.answers[question.id] || '';
+            
+            const questionText = question.question.replace('_____', 
+                `<input type="text" class="fill-blank" value="${savedAnswer}" 
+                 onchange="selectAnswer(${question.id}, this.value)" placeholder="Nhập câu trả lời">`);
+            
+            questionDisplay.innerHTML = `
+                <h2>${questionText}</h2>
+            `;
+        }
+
+        function renderShortAnswer(question) {
+            const questionDisplay = document.getElementById('questionDisplay');
+            const savedAnswer = currentTest.answers[question.id] || '';
+            
+            questionDisplay.innerHTML = `
+                <h2>${question.question}</h2>
+                <div class="hints">
+                    <h4>💡 Gợi ý / Hints:</h4>
+                    <div class="hint-tags">
+                        ${question.hints.map(hint => `<span class="hint-tag">${hint}</span>`).join('')}
+                    </div>
+                </div>
+                <textarea class="short-answer" 
+                    placeholder="Nhập câu trả lời của bạn (tối đa 150 từ)..." 
+                    onchange="selectAnswer(${question.id}, this.value)"
+                    maxlength="1000">${savedAnswer}</textarea>
+                <div style="text-align: right; color: #6c757d; font-size: 0.9em; margin-top: 5px;">
+                    <span id="wordCount_${question.id}">${savedAnswer.split(' ').filter(word => word.length > 0).length}</span>/150 từ
+                </div>
+            `;
+            
+            // Add word count functionality
+            const textarea = questionDisplay.querySelector('.short-answer');
+            textarea.addEventListener('input', function() {
+                const wordCount = this.value.split(' ').filter(word => word.length > 0).length;
+                document.getElementById(`wordCount_${question.id}`).textContent = wordCount;
+                if (wordCount > 150) {
+                    document.getElementById(`wordCount_${question.id}`).style.color = '#dc3545';
+                } else {
+                    document.getElementById(`wordCount_${question.id}`).style.color = '#6c757d';
+                }
+            });
+        }
+
+        function selectAnswer(questionId, answer) {
+            currentTest.answers[questionId] = answer;
+            
+            // Update visual feedback for multiple choice and true/false
+            const answers = document.querySelectorAll('.answer');
+            answers.forEach(el => el.classList.remove('selected'));
+            
+            if (typeof answer === 'number') {
+                answers[answer].classList.add('selected');
+            } else if (typeof answer === 'boolean') {
+                answers[answer ? 0 : 1].classList.add('selected');
+            }
+        }
+
+        function previousQuestion() {
+            if (currentTest.currentIndex > 0) {
+                currentTest.currentIndex--;
+                loadQuestion();
+            }
+        }
+
+        function nextQuestion() {
+            if (currentTest.currentIndex < currentTest.questions.length - 1) {
+                currentTest.currentIndex++;
+                loadQuestion();
+            }
+        }
+
+        function loadQuestionReview() {
+            const question = currentTest.questions[currentTest.currentIndex];
+            const userAnswer = currentTest.answers[question.id];
+            
+            // Update progress
+            document.getElementById('currentQuestion').textContent = currentTest.currentIndex + 1;
+            const progress = ((currentTest.currentIndex + 1) / currentTest.questions.length) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            
+            // Update navigation buttons
+            document.getElementById('prevBtn').disabled = currentTest.currentIndex === 0;
+            document.getElementById('nextBtn').style.display = 
+                currentTest.currentIndex === currentTest.questions.length - 1 ? 'none' : 'inline-block';
+            document.getElementById('finishBtn').style.display = 
+                currentTest.currentIndex === currentTest.questions.length - 1 ? 'inline-block' : 'none';
+            
+            // Render question review based on type
+            if (question.type === 'multiple') {
+                renderMultipleChoiceReview(question, userAnswer);
+            } else if (question.type === 'truefalse') {
+                renderTrueFalseReview(question, userAnswer);
+            } else if (question.type === 'fillblank') {
+                renderFillBlankReview(question, userAnswer);
+            } else if (question.type === 'shortanswer') {
+                renderShortAnswerReview(question, userAnswer);
+            }
+        }
+
+        function renderMultipleChoiceReview(question, userAnswer) {
+            const questionDisplay = document.getElementById('questionDisplay');
+            const isCorrect = userAnswer === question.correct;
+            
+            questionDisplay.innerHTML = `
+                <h2>${question.question}</h2>
+                <div class="answers">
+                    ${question.options.map((option, index) => {
+                        let classes = 'answer';
+                        if (index === question.correct) {
+                            classes += ' correct';
+                        } else if (index === userAnswer && !isCorrect) {
+                            classes += ' incorrect';
+                        }
+                        
+                        let indicator = '';
+                        if (index === question.correct) {
+                            indicator = '✓ ';
+                        } else if (index === userAnswer && !isCorrect) {
+                            indicator = '✗ ';
+                        }
+                        
+                        return `
+                            <div class="${classes}">
+                                <span>${String.fromCharCode(65 + index)}</span>
+                                <span class="answer-text">${indicator}${option}</span>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+                <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid ${isCorrect ? '#28a745' : '#dc3545'};">
+                    <strong>${isCorrect ? '✅ Đúng!' : '❌ Sai!'}</strong>
+                    <p style="margin: 10px 0 0 0; color: #666;">${question.explanation}</p>
+                </div>
+            `;
+        }
+
+        function renderTrueFalseReview(question, userAnswer) {
+            const questionDisplay = document.getElementById('questionDisplay');
+            const isCorrect = userAnswer === question.correct;
+            
+            questionDisplay.innerHTML = `
+                <h2>${question.question}</h2>
+                <div class="answers">
+                    <div class="answer ${question.correct === true ? 'correct' : ''} ${userAnswer === true && !isCorrect ? 'incorrect' : ''}">
+                        <span>✓</span>
+                        <span class="answer-text">${question.correct === true ? '✓ ' : ''}${userAnswer === true && !isCorrect ? '✗ ' : ''}Đúng / True</span>
+                    </div>
+                    <div class="answer ${question.correct === false ? 'correct' : ''} ${userAnswer === false && !isCorrect ? 'incorrect' : ''}">
+                        <span>✗</span>
+                        <span class="answer-text">${question.correct === false ? '✓ ' : ''}${userAnswer === false && !isCorrect ? '✗ ' : ''}Sai / False</span>
+                    </div>
+                </div>
+                <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid ${isCorrect ? '#28a745' : '#dc3545'};">
+                    <strong>${isCorrect ? '✅ Đúng!' : '❌ Sai!'}</strong>
+                    <p style="margin: 10px 0 0 0; color: #666;">${question.explanation}</p>
+                </div>
+            `;
+        }
+
+        function renderFillBlankReview(question, userAnswer) {
+            const questionDisplay = document.getElementById('questionDisplay');
+            const isCorrect = userAnswer && userAnswer.toLowerCase().trim() === question.correct.toLowerCase();
+            
+            const questionText = question.question.replace('_____', 
+                `<span style="background: ${isCorrect ? '#d4edda' : '#f8d7da'}; padding: 5px 10px; border-radius: 5px; font-weight: bold;">
+                    ${userAnswer || '(Không trả lời)'} ${isCorrect ? '✓' : '✗'}
+                </span>`);
+            
+            questionDisplay.innerHTML = `
+                <h2>${questionText}</h2>
+                <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid ${isCorrect ? '#28a745' : '#dc3545'};">
+                    <strong>${isCorrect ? '✅ Đúng!' : '❌ Sai!'}</strong>
+                    <p style="margin: 10px 0 5px 0; color: #666;">Đáp án đúng: <strong>${question.correct}</strong></p>
+                    <p style="margin: 5px 0 0 0; color: #666;">${question.explanation}</p>
+                </div>
+            `;
+        }
+
+        function renderShortAnswerReview(question, userAnswer) {
+            const questionDisplay = document.getElementById('questionDisplay');
+            const wordCount = userAnswer ? userAnswer.split(' ').filter(word => word.length > 0).length : 0;
+            
+            questionDisplay.innerHTML = `
+                <h2>${question.question}</h2>
+                <div class="hints">
+                    <h4>💡 Gợi ý đã cho / Given Hints:</h4>
+                    <div class="hint-tags">
+                        ${question.hints.map(hint => `<span class="hint-tag">${hint}</span>`).join('')}
+                    </div>
+                </div>
+                <div style="background: #f8f9fa; border: 2px solid #e9ecef; border-radius: 10px; padding: 15px; margin: 15px 0;">
+                    <h4 style="margin-bottom: 10px; color: #495057;">📝 Câu trả lời của bạn / Your Answer:</h4>
+                    <div style="background: white; padding: 15px; border-radius: 5px; min-height: 60px; border: 1px solid #dee2e6;">
+                        ${userAnswer || '<em style="color: #6c757d;">Không có câu trả lời / No answer provided</em>'}
+                    </div>
+                    <div style="text-align: right; color: #6c757d; font-size: 0.9em; margin-top: 5px;">
+                        ${wordCount}/150 từ
+                    </div>
+                </div>
+                <div class="pending-review" style="margin-top: 20px; padding: 15px; border-radius: 10px;">
+                    <strong>⏳ Đang chờ xem xét / Pending for Review</strong>
+                    <p style="margin: 10px 0 0 0;">Câu trả lời này sẽ được giáo viên chấm điểm thủ công. / This answer will be manually graded by the instructor.</p>
+                    <p style="margin: 5px 0 0 0; color: #666;"><strong>Gợi ý đánh giá:</strong> ${question.explanation}</p>
+                </div>
+            `;
+        }
+
+        function finishTest() {
+            if (currentTest.reviewMode) {
+                // Return to results from review mode
+                currentTest.reviewMode = false;
+                document.getElementById('testInterface').style.display = 'none';
+                document.getElementById('resultsDisplay').style.display = 'block';
+                
+                // Reset navigation buttons
+                document.getElementById('nextBtn').textContent = 'Câu tiếp →';
+                document.getElementById('finishBtn').textContent = 'Hoàn thành';
+                return;
+            }
+            
+            clearInterval(currentTest.timer);
+            
+            // Calculate results
+            const results = calculateResults();
+            
+            // Show results
+            document.getElementById('testInterface').style.display = 'none';
+            document.getElementById('resultsDisplay').style.display = 'block';
+            
+            // Update result displays
+            document.getElementById('scorePercentage').textContent = results.percentage + '%';
+            document.getElementById('correctCount').textContent = results.correct;
+            document.getElementById('incorrectCount').textContent = results.incorrect;
+            
+            // Update results details to show pending answers
+            const resultsDetails = document.querySelector('.results-details');
+            if (results.pending > 0) {
+                resultsDetails.innerHTML = `
+                    <div class="result-item">
+                        <h3 style="color: #28a745;">${results.correct}</h3>
+                        <p>Đúng / Correct</p>
+                    </div>
+                    <div class="result-item">
+                        <h3 style="color: #dc3545;">${results.incorrect}</h3>
+                        <p>Sai / Incorrect</p>
+                    </div>
+                    <div class="result-item">
+                        <h3 style="color: #ffc107;">${results.pending}</h3>
+                        <p>Chờ xem xét / Pending</p>
+                    </div>
+                    <div class="result-item">
+                        <h3 id="timeSpent">15:30</h3>
+                        <p>Thời gian / Time</p>
+                    </div>
+                `;
+            } else {
+                resultsDetails.innerHTML = `
+                    <div class="result-item">
+                        <h3>${results.correct}</h3>
+                        <p>Đúng / Correct</p>
+                    </div>
+                    <div class="result-item">
+                        <h3>${results.incorrect}</h3>
+                        <p>Sai / Incorrect</p>
+                    </div>
+                    <div class="result-item">
+                        <h3 id="timeSpent">15:30</h3>
+                        <p>Thời gian / Time</p>
+                    </div>
+                `;
+            }
+            
+            const timeSpent = testConfig.timeLimit * 60 - currentTest.timeRemaining;
+            const minutes = Math.floor(timeSpent / 60);
+            const seconds = timeSpent % 60;
+            document.getElementById('timeSpent').textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function calculateResults() {
+            let correct = 0;
+            let incorrect = 0;
+            let pending = 0;
+            
+            currentTest.questions.forEach(question => {
+                const userAnswer = currentTest.answers[question.id];
+                let isCorrect = false;
+                
+                if (question.type === 'multiple') {
+                    isCorrect = userAnswer === question.correct;
+                    if (isCorrect) {
+                        correct++;
+                    } else {
+                        incorrect++;
+                    }
+                } else if (question.type === 'truefalse') {
+                    isCorrect = userAnswer === question.correct;
+                    if (isCorrect) {
+                        correct++;
+                    } else {
+                        incorrect++;
+                    }
+                } else if (question.type === 'fillblank') {
+                    isCorrect = userAnswer && userAnswer.toLowerCase().trim() === question.correct.toLowerCase();
+                    if (isCorrect) {
+                        correct++;
+                    } else {
+                        incorrect++;
+                    }
+                } else if (question.type === 'shortanswer') {
+                    // Short answers are always pending for manual review
+                    pending++;
+                }
+            });
+            
+            // Calculate percentage only for auto-graded questions
+            const autoGradedTotal = currentTest.questions.length - pending;
+            const percentage = autoGradedTotal > 0 ? Math.round((correct / autoGradedTotal) * 100) : 0;
+            
+            return { correct, incorrect, pending, percentage, autoGradedTotal };
+        }
+
+        function reviewAnswers() {
+            // Hide results and show review interface
+            document.getElementById('resultsDisplay').style.display = 'none';
+            document.getElementById('testInterface').style.display = 'block';
+            
+            // Set up review mode
+            currentTest.reviewMode = true;
+            currentTest.currentIndex = 0;
+            
+            // Update navigation for review
+            document.getElementById('nextBtn').textContent = 'Câu tiếp →';
+            document.getElementById('finishBtn').textContent = 'Về kết quả';
+            document.getElementById('finishBtn').style.display = 'inline-block';
+            
+            loadQuestionReview();
+        }
+
+        function restartTest() {
+            // Reset everything
+            document.getElementById('resultsDisplay').style.display = 'none';
+            document.getElementById('testSetup').style.display = 'block';
+            
+            // Clear timer if exists
+            if (currentTest.timer) {
+                clearInterval(currentTest.timer);
+            }
+            
+            // Reset test state
+            currentTest = {
+                questions: [],
+                currentIndex: 0,
+                answers: {},
+                startTime: null,
+                timer: null,
+                timeRemaining: 0,
+                reviewMode: false
+            };
+        }
+    </script>
+</body>
+</html>
