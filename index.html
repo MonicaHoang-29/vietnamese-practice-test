@@ -41,7 +41,8 @@
             border-radius: 50px; cursor: pointer; transition: all 0.3s ease;
         }
         .start-btn:disabled { background: #6c757d; cursor: not-allowed; }
-        .question-container, .results { display: none; }
+        .start-btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(79,172,254,0.4); }
+        .question-container, .results, .github-config { display: none; }
         .question-header {
             display: flex; justify-content: space-between; align-items: center;
             margin-bottom: 30px; padding: 20px; background: #f8f9fa; border-radius: 15px;
@@ -114,6 +115,40 @@
         .pending-review {
             background: #fff3cd; border-left: 4px solid #ffc107; color: #856404;
         }
+        .github-config {
+            background: #f8f9fa; border-radius: 15px; padding: 30px; margin-bottom: 30px;
+        }
+        .github-config h3 { margin-bottom: 20px; color: #333; }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block; margin-bottom: 5px; font-weight: bold; color: #555;
+        }
+        .form-group input {
+            width: 100%; padding: 12px; border: 2px solid #e9ecef; border-radius: 8px;
+            font-size: 1em; transition: border-color 0.3s ease;
+        }
+        .form-group input:focus {
+            outline: none; border-color: #4facfe;
+        }
+        .save-status {
+            margin-top: 20px; padding: 15px; border-radius: 10px; display: none;
+        }
+        .save-status.success {
+            background: #d4edda; color: #155724; border: 1px solid #c3e6cb;
+        }
+        .save-status.error {
+            background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb;
+        }
+        .save-status.loading {
+            background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb;
+        }
+        .btn-secondary {
+            background: #6c757d; color: white; border: none; padding: 12px 25px;
+            border-radius: 25px; cursor: pointer; font-size: 1em; margin-right: 10px;
+        }
+        .btn-secondary:hover { background: #5a6268; }
         @media (max-width:768px){
             .container{margin:10px;}
             .content{padding:20px;}
@@ -154,6 +189,29 @@
                 <button class="start-btn" id="startBtn" disabled>Bắt đầu thi / Start Test</button>
             </div>
 
+            <!-- GitHub Configuration -->
+            <div class="github-config" id="githubConfig">
+                <h3>🔧 Cấu hình GitHub / GitHub Configuration</h3>
+                <div class="form-group">
+                    <label for="githubToken">GitHub Personal Access Token:</label>
+                    <input type="password" id="githubToken" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+                </div>
+                <div class="form-group">
+                    <label for="githubRepo">Repository (owner/repo):</label>
+                    <input type="text" id="githubRepo" placeholder="yourusername/your-repo-name">
+                </div>
+                <div class="form-group">
+                    <label for="studentName">Tên học sinh / Student Name:</label>
+                    <input type="text" id="studentName" placeholder="Nguyễn Văn A">
+                </div>
+                <div class="form-group">
+                    <label for="studentId">Mã số học sinh / Student ID:</label>
+                    <input type="text" id="studentId" placeholder="SV001">
+                </div>
+                <button class="start-btn" onclick="saveGitHubConfig()">Lưu cấu hình / Save Config</button>
+                <button class="btn-secondary" onclick="showTestSetup()">Quay lại / Back</button>
+            </div>
+
             <!-- Test Interface -->
             <div class="question-container" id="testInterface">
                 <div class="question-header">
@@ -182,7 +240,10 @@
                 <div class="results-details">
                     <!-- Filled dynamically -->
                 </div>
+                <div class="save-status" id="saveStatus"></div>
                 <button class="start-btn" onclick="reviewAnswers()">Xem lại đáp án / Review Answers</button>
+                <button class="start-btn" onclick="saveResultsToGitHub()">💾 Lưu kết quả / Save Results</button>
+                <button class="btn-secondary" onclick="showGitHubConfig()">⚙️ Cấu hình GitHub</button>
                 <button class="start-btn" onclick="restartTest()">Làm lại / Restart</button>
             </div>
         </div>
@@ -192,7 +253,134 @@
         // will hold questions loaded from questions.json
         let questionBank = [];
 
-        // fetch on load
+        // GitHub configuration
+        const githubConfig = {
+            token: '',
+            repo: '',
+            studentName: '',
+            studentId: ''
+        };
+
+        // Load GitHub config from localStorage
+        function loadGitHubConfig() {
+            const saved = localStorage.getItem('githubConfig');
+            if (saved) {
+                Object.assign(githubConfig, JSON.parse(saved));
+                document.getElementById('githubToken').value = githubConfig.token;
+                document.getElementById('githubRepo').value = githubConfig.repo;
+                document.getElementById('studentName').value = githubConfig.studentName;
+                document.getElementById('studentId').value = githubConfig.studentId;
+            }
+        }
+
+        // Save GitHub config to localStorage
+        function saveGitHubConfig() {
+            githubConfig.token = document.getElementById('githubToken').value;
+            githubConfig.repo = document.getElementById('githubRepo').value;
+            githubConfig.studentName = document.getElementById('studentName').value;
+            githubConfig.studentId = document.getElementById('studentId').value;
+            
+            localStorage.setItem('githubConfig', JSON.stringify(githubConfig));
+            showSaveStatus('Cấu hình đã được lưu! / Configuration saved!', 'success');
+        }
+
+        function showGitHubConfig() {
+            document.getElementById('testSetup').style.display = 'none';
+            document.getElementById('resultsDisplay').style.display = 'none';
+            document.getElementById('githubConfig').style.display = 'block';
+        }
+
+        function showTestSetup() {
+            document.getElementById('githubConfig').style.display = 'none';
+            document.getElementById('testSetup').style.display = 'block';
+        }
+
+        function showSaveStatus(message, type) {
+            const statusDiv = document.getElementById('saveStatus');
+            statusDiv.textContent = message;
+            statusDiv.className = `save-status ${type}`;
+            statusDiv.style.display = 'block';
+            
+            if (type !== 'loading') {
+                setTimeout(() => {
+                    statusDiv.style.display = 'none';
+                }, 5000);
+            }
+        }
+
+        async function saveResultsToGitHub() {
+            if (!githubConfig.token || !githubConfig.repo || !githubConfig.studentName || !githubConfig.studentId) {
+                showSaveStatus('Vui lòng cấu hình GitHub trước! / Please configure GitHub first!', 'error');
+                return;
+            }
+
+            showSaveStatus('Đang lưu kết quả... / Saving results...', 'loading');
+
+            try {
+                const results = calculateResults();
+                const timestamp = new Date().toISOString();
+                const filename = `results/${githubConfig.studentId}_${timestamp.replace(/[:.]/g, '-')}.json`;
+                
+                const resultData = {
+                    studentInfo: {
+                        name: githubConfig.studentName,
+                        id: githubConfig.studentId,
+                        timestamp: timestamp
+                    },
+                    testConfig: {
+                        questionCount: testConfig.questionCount,
+                        timeLimit: testConfig.timeLimit,
+                        randomize: testConfig.randomize
+                    },
+                    results: {
+                        score: results.percentage,
+                        correct: results.correct,
+                        incorrect: results.incorrect,
+                        pending: results.pending,
+                        timeUsed: testConfig.timeLimit * 60 - currentTest.timeRemaining
+                    },
+                    detailedAnswers: currentTest.questions.map(q => ({
+                        id: q.id,
+                        question: q.question,
+                        type: q.type,
+                        userAnswer: currentTest.answers[q.id],
+                        correctAnswer: q.correct,
+                        isCorrect: q.type === 'shortanswer' ? 'pending' : 
+                            (q.type === 'fillblank' ? 
+                                (currentTest.answers[q.id] && currentTest.answers[q.id].trim().toLowerCase() === q.correct.toLowerCase()) :
+                                (currentTest.answers[q.id] === q.correct))
+                    }))
+                };
+
+                const content = btoa(JSON.stringify(resultData, null, 2));
+                
+                const response = await fetch(`https://api.github.com/repos/${githubConfig.repo}/contents/${filename}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `token ${githubConfig.token}`,
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        message: `Add quiz results for ${githubConfig.studentName} (${githubConfig.studentId})`,
+                        content: content
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    showSaveStatus('Kết quả đã được lưu thành công! / Results saved successfully!', 'success');
+                    console.log('File saved:', data.content.html_url);
+                } else {
+                    const error = await response.json();
+                    throw new Error(error.message || 'Failed to save to GitHub');
+                }
+            } catch (error) {
+                console.error('Error saving to GitHub:', error);
+                showSaveStatus(`Lỗi khi lưu: ${error.message} / Error saving: ${error.message}`, 'error');
+            }
+        }
+
+        // fetch questions on load
         fetch('questions.json')
             .then(res => res.json())
             .then(data => {
@@ -213,6 +401,7 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             updateDisplays();
+            loadGitHubConfig();
             document.getElementById('startBtn').addEventListener('click', startTest);
         });
 
@@ -354,8 +543,6 @@
             }
         }
 
-        // -- review and finish logic (identical to original code) --
-
         function loadQuestionReview() {
             const q = currentTest.questions[currentTest.currentIndex];
             const ua = currentTest.answers[q.id];
@@ -394,105 +581,4 @@
                 const userTxt = ua||'(Không trả lời)';
                 const bg = isCorrect? '#d4edda':'#f8d7da';
                 html += `<div class="answer" style="background:${bg};padding:10px;">
-                    ${userTxt} ${isCorrect?'✓':'✗'}</div>`;
-            }
-            html += `</div>
-                <div style="margin-top:20px;padding:15px;background:#f8f9fa;border-radius:10px;
-                            border-left:4px solid ${isCorrect?'#28a745':'#dc3545'};">
-                    <strong>${isCorrect?'✅ Đúng!':'❌ Sai!'}</strong>
-                    <p style="margin:10px 0 0;color:#666;">${isCorrect? q.explanation:
-                      'Đáp án đúng: ' + (q.correctText|| q.correct) + '<br>' + q.explanation}</p>
-                </div>`;
-            if(q.type==='shortanswer'){
-                html = `<h2>${q.question}</h2>
-                    <div class="hints"><h4>💡 Gợi ý đã cho / Given Hints:</h4>
-                        <div class="hint-tags">${q.hints.map(h=>`<span class="hint-tag">${h}</span>`).join('')}</div>
-                    </div>
-                    <div style="background:#f8f9fa;border:2px solid #e9ecef;border-radius:10px;padding:15px;">
-                        <h4>📝 Câu trả lời của bạn / Your Answer:</h4>
-                        <div style="background:white;padding:15px;border-radius:5px;
-                                    min-height:60px;border:1px solid #dee2e6;">
-                            ${ua||'<em style="color:#6c757d;">Không có câu trả lời</em>'}
-                        </div>
-                    </div>
-                    <div class="pending-review" style="margin-top:20px;padding:15px;border-radius:10px;">
-                      <strong>⏳ Đang chờ xem xét / Pending for Review</strong>
-                      <p>Câu trả lời này sẽ được giáo viên chấm điểm thủ công.</p>
-                      <p><strong>Gợi ý đánh giá:</strong> ${q.explanation}</p>
-                    </div>`;
-            }
-
-            document.getElementById('questionDisplay').innerHTML = html;
-        }
-
-        function submitToStaticman(results) {
-          const actionURL =
-            "https://staticman.herokuapp.com/v2/entry/MonicaHoang-29/vietnamese-practice-test/master/results";
-        
-          const form = document.createElement("form");
-          form.method = "POST";
-          form.action = actionURL;
-          form.setAttribute("accept-charset", "UTF-8");
-        
-          // name
-          let input = document.createElement("input");
-          input.name = "fields[name]";
-          input.value = "anonymous";     // or ask user for a name/email
-          form.appendChild(input);
-        
-          // score
-          input = document.createElement("input");
-          input.name = "fields[score]";
-          input.value = results.percentage;
-          form.appendChild(input);
-        
-          // answers (stringify your entire answers object)
-          input = document.createElement("input");
-          input.name = "fields[answers]";
-          input.value = JSON.stringify(results);
-          form.appendChild(input);
-        
-          document.body.appendChild(form);
-          form.submit();
-        }
-        
-        // in finishTest():
-        const results = calculateResults();
-        submitToStaticman(results);
-
-
-        function calculateResults() {
-            let c=0, x=0, p=0;
-            currentTest.questions.forEach(q=>{
-                const ua=currentTest.answers[q.id];
-                if(q.type==='shortanswer') return p++;
-                const ok = q.type==='fillblank'
-                   ? ua && ua.trim().toLowerCase()===q.correct.toLowerCase()
-                   : ua===q.correct;
-                if(ok) c++; else x++;
-            });
-            const auto= currentTest.questions.length - p;
-            return { correct:c, incorrect:x, pending:p, percentage: auto>0 ? Math.round(c/auto*100) : 0 };
-        }
-
-        function reviewAnswers() {
-            document.getElementById('resultsDisplay').style.display='none';
-            document.getElementById('testInterface').style.display='block';
-            currentTest.reviewMode=true;
-            currentTest.currentIndex=0;
-            document.getElementById('finishBtn').textContent='Về kết quả';
-            loadQuestionReview();
-        }
-
-        function restartTest() {
-            clearInterval(currentTest.timer);
-            document.getElementById('resultsDisplay').style.display='none';
-            document.getElementById('testSetup').style.display='block';
-            currentTest.questions=[];
-            currentTest.currentIndex=0;
-            currentTest.answers={};
-            currentTest.reviewMode=false;
-        }
-    </script>
-</body>
-</html>
+                    ${userTxt} ${isCorrect?'✓':'✗'}
