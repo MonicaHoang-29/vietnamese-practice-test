@@ -1,0 +1,611 @@
+[
+    {
+        "id": 1,
+        "question": "_________ thương hiệu là giá trị thêm vào hỗ trợ cho sản phẩm và dịch vụ",
+        "type": "multiple",
+        "options": [
+            "Loyalty (lòng trung thành)",
+            "Equity (Tài sản)",
+            "Preference (sự ưa thích hơn)",
+            "Satisfaction (sự hài lòng)",
+            "Benefits (lợi ích)"
+        ],
+        "correct": 1,
+        "explanation": "Đáp án đúng là \"Equity\" (Tài sản). Việc định nghĩa này có liên quan đến ý tưởng rằng giá trị của một thương hiệu được tạo ra thông qua sự hỗ trợ và đầu tư từ bên ngoài, như tiền đầu tư hoặc tài sản khác. Điều này cho thấy rằng giá trị của một thương hiệu không chỉ là do giá trị của các sản phẩm hoặc dịch vụ mà nó cung cấp, mà còn có sự tham gia của các yếu tố bên ngoài."
+    },
+    {
+        "id": 3,
+        "question": "_________được định nghĩa như sự tác động phân biệt mà việc hiểu biết thương hiệu tạo ra trên phản ứng của người tiêu dùng đối với việc tiếp thị của thương hiệu",
+        "type": "multiple",
+        "options": [
+            "Mission-driven brand equity (tài sản thương hiệu định hướng sứ mệnh)",
+            "Customer-based brand equity (tài sản thương hiệu định hướng khách hàng)",
+            "Product-driven brand equity (tài sản thương hiệu định hướng sản phẩm)",
+            "Service-driven brand equity (tài sản thương hiệu định hướng dịch vụ)",
+            "Function-based brand equity (tài sản thương hiệu dựa trên chức năng)"
+        ],
+        "correct": 1,
+        "explanation": "The correct answer, \"tài sản thương hiệu định hướng khách hàng\" or customer-based brand equity, is the definition that accurately describes the concept of brand equity as a result of the interaction between a consumer's perception of a brand and their behavior towards it in marketing efforts. This term emphasizes the importance of understanding how customers perceive and respond to a brand, which is the core idea behind brand equity. By focusing on customer-based aspects, this definition highlights the value that a brand creates for its target audience through effective marketing strategies."
+    },
+    {
+        "id": 5,
+        "question": "Khi một người tiêu dùng thể hiện những suy nghĩ, cảm nhận, ý tưởng, kinh nghiệm, niềm tin, v.v mà nó trở thành gắn kết với thương hiệu, người tiêu dùng đang thể hiện ______thương hiệu",
+        "type": "multiple",
+        "options": [
+            "Knowledge (kiến thức)",
+            "Loyalty (lòng trung thành)",
+            "Behavior (hành vi)",
+            "Preference (sở thích)",
+            "Equity (tài sản)"
+        ],
+        "correct": 0,
+        "explanation": "Đáp án \"Knowledge\" là phù hợp vì khi một người tiêu dùng thể hiện những suy nghĩ, cảm nhận, ý tưởng, kinh nghiệm, niềm tin gắn kết với thương hiệu, họ đang thể hiện thông qua việc tạo ra hoặc ủng hộ kiến thức và sự hiểu biết về sản phẩm hoặc dịch vụ của thương hiệu. Điều này cho thấy rằng người tiêu dùng đã trở thành một phần của quá trình học hỏi và tích lũy kiến thức liên quan đến thương hiệu. Bằng cách này, họ đã xây dựng được mối quan hệ gắn kết với thương hiệu dựa trên thông tin và kiến thức mà họ đã thu thập được."
+    },
+    {
+        "id": 7,
+        "question": "Thương hiệu mạnh sở hữu các lợi thế tiếp thị sau đây NGOẠI TRỪ______",
+        "type": "multiple",
+        "options": [
+            "a) greater loyalty (lòng trung thành cao hơn)",
+            "b) larger margins (lợi nhuận lớn hơn)",
+            "c) guaranteed profits (lợi nhuận được đảm bảo)",
+            "d) improved perceptions of product performance (nhận thức về việc thực hiện",
+            "của sản phẩm được cải thiện)",
+            "e) more elastic consumer response to price decreases (phản ứng của người tiêu",
+            "dùng co giãn nhiều hơn đối với sự giảm giá)"
+        ],
+        "correct": 2,
+        "explanation": "This answer is correct because \"guaranteed profits\" là một khái niệm không tồn tại trong kinh doanh thực tế. Không có thương hiệu nào có thể đảm bảo lợi nhuận được hoàn toàn, vì thị trường luôn thay đổi và các yếu tố như chi phí, giá cả, và nhu cầu của khách hàng có thể ảnh hưởng đến kết quả tài chính của công ty. Do đó, \"guaranteed profits\" không phải là một lợi thế tiếp thị thực tế hoặc đáng tin cậy cho bất kỳ thương hiệu nào."
+    },
+    {
+        "id": 8,
+        "question": "__________ là cái tạo ra sự khác biệt thể hiện trong tài sản thương hiệu",
+        "type": "multiple",
+        "options": [
+            "a) Brand image (hình ảnh thương hiệu)",
+            "b) Consumer income (thu nhập người tiêu dùng)",
+            "c) Consumer purchasing power (khả năng mua của người tiêu dùng)",
+            "d) Consumer knowledge (kiến thức người tiêu dùng)",
+            "e) Brand perception (nhận thức nhãn hiệu)"
+        ],
+        "correct": 3,
+        "explanation": "The correct answer is d) Consumer knowledge (kiến thức người tiêu dùng). This is because consumer knowledge refers to the awareness and understanding of a product or brand by its target audience, which is what creates differences in how consumers perceive and interact with a brand's assets. By having a deeper understanding of their needs and preferences, brands can create unique value propositions that set them apart from competitors."
+    },
+    {
+        "id": 10,
+        "question": "Tất cả những điều sau đây được xem là nằm trong “6 khối xây dựng thương hiệu” NGOẠI TRỪ________",
+        "type": "multiple",
+        "options": [
+            "a) brand salience (sự nổi bật của thương hiệu)",
+            "b) brand performance (sự thực hiện của thương hiệu)",
+            "c) brand imagery (hình ảnh thương hiệu)",
+            "d) brand feelings (cảm nhận thương hiệu)",
+            "e) brand pride (sự kiêu hãnh của thương hiệu)"
+        ],
+        "correct": 4,
+        "explanation": "Đáp án đúng là \"e) brand pride\" vì nó không được coi là một trong \"6 khối xây dựng thương hiệu\" theo cách tiếp thị thương hiệu truyền thống. Các \"6 khối xây dựng thương hiệu\" bao gồm:\n\n* Brand awareness (hiện diện của thương hiệu)\n* Unique Selling Proposition (USP, đặc điểm riêng biệt của sản phẩm hoặc dịch vụ)\n* Brand identity (tính cách và hình ảnh của thương hiệu)\n* Brand voice (giọng điệu và phong cách giao tiếp của thương hiệu)\n* Brand storytelling (câu chuyện và giá trị cốt lõi của thương hiệu)\n* Brand loyalty (sự trung thành của khách hàng với thương hiệu)\n\n\"Brand pride\" là một khái"
+    },
+    {
+        "id": 11,
+        "question": "Với “sáu khối xây dựng thương hiệu,”_______ tập trung vào ý kiến và sự đánh giá của riêng khách hàng",
+        "type": "multiple",
+        "options": [
+            "a) brand salience (sự nổi bật thương hiệu)",
+            "b) brand performance (thực hiện thương hiệu)",
+            "c) brand imagery (hình ảnh thương hiệu)",
+            "d) brand judgments (sự đánh giá thương hiệu)",
+            "e) brand resonance (sự cộng hưởng thương hiệu)"
+        ],
+        "correct": 3,
+        "explanation": "The correct answer is \"d) brand judgments\" because it accurately reflects the concept of \"six building blocks of branding\" that focuses on internal factors such as values, tone of voice, personality, and language to create a unique identity for a brand. This approach emphasizes the importance of aligning the brand's internal perspective with its external message, ensuring that the customer's perception of the brand is consistent with the company's own vision and values. By focusing on internal factors, brands can build trust and credibility with their target audience."
+    },
+    {
+        "id": 14,
+        "question": "Sự nổi bật của thương hiệu liên quan đến mức độ thường xuyên và dễ dàng mà một thương hiệu được kích hoạt trong những tình huống mua và sử dụng khác nhau",
+        "type": "truefalse",
+        "correct": true,
+        "explanation": "Sự nổi bật của thương hiệu liên quan đến việc tạo ra sự nhận biết và nhớ đến thương hiệu của khách hàng trong nhiều tình huống khác nhau. Khi một thương hiệu được kích hoạt trong những tình huống mua và sử dụng khác nhau, nó giúp tăng cường sự gắn kết với khách hàng và duy trì sự nổi bật trong tâm trí họ. Điều này đồng thời giúp tăng cường niềm tin và uy tín của thương hiệu."
+    },
+    {
+        "id": 15,
+        "question": "Hình ảnh thương hiệu là những phản hồi và phản ứng tình cảm của người tiêu dùng đối với thương hiệu",
+        "type": "truefalse",
+        "correct": false,
+        "explanation": "Hình ảnh thương hiệu thực sự là một khái niệm đa chiều, bao gồm cả phản hồi và phản ứng tình cảm của người tiêu dùng đối với thương hiệu, cũng như cách mà người tiêu dùng hình dung và trải nghiệm thương hiệu thông qua các yếu tố như sản phẩm, dịch vụ, giá trị và phong cách. Nó không chỉ liên quan đến phản hồi tình cảm, mà còn bao gồm cả thông tin thực tế về sản phẩm hoặc dịch vụ. Do đó, câu trả lời \"False\" là chính xác vì hình ảnh thương hiệu là một khái niệm phức tạp hơn nhiều."
+    },
+    {
+        "id": 17,
+        "question": "Giải thích khái niệm tài sản thương hiệu dựa trên khách hàng",
+        "type": "shortanswer",
+        "hints": [
+            "Nhận diện",
+            "Hình ảnh",
+            "Phản ứng"
+        ],
+        "explanation": "Trong Quản trị Thương hiệu, tài sản thương hiệu dựa trên khách hàng (CBBE) là tác động khác biệt do kiến thức thương hiệu tạo ra trên phản ứng của khách hàng với các chương trình marketing. Khi khách hàng hiểu rõ thương hiệu, họ có thiện cảm và tin tưởng, dẫn đến hành vi mua và ủng hộ nhiều hơn. Ví dụ, sữa tươi Vinamilk được người tiêu dùng đánh giá cao về chất lượng và an toàn, nên họ sẵn sàng trả giá cao hơn so với các sản phẩm sữa không rõ nguồn gốc. Nhờ CBBE tích cực, thương hiệu giảm rủi ro ra sản phẩm mới, nâng cao hiệu quả tiếp thị và giữ vững lợi thế cạnh tranh."
+    },
+    {
+        "id": 18,
+        "question": "Điều gì tạo ra tài sản thương hiệu? Nhà tiếp thị tạo ra tài sản thương hiệu như thế nào?",
+        "type": "shortanswer",
+        "hints": [
+            "Nhận diện",
+            "Liên tưởng",
+            "Trải nghiệm"
+        ],
+        "explanation": "Theo mô hình CBBE, tài sản thương hiệu phát sinh từ hai thành tố chủ chốt: mức độ nhận diện (khả năng khách hàng nhớ và gọi tên thương hiệu) và hình ảnh (liên tưởng và cảm nhận về thương hiệu đó). Ví dụ, Trung Nguyên Legend đã xây dựng thành công tài sản thương hiệu cà phê đặc trưng với gói sản phẩm nhận diện mạnh và trải nghiệm quán cà phê độc đáo."
+    },
+    {
+        "id": 20,
+        "question": "Mô tả ý nghĩa và chức năng của một cuộc kiểm toán thương hiệu",
+        "type": "shortanswer",
+        "hints": [
+            "Sức khỏe",
+            "Nhận biết",
+            "Chiến lược"
+        ],
+        "explanation": "Kiểm toán thương hiệu giúp các nhà tiếp thị đánh giá sức khỏe thương hiệu thông qua ý kiến người tiêu dùng. Thủ tục nghiên cứu và phân tích xác định nguồn gốc tài sản thương hiệu (brand equity) như mức độ nhận biết, ấn tượng cảm nhận và lòng trung thành. Đồng thời nó gợi ý cách cải thiện và khai thác tài sản, như điều chỉnh thông điệp, nâng cao trải nghiệm sản phẩm hay mở rộng đối tượng khách hàng. Kết quả kiểm toán là căn cứ để định hướng xây dựng chiến lược, giúp phát triển chương trình tiếp thị nhằm gia tăng giá trị thương hiệu dài hạn. Nhà tiếp thị nên tiến hành kiểm toán mỗi khi có thay đổi lớn về chiến lược để đảm bảo thương hiệu luôn bền vững và phát triển."
+    },
+    {
+        "id": 22,
+        "question": "Một nhà quản lý tiếp thị nhấn mạnh tầm quan trọng của việc có một thương hiệu mạnh với một người quản lý thương hiệu mới được tuyển dụng. Tất cả những điều sau đây sẽ là lợi thế mà người quản lý tiếp thị có thể nhấn mạnh cho cấp dưới của mình NGOẠI TRỪ _______",
+        "type": "multiple",
+        "options": [
+            "a) nhận thức về thành tích của sản phẩm được cải thiện",
+            "b) lòng trung thành lớn hơn",
+            "c) ít dễ bị tổn thương trước khủng hoảng tiếp thị",
+            "d) lower margins (lợi nhuận thấp hơn)",
+            "e) possible licensing opportunities (có thể có cơ hội cấp phép)"
+        ],
+        "correct": 3,
+        "explanation": "Đáp án đúng là \"lower margins\" (lợi nhuận thấp hơn). Điều này có nghĩa là một thương hiệu mạnh thường đi kèm với lợi nhuận cao hơn, không phải lợi nhuận thấp hơn. Một thương hiệu mạnh có thể giúp tăng doanh thu và tăng trưởng lợi nhuận, do đó, việc nhấn mạnh lợi nhuận thấp hơn sẽ không phải là một lợi thế cho người quản lý tiếp thị."
+    },
+    {
+        "id": 24,
+        "question": "Nếu một người quản lý đang tìm kiếm một \"bản báo cáo\" về thành tích trước đây của một thương hiệu, ông ta hay bà ta nên chuyển sang kiểm tra ____ của thương hiệu.",
+        "type": "multiple",
+        "options": [
+            "a) Strength (sức mạnh)",
+            "b) Compatibility (khả năng tương thích)",
+            "c) Stature (tầm vóc)",
+            "d) Image (hình ảnh)",
+            "e) Dominance (sự thống trị)"
+        ],
+        "correct": 2,
+        "explanation": "Đáp án c) Stature (tầm vóc) là đúng vì \"stature\" trong ngữ cảnh này ám chỉ độ cao hoặc kích thước của thương hiệu, chứ không phải là một khía cạnh liên quan đến thành tích hoặc hiệu suất kinh doanh. Việc kiểm tra stature của thương hiệu sẽ giúp người quản lý có một cái nhìn tổng quan về kích thước và vị thế của thương hiệu, từ đó đánh giá được thành tích trước đây của nó."
+    },
+    {
+        "id": 25,
+        "question": "Matt luôn luôn nghĩ về pin Die Hard khi ông nghĩ về một loại pin tin cậy cho xe hơi. Đây là một ví dụ về _______ thương hiệu",
+        "type": "multiple",
+        "options": [
+            "a) Salience (sự nổi bật)",
+            "b) Imagery (hình tượng)",
+            "c) Judgments (cách nhìn)",
+            "d) Feelings (cảm xúc)",
+            "e) Scope (phạm vi)"
+        ],
+        "correct": 0,
+        "explanation": "Đáp án đúng là \"a) Salience\" (sự nổi bật). Lý do là vì Matt luôn nghĩ về một loại pin Die Hard khi ông nghĩ về một loại pin tin cậy cho xe hơi, điều này cho thấy rằng ông đã tạo ra một liên kết mạnh mẽ giữa hai ý tưởng khác nhau. Điều này minh họa cho khái niệm \"salience\", nơi mà một ý tưởng hoặc chữ cái trở nên nổi bật trong đầu người do sự liên kết với ý tưởng hoặc chữ cái khác."
+    },
+    {
+        "id": 26,
+        "question": "Công ty của bạn mong muốn có được tài sản thương hiệu dựa trên khách hàng tích cực. Cần phải làm gì để điều này xảy ra?",
+        "type": "shortanswer",
+        "hints": [
+            "Nhận diện",
+            "Liên tưởng",
+            "Sự kiện"
+        ],
+        "explanation": "Một thương hiệu được cho là có tài sản thương hiệu tích cực dựa trên khách hàng, lấy ví dụ giày thể thao Biti’s trước hết đẩy mạnh nhận diện thương hiệu thông qua với chiến dịch “Biti’s Hunter”. Tiếp theo, Biti’s củng cố kiến thức thương hiệu bằng liên tưởng tích cực về sự thoải mái và bền bỉ. Tiếp đó, họ hợp tác với ca sĩ Sơn Tùng M-TP – một đại sứ thương hiệu có tầm ảnh hưởng mạnh, giúp gia tăng nhận diện và tâm lý tin cậy. Biti’s còn tổ chức các sự kiện roadshow và trải nghiệm thử giày miễn phí trên khắp các tỉnh thành, kích thích phản ứng tích cực của khách hàng. Nhờ vậy, Biti’s Hunter không chỉ tăng nhanh doanh số mà còn ghi dấu ấn mạnh mẽ trong tâm trí giới trẻ."
+    },
+    {
+        "id": 27,
+        "question": "Volvo có một liên tưởng thương hiệu mạnh đối với kiến thức thương hiệu khi người tiêu dùng cảm nhận nó như là một chiếc xe hơi rất an toàn. Giải thích khái niệm về kiến thức thương hiệu",
+        "type": "shortanswer",
+        "hints": [
+            "Nhận diện",
+            "Hình ảnh",
+            "An toàn"
+        ],
+        "explanation": "Kiến thức thương hiệu là toàn bộ thông tin, trải nghiệm và liên tưởng mà khách hàng lưu giữ về thương hiệu. Kiến thức thương hiệu bao gồm hai thành tố chính: nhận diện (brand awareness) – khả năng khách hàng nhớ và gọi tên thương hiệu; và hình ảnh (brand image) – các liên tưởng, cảm nhận về tính năng, giá trị và cảm xúc liên quan. Ví dụ, khi nhắc đến Volvo, người tiêu dùng ngay lập tức nghĩ đến sự an toàn – liên tưởng thương hiệu này tạo nên lợi thế cạnh tranh. Nhờ kiến thức thương hiệu vững chắc, nhà tiếp thị có thể xây dựng chiến lược tiếp thị phù hợp, tăng cường độ tin cậy và nâng cao giá trị cảm nhận, từ đó củng cố tài sản thương hiệu và gắn kết lâu dài với khách hàng"
+    },
+    {
+        "id": 30,
+        "question": "Là một phần của quá trình quản lý thương hiệu chiến lược, mỗi công ty và sản phẩm chào bán cần phải đại diện cho một ___ khác biệt trong tâm trí của thị trường mục tiêu",
+        "type": "multiple",
+        "options": [
+            "a) Promotion (sự xúc tiến)",
+            "b) Cell (ô)",
+            "c) big idea (ý tưởng lớn)",
+            "d) ad (quảng cáo)",
+            "e) organizational concept (khái niệm tổ chức)"
+        ],
+        "correct": 2,
+        "explanation": "Trả lời:\n\nĐáp án chính xác là \"big idea\" (ý tưởng lớn). Ý tưởng lớn này là yếu tố quan trọng giúp mỗi công ty và sản phẩm chào bán nổi bật và tạo sự khác biệt trong tâm trí của thị trường mục tiêu. Bằng cách có một ý tưởng lớn, các doanh nghiệp có thể tạo ra một hình ảnh thương hiệu độc đáo và thu hút khách hàng.\n\nGiải thích: Mỗi công ty và sản phẩm cần phải đại diện cho một \"big idea\" để trở nên nổi bật trên thị trường. Ý tưởng này không chỉ giúp họ tạo ra sự khác biệt mà còn giúp họ liên kết với khách hàng và xây dựng thành công thương hiệu của mình."
+    },
+    {
+        "id": 31,
+        "question": "Mọi chiến lược tiếp thị đều xây dựng dựa trên STP – Phân khúc, chọn thị trường mục tiêu, và ____",
+        "type": "multiple",
+        "options": [
+            "a) Positioning (định vị)",
+            "b) Product (sản phẩm)",
+            "c) Planning (kế hoạch)",
+            "d) Promotion (xúc tiến)",
+            "e) Performance (thành tích)"
+        ],
+        "correct": 0,
+        "explanation": "Đáp án đúng là Positioning (định vị). Điều này vì vậy là do tất cả các chiến lược tiếp thị đều dựa trên ba yếu tố chính của STP: Phân khúc (Segmentation), chọn thị trường mục tiêu (Target Market) và định vị (Positioning). Định vị là bước cuối cùng trong quy trình STP, giúp khách hàng xác định tư cách và giá trị của sản phẩm hoặc dịch vụ so với đối thủ cạnh tranh."
+    },
+    {
+        "id": 32,
+        "question": "_____ là hành động thiết kế sản phẩm chào bán và hình ảnh của nó để chiếm lĩnh một vị trí phân biệt trong tâm trí của thị trường mục tiêu.",
+        "type": "multiple",
+        "options": [
+            "a) Positioning (định vị)",
+            "b) Product conceptualization (khái niệm hóa sản phẩm)",
+            "c) Promotion presentation (sự trình bày xúc tiến)",
+            "d) Performance imaging (Tạo hình thành tích)",
+            "e) Pre Product launching (tung ra tiền-sản phẩm)"
+        ],
+        "correct": 0,
+        "explanation": "The correct answer is \"Positioning\" because it accurately describes the concept of thiết kế sản phẩm chào bán và hình ảnh của nó để chiếm lĩnh một vị trí phân biệt trong tâm trí của thị trường mục tiêu. Positioning là một khái niệm marketing liên quan đến việc tạo ra một định vị khác biệt cho sản phẩm hoặc dịch vụ của mình trên thị trường, nhằm thu hút khách hàng tiềm năng và duy trì sự cạnh tranh. Bằng cách định vị chính xác, các doanh nghiệp có thể tạo ra một hình ảnh và giá trị riêng biệt cho sản phẩm của mình."
+    },
+    {
+        "id": 34,
+        "question": "Điểm đầu tiên trong việc xác định khung tham chiếu cho định vị của một sản phẩm là xác định ____- là những sản phẩm hoặc tập hợp sản phẩm mà thương hiệu sẽ cạnh tranh hoặc có thể thay thế dễ dàng cho nhau",
+        "type": "multiple",
+        "options": [
+            "a) functional membership (tư cách thành viên chức năng)",
+            "b) competitive field (phạm vi cạnh tranh)",
+            "c) category membership (tư cách thành viên chủng loại)",
+            "d) value membership (tư cách thành viên giá trị)",
+            "e) demand field (trường nhu cầu)"
+        ],
+        "correct": 2,
+        "explanation": "Đáp án đúng là \"c) category membership\" vì đây là điểm đầu tiên trong việc xác định khung tham chiếu cho định vị của một sản phẩm. Category membership liên quan đến việc xác định các tập hợp hoặc phân khúc sản phẩm mà thương hiệu sẽ cạnh tranh hoặc có thể thay thế dễ dàng với nhau, giúp hiểu rõ về không gian cạnh tranh và định vị của thương hiệu."
+    },
+    {
+        "id": 35,
+        "question": "Cụm từ nào sau đây được liên tưởng gần nhất với câu phát biểu sau: “Những thuộc tính hoặc lợi tính mà người tiêu dùng liên tưởng một cách mạnh mẽ với một thương hiệu, đánh giá một cách tích cực và tin rằng họ không thể tìm thấy với cùng mức độ trong các thương hiệu cạnh tranh khác”",
+        "type": "multiple",
+        "options": [
+            "a) Brand image (hình ảnh thương hiệu)",
+            "b) Points-of-difference (những điểm khác nhau)",
+            "c) Points-of-parity (những điểm bằng nhau)",
+            "d) Points of value (những điểm giá trị)",
+            "e) Brand concept (khái niệm thương hiệu)"
+        ],
+        "correct": 1,
+        "explanation": "Cụm từ \"Points-of-difference\" (những điểm khác nhau) được liên tưởng gần nhất với câu phát biểu trên vì nó mô tả sự khác biệt chính giữa các thương hiệu, giúp người tiêu dùng đánh giá và lựa chọn một thương hiệu cụ thể. Câu nói đó nhấn mạnh tầm quan trọng của việc tạo ra những lợi tính hoặc thuộc tính độc đáo mà người tiêu dùng không thể tìm thấy ở các thương hiệu khác, đồng nghĩa với việc \"điểm khác nhau\" giữa các thương hiệu."
+    },
+    {
+        "id": 36,
+        "question": "_______ là những liên tưởng không nhất thiết là độc nhất đối với thương hiệu nhưng trong thực tế có thể chia xẻ với những thương hiệu khác",
+        "type": "multiple",
+        "options": [
+            "a) Points-of-parity (điểm bằng nhau)",
+            "b) Points-of-difference (điểm khác nhau)",
+            "c) Brand cells (các ô thương hiệu)",
+            "d) Brand positions (những vị trí thương hiệu)",
+            "e) Points of competitive field (Những điểm của phạm vi cạnh tranh)"
+        ],
+        "correct": 0,
+        "explanation": "Đáp án \"Points-of-parity\" là chính xác vì nó mô tả các liên tưởng không độc nhất đối với thương hiệu mà vẫn có thể được chia sẻ với những thương hiệu khác. Các điểm bằng nhau (Points-of-parity) là khía cạnh chung của một sản phẩm hoặc dịch vụ giữa nhiều thương hiệu, thường liên quan đến chất lượng, giá cả, tính năng, v.v. Chúng không phải là đặc điểm duy nhất định hình danh tiếng và nhận thức của thương hiệu."
+    },
+    {
+        "id": 37,
+        "question": "Để đạt được điểm bằng nhau về một thuộc tính hoặc lợi ích cụ thể nào đó, phải có một lượng người tiêu dùng đủ lớn tin rằng thương hiệu là “_____” về chiều kích đó.",
+        "type": "multiple",
+        "options": [
+            "a) most excellent (tốt nhất)",
+            "b) neutral (trung tính)",
+            "c) marginal (có giới hạn)",
+            "d) good enough (đủ tốt)",
+            "e) service based (dựa trên dịch vụ)"
+        ],
+        "correct": 3,
+        "explanation": "Đáp án correct là \"d) good enough\" vì điều này mô tả ý nghĩa của thuật ngữ \"khả năng đạt được điểm bằng nhau về một thuộc tính hoặc lợi ích cụ thể nào đó\", tức là mức độ chấp nhận được trong mắt người tiêu dùng để thương hiệu có thể đáp ứng nhu cầu của họ. Khi một thương hiệu có khả năng \"đủ tốt\" về một đặc điểm nhất định, người tiêu dùng sẽ dễ dàng chấp nhận và tin tưởng vào thương hiệu đó hơn."
+    },
+    {
+        "id": 38,
+        "question": "Cách tiếp cận được ưa thích đối với định vị là thông báo cho người tiêu dùng về tư cách thành viên của một thương hiệu trước khi nói về _______ của nó",
+        "type": "multiple",
+        "options": [
+            "a) point-of-parity (điểm bằng nhau)",
+            "b) point-of-difference (điểm khác nhau)",
+            "c) point of conflict (điểm mâu thuẫn)",
+            "d) point of weakness(điểm yếu)",
+            "e) point of reference (điểm tham chiếu)"
+        ],
+        "correct": 1,
+        "explanation": "Đáp án đúng là \"b) point-of-difference\" vì cách tiếp cận này được gọi là \"tư cách thành viên\" hay \"point-of-view\" (POV), trong đó thương hiệu sẽ tạo ra một tư cách hoặc quan điểm độc đáo để thu hút sự chú ý của người tiêu dùng trước khi đề cập đến sản phẩm hoặc dịch vụ cụ thể của mình. Điều này giúp thương hiệu khác biệt và tạo ấn tượng mạnh mẽ với khách hàng tiềm năng."
+    },
+    {
+        "id": 40,
+        "question": "Bột làm bánh sô cô la có thể tuyên bố là có vị ngon và hỗ trợ điều tuyên bố này bằng cách chứa những thành phần có chất lượng cao hoặc bằng cách chỉ cho người tiêu dùng sự ưa thích trong khi tiêu dùng, do đó truyền đạt tư cách thành viên của chủng loại thức ăn tráng miệng nướng thông qua _____________",
+        "type": "multiple",
+        "options": [
+            "a) announcing category benefits (thông báo các lợi ích chủng loại)",
+            "b) comparing to exemplars (So sánh với các sản phẩm mẫu)",
+            "c) relying on the product descriptor (dựa vào sự mô tả sản phẩm)",
+            "d) communicating deliverability variables (truyền thông về những biến số",
+            "chuyển giao)",
+            "e) identifying counterexamples (Nhận ra các phản ví dụ)"
+        ],
+        "correct": 0,
+        "explanation": "Đáp án chính xác là \"announcing category benefits\" vì nó mô tả cách tuyên bố rằng bột làm bánh sô cô la có vị ngon và hỗ trợ điều đó thông qua việc chứa những thành phần chất lượng cao hoặc sự ưa thích của người tiêu dùng. Điều này giúp truyền đạt tư cách thành viên của chủng loại thức ăn tráng miệng nướng, giúp khách hàng hiểu được giá trị và phẩm chất của sản phẩm."
+    },
+    {
+        "id": 42,
+        "question": "_______ về cơ bàn là mức độ ít mong muốn nhất đối với việc định vị những điểm khác nhau của thương hiệu, một phần bởi vì các đối thủ có thể dễ dàng sao chép",
+        "type": "multiple",
+        "options": [
+            "a) Benefits (các lợi ích)",
+            "b) Attitudes (Các thái độ)",
+            "c) Values (Các giá trị)",
+            "d) Attributes (Các thuộc tính)",
+            "e) Messages (Các thông điệp)"
+        ],
+        "correct": 3,
+        "explanation": "Đáp án đúng là \"Attributes\" (Các thuộc tính). Lý do là vì những đặc điểm hoặc thuộc tính của một thương hiệu không phải là điều dễ dàng sao chép được, nhưng nó vẫn là mức độ ít mong muốn nhất đối với việc định vị những điểm khác nhau của thương hiệu. Điều này là bởi vì các đối thủ có thể cố gắng sao chép các đặc điểm chung mà khách hàng ưa thích, nhưng khó có thể làm cho một thương hiệu mới có bản sắc riêng biệt và độc đáo."
+    },
+    {
+        "id": 43,
+        "question": "Các nhà tiếp thị phải quyết định cấp độ mà họ neo các điểm khác biệt của thương hiệu. Ở cấp độ thấp nhất là _____________. Ví dụ, Dover soap có thể nói về sự kiện rằng nó có chứa một-phần-tư hàm lượng kem dưỡng da",
+        "type": "multiple",
+        "options": [
+            "a) brand values (Giá trị thương hiệu)",
+            "b) brand attributes (thuộc tính thương hiệu)",
+            "c) brand benefits (lợi ích thương hiệu)",
+            "d) brand specifications (mô tả thương hiệu)",
+            "e) brand partitions (sự phân chia thương hiệu)"
+        ],
+        "correct": 1,
+        "explanation": "Đáp án đúng là \"b) brand attributes\" vì đây là cấp độ thấp nhất trong việc phân loại các điểm khác biệt của thương hiệu. Cấp độ này tập trung vào các thuộc tính hoặc đặc trưng cụ thể của sản phẩm hoặc dịch vụ, chẳng hạn như hàm lượng kem dưỡng da trong sản phẩm tẩy da mặt của Dover soap. Bằng cách xác định những thuộc tính này, nhà tiếp thị có thể tạo ra một danh sách các điểm khác biệt của thương hiệu mà sẽ được sử dụng để quảng cáo và thu hút khách hàng."
+    },
+    {
+        "id": 45,
+        "question": "Tất cả những ví dụ dưới đây có thể được xem là nằm trong những ví dụ về những thuộc tính và lợi ích có tương quan đối nghịch NGOẠI TRỪ_____",
+        "type": "multiple",
+        "options": [
+            "a) low price versus high quality (Giá thấp đối nghịch với chất lượng cao)",
+            "b) taste versus low calories (vị ngon đối nghịch với ít calori)",
+            "c) supply versus demand (Cung đối nghịch với cầu)",
+            "d) powerful versus safe (Mạnh mẽ đối nghịch với an toàn)",
+            "e) nutritious versus good tasting (Bổ dưỡng đối nghịch với vị ngon)"
+        ],
+        "correct": 2,
+        "explanation": "Đáp án đúng là \"cung đối nghịch với cầu\" (supply versus demand). Điều này vì cung và cầu là hai khái niệm quan trọng trong kinh tế học, mô tả mối quan hệ giữa cung ứng hàng hóa và nhu cầu của khách hàng. Khi một sự kiện ảnh hưởng đến cung hoặc cầu, nó có thể tạo ra những thay đổi đối nghịch nhau trên thị trường, như một sự tăng trưởng của cung có thể dẫn đến giảm giá và một sự tăng trưởng của cầu có thể dẫn đến giá cả tăng lên."
+    },
+    {
+        "id": 47,
+        "question": "Để cho một điểm khác biệt có thể có _____________, người tiêu dùng mục tiêu cần phải nhận thấy nó độc nhất và cao hơn hẳn",
+        "type": "multiple",
+        "options": [
+            "a) Distinctiveness (tính phân biệt)",
+            "b) Communicability (tính truyền thông)",
+            "c) Relevance (tính liên quan)",
+            "d) Believability (tính có thể tin cậy)",
+            "e) Feasibility (tính khả thi)"
+        ],
+        "correct": 0,
+        "explanation": "Đáp án \"tính phân biệt\" là chính xác vì tính distinctiveness (có nghĩa là tính phân biệt) là khái niệm liên quan đến việc tạo ra sự khác biệt độc nhất và nổi bật so với các lựa chọn hoặc sản phẩm khác. Để cho một điểm khác biệt có thể có, người tiêu dùng cần phải nhận thấy nó có tính phân biệt này, tức là nó không chỉ đơn giản là tốt hơn hay ngon hơn mà còn có đặc điểm riêng biệt và cao hơn hẳn."
+    },
+    {
+        "id": 48,
+        "question": "________ là khả năng của một công ty có thể thực hiện trong một hay nhiều phương diện mà đối thủ không thể hoặc sẽ không bắt kịp được",
+        "type": "multiple",
+        "options": [
+            "a) Positioning (định vị)",
+            "b) Deliverability (tính có thể chuyển giao)",
+            "c) Competitive advantage (lợi thế cạnh tranh)",
+            "d) Distribution (sự phân phối)",
+            "e) Differentiation (sự khác biệt)"
+        ],
+        "correct": 2,
+        "explanation": "The correct answer is indeed \"Competitive advantage\" (lợi thế cạnh tranh). This term accurately describes the ability of a company to excel in one or more areas that its competitors cannot match or are unwilling to invest in. By having this advantage, a company can gain a sustainable edge over its rivals and achieve long-term success in the market."
+    },
+    {
+        "id": 49,
+        "question": "Những phương tiện rõ ràng của khác biệt hóa, và thường là những điều hấp dẫn nhất đối với người tiêu dùng, liên quan đến những khía cạnh của _______________",
+        "type": "multiple",
+        "options": [
+            "a) Price (giá cả)",
+            "b) distribution process (quá trình phân phối)",
+            "c) promotions (các hoạt động xúc tiến)",
+            "d) product and service (sản phẩm và dịch vụ)",
+            "e) sales team responsible for the product or service (Trách nhiệm của đội ngũ",
+            "bán hàng đối với sản phẩm và dịch vụ)"
+        ],
+        "correct": 3,
+        "explanation": "Đáp án đúng là \"d) sản phẩm và dịch vụ\" vì chúng thường là những phương tiện rõ ràng của khác biệt hóa và hấp dẫn nhất đối với người tiêu dùng. Sản phẩm và dịch vụ thường phản ánh các giá trị, trải nghiệm và giá trị được cung cấp bởi một thương hiệu, giúp tạo sự khác biệt và thu hút khách hàng. Những khác biệt này có thể nằm ở tính năng, thiết kế, chất lượng, trải nghiệm sử dụng,..."
+    },
+    {
+        "id": 50,
+        "question": "Định vị là hành động thiết kế đề xuất và hình ảnh của công ty để chiếm lấy một vị trí phân biệt trong đầu của khách hàng mục tiêu",
+        "type": "truefalse",
+        "correct": true,
+        "explanation": "Định vị là chiến lược kinh doanh quan trọng giúp công ty tạo ra sự khác biệt và nhận diện rõ ràng trên thị trường. Bằng cách thiết kế đề xuất và hình ảnh của mình, công ty có thể chiếm lấy một vị trí phân biệt trong đầu của khách hàng mục tiêu, tăng cường khả năng cạnh tranh và xây dựng mối quan hệ lâu dài với họ. Điều này giúp công ty đạt được mục tiêu kinh doanh và tăng cường sự thành công trên thị trường."
+    },
+    {
+        "id": 51,
+        "question": "Tư cách thành viên chủng loại được xem như là những sản phẩm hoặc các tập hợp sản phẩm mà thương hiệu cạnh tranh và các sản phẩm đó có thể dễ dàng thay thế nhau",
+        "type": "truefalse",
+        "correct": true,
+        "explanation": "Tư cách thành viên chủng loại (also known as core benefits or brand positioning) là những giá trị hoặc tính năng cơ bản mà một thương hiệu cung cấp cho khách hàng. Những sản phẩm hoặc tập hợp sản phẩm này được xem như dễ dàng thay thế nhau vì chúng không mang lại sự khác biệt đặc biệt so với các đối thủ cạnh tranh khác. Do đó, tư cách thành viên chủng loại được coi là những sản phẩm không phải là điểm khác biệt nổi bật của một thương hiệu."
+    },
+    {
+        "id": 53,
+        "question": "Điểm-bằng-nhau là những thuộc tính hoặc lợi ích mà người tiêu dùng liên tưởng chặt chẽ với một thương hiệu, đánh giá nó một cách tích cực, và tin rằng họ kho6gn thể tìm thấy nó với cùng một mức độ trong thương hiệu cạnh tranh",
+        "type": "truefalse",
+        "correct": false,
+        "explanation": "Điểm-bằng-nhau (Unique Selling Point - USP) là những lợi ích hoặc thuộc tính cụ thể khiến một thương hiệu khác biệt so với các thương hiệu cạnh tranh. Người tiêu dùng thường liên tưởng tích cực với thương hiệu có điểm-bằng-nhau, và họ tin rằng chúng không thể tìm thấy ở nơi khác. Do đó, câu trả lời \"False\" là chính xác vì điểm-bằng-nhau thực sự là một lý do để người tiêu dùng chọn một thương hiệu hơn các thương hiệu khác."
+    },
+    {
+        "id": 54,
+        "question": "Điểm bằng nhau gồm có hai dạng: chủng loại và cạnh tranh",
+        "type": "truefalse",
+        "correct": true,
+        "explanation": "Điểm bằng nhau ở đây ám chỉ đến việc hai hoặc nhiều công ty cùng có điểm mạnh hoặc lợi thế trong một lĩnh vực nhất định, như một \"chủng loại\" của các doanh nghiệp. Điều này dẫn đến sự cạnh tranh gay gắt giữa chúng, vì họ đều muốn giành được thị phần và khách hàng. Kết quả là, những \"điểm bằng nhau\" trở thành một yếu tố quan trọng trong việc xác định vị thế và thành công của các công ty trong ngành."
+    },
+    {
+        "id": 55,
+        "question": "Điểm bằng nhau chủng loại có thể thay đổi theo thời gian do tiến bộ công nghệ, phát triển về luật pháp, hoặc xu hướng người tiêu dùng",
+        "type": "truefalse",
+        "correct": true,
+        "explanation": "This answer is correct because it accurately reflects the dynamic nature of consumer markets and the impact of technological advancements, legal changes, and shifting consumer preferences on product categories. As new technologies emerge or existing ones evolve, product lines can expand or contract to stay relevant, leading to changes in market trends and customer demand. This continuous evolution ensures that product categories like \"điểm bằng nhau\" (a Vietnamese term for a specific type of product) remain adaptable and responsive to changing consumer needs."
+    },
+    {
+        "id": 56,
+        "question": "Một khi một công ty đã nhận ra tư cách thành viên chủng loại của một thương hiệu, người tiêu dùng không nghi vấn về tính hợp lệ về tư cách thành viên chủng loại của thương hiệu đó.",
+        "type": "truefalse",
+        "correct": false,
+        "explanation": "Đáp án đúng là \"False\". Người tiêu dùng vẫn có thể nghi vấn về tính hợp lệ của tư cách thành viên chủng loại của một thương hiệu ngay cả khi công ty đã nhận ra đó. Việc nhận ra tư cách thành viên chủng loại không nhất thiết đảm bảo quyền lợi và nghĩa vụ của công ty với người tiêu dùng."
+    },
+    {
+        "id": 57,
+        "question": "Cách tiếp cận ưa thích đối với định vị là thông báo cho người tiêu dùng tư cách thành viên của thương hiệu trước khi nói về điểm-khác-biệt.",
+        "type": "truefalse",
+        "correct": true,
+        "explanation": "Đáp án đúng là \"True\". Cách tiếp cận ưa thích này được gọi là \"định vị từ tư cách\" (brand positioning through personality) và nó cho thấy rằng thương hiệu muốn xây dựng mối quan hệ với khách hàng thông qua việc tiết lộ tư cách cá nhân của mình trước khi trình bày giá trị độc đáo. Điều này giúp tạo ra sự tin tưởng và gắn kết với khách hàng, đồng thời cũng làm cho thương hiệu trở nên dễ nhớ và dễ thương."
+    },
+    {
+        "id": 64,
+        "question": "Khi đề cập đến việc định vị, hãy giải thích điểm bằng nhau và điểm khác nhau",
+        "type": "shortanswer",
+        "hints": [
+            "POP",
+            "POD",
+            "Cạnh tranh"
+        ],
+        "explanation": "Điểm bằng nhau POP là đặc tính mà thương hiệu chia sẻ với đối thủ, đảm bảo tính đáng tin cậy trong phân khúc. Ví dụ, kem chống nắng phải bảo vệ da khỏi tia UV để ngang tầm các sản phẩm khác. Điểm khác nhau POD là yếu tố độc đáo tạo lợi thế cạnh tranh, như công thức nhẹ, không nhờn và bổ sung chất chống oxy hóa. POP giúp cân bằng kỳ vọng, trong khi POD phân biệt thương hiệu, thu hút khách hàng và cho phép định giá cao hơn."
+    },
+    {
+        "id": 65,
+        "question": "Có ba cách chính để truyền đạt tư cách thành viên chủng loại của một thương hiệu. Ba cách đó là gì?",
+        "type": "shortanswer",
+        "hints": [
+            "Lợi ích",
+            "So sánh",
+            "Mô tả"
+        ],
+        "explanation": "Ba cách chính để truyền đạt tư cách thành viên chủng loại của một thương hiệu là: (1) Truyền đạt lợi ích của chủng loại: Thông qua việc nhấn mạnh những lợi ích cơ bản mà người tiêu dùng kỳ vọng ở phân khúc đó; (2) So sánh với sản phẩm mẫu: Liên kết thương hiệu mới với những “huyền thoại” (Calvin Klein hay Ralph Lauren) hoặc nhãn hiệu hàng đầu trong cùng phân khúc; và (3) Dựa vào một yếu tố mô tả thương hiệu: Kết hợp từ ngữ chỉ phân khúc ngay trong tên hoặc khẩu hiệu. Ví dụ “US Airways” cho ngành hàng không Mỹ, “QuickPrint Photo” cho dịch vụ in ảnh nhanh."
+    },
+    {
+        "id": 68,
+        "question": "“Không cần phải giao hàng, vì nó là DiGiorno!” Chiến dịch quảng cáo này đã giúp cho bánh pizza của DiGiorno trở thành lãnh đạo thị trường trong mảng pizza đông lạnh. Cụm từ nào dưới đây được liên tưởng chặt chẽ đến chiến lược thành công về mặt xúc tiến của công ty?",
+        "type": "multiple",
+        "options": [
+            "a) Price leader (Lãnh đạo về giá)",
+            "b) Value relationships (Mối quan hệ giá trị)",
+            "c) Vertical integration (Sự tích hợp theo chiều dọc)",
+            "d) Superior quality control (Kiểm soát chất lượng cao cấp)",
+            "e) Clever positioning (Định vị thông minh)"
+        ],
+        "correct": 4,
+        "explanation": "Clever positioning là thuật ngữ marketing dùng để mô tả việc tạo ra một định vị thương hiệu độc đáo và hấp dẫn cho sản phẩm hoặc dịch vụ của mình. Trong trường hợp này, chiến dịch quảng cáo \"Không cần phải giao hàng, vì nó là DiGiorno!\" đã giúp DiGiorno định vị bánh pizza của họ như một lựa chọn tiện lợi và hấp dẫn, vượt qua sự cạnh tranh trong thị trường pizza đông lạnh. Bằng cách tạo ra một định vị thông minh và hấp dẫn, công ty đã thành công trong việc thu hút khách hàng và dẫn đầu thị trường."
+    },
+    {
+        "id": 69,
+        "question": "________ thực ra có thể căn cứ vào bất kỳ thuộc tính hoặc lợi ích nào. Ví dụ, FedEx sử dụng “Đảm bảo giao hàng qua đêm” và Nike sử dụng câu “Thành tích”",
+        "type": "multiple",
+        "options": [
+            "a) Points-of-parity (Điểm bằng nhau)",
+            "b) Points-of-difference (Điểm khác nhau)",
+            "c) Points of conflict (Điểm mâu thuẫn)",
+            "d) Points of defensibility (Điểm có thể phòng vệ)",
+            "e) Points of service (Điểm dịch vụ)"
+        ],
+        "correct": 1,
+        "explanation": "The correct answer is indeed \"b) Points-of-difference\" because it accurately describes the concept of unique selling points or differentiators that companies like FedEx and Nike use to differentiate themselves from their competitors. These \"points of difference\" are essentially the unique benefits, features, or values that one company offers over another, making them more attractive to customers. By highlighting these differences, companies can create a competitive advantage and build brand loyalty."
+    },
+    {
+        "id": 70,
+        "question": "Người tiêu dùng có thể không xem một đại lý du lịch nào đó thực sự là một đại lý du lịch trừ khi nó có thể đặt vé máy bay và khách sạn, cung cấp những lời khuyên về các chương trình nghỉ ngơi, và cung cấp các lựa chọn khác nhau về việc trả tiền và giao vé máy bay. Những yếu tố dịch vụ này được xem là _______________.",
+        "type": "multiple",
+        "options": [
+            "a) Competitive points-of-difference (Điểm khác biệt có tính cạnh tranh)",
+            "b) Competitive points-of-parity (Điểm bằng nhau có tính cạnh tranh)",
+            "c) Category points-of-difference (Điểm khác biệt của chủng loại)",
+            "d) Category points-of-parity (Điểm bằng nhau của chủng loại)",
+            "e) Conceptual points-of-parity (Điểm bằng nhau có tính khái niệm)"
+        ],
+        "correct": 3,
+        "explanation": "Đáp án đúng là \"Category points-of-parity\" (Điểm bằng nhau của chủng loại). Điều này có nghĩa là các yếu tố dịch vụ được coi là điểm chính của một đại lý du lịch, tạo sự cạnh tranh và phân biệt với các đại lý khác trong cùng chủng loại. Bằng cách cung cấp các chức năng và dịch vụ tương tự, các đại lý du lịch có thể tạo ra sự bằng nhau (points-of-parity) giữa mình và đối thủ, giúp người tiêu dùng so sánh và lựa chọn đại lý phù hợp nhất cho nhu cầu của họ."
+    },
+    {
+        "id": 71,
+        "question": "Là một người quản lý tiếp thị, điều nào sau đây sẽ là mục tiêu tốt nhất những điểm bằng nhau có tính cạnh tranh của tổ chức của bạn",
+        "type": "multiple",
+        "options": [
+            "a) Chỉ ra những điểm khác nhau có tính cạnh tranh",
+            "b) Nhấn mạnh những điểm khác nhau có tính cạnh tranh",
+            "c) Giải thích những điểm khác nhau có tính cạnh tranh",
+            "d) Toàn cầu hóa những điểm khác nhau có tính cạnh tranh",
+            "e) Phủ định những điểm khác nhau có tính cạnh tranh"
+        ],
+        "correct": 4,
+        "explanation": "Đáp án e) Phủ định những điểm khác nhau có tính cạnh tranh là mục tiêu tốt nhất vì nó giúp tập trung vào những điểm mạnh và lợi thế của tổ chức, đồng thời vượt qua những điểm yếu hoặc thiếu sót của đối thủ. Bằng cách phủ định những điểm khác nhau có tính cạnh tranh, bạn có thể tập trung vào việc tạo ra giá trị độc đáo và tăng cường sự hấp dẫn cho khách hàng. Điều này giúp tăng cường khả năng cạnh tranh của tổ chức."
+    },
+    {
+        "id": 73,
+        "question": "Tums tuyên bố là có những thành phần giảm thiểu acid nhiều nhất trong bất kỳ loại thuốc chống acid (antacid) nào của công ty. Tư cách thành viên chủng loại của thương hiệu được truyền đạt bằng cách nào?",
+        "type": "multiple",
+        "options": [
+            "a) Comparing to exemplars (So sánh với các sản phẩm mẫu mực)",
+            "b) Relying on the product descriptor (Dựa vào tên mô tả sản phẩm)",
+            "c) Announcing category benefits (Tuyên bố những lợi ích của chủng loại)",
+            "d) Focusing on reliability (Tập trung vào tính đáng tin cậy)",
+            "e) Persuasion based on believability (Thuyết phục dựa trên tính có thể tin cậy)"
+        ],
+        "correct": 2,
+        "explanation": "This answer là đúng vì nó mô tả chính xác cách thức mà Tums tuyên bố về việc có thành phần giảm thiểu acid nhiều nhất trong bất kỳ loại thuốc chống acid nào của công ty. Phrases như \"Announcing category benefits\" (Tuyên bố những lợi ích của chủng loại) mô tả quá trình truyền tải thông tin về những ưu điểm và lợi ích cụ thể của một sản phẩm hoặc thương hiệu so với các lựa chọn khác trong cùng một ngành hàng. Trong trường hợp này, Tums đang tuyên bố về việc có thành phần giảm thiểu acid nhiều nhất, giúp khách hàng hiểu rõ hơn về giá trị của sản phẩm so với các lựa chọn khác."
+    },
+    {
+        "id": 74,
+        "question": "Một nhà tiếp thị muốn gắn một điểm khác biệt cho xà phòng Dove về những lợi ích của thương hiệu có thể nhấn mạnh điều nào sau đây?",
+        "type": "multiple",
+        "options": [
+            "a) The soap is one-quarter cleansing cream (Cục xà phòng này có một phần tư",
+            "hàm lượng kem dưỡng da)",
+            "b) Dove products include bar soaps and shampoos (Các sản phẩm của Dove",
+            "bao gồm xà phòng cục và dầu gội đầu)",
+            "c) Dove soap helps users have softer skin (Xà phòng Dove giúp cho người",
+            "sử dụng có làn da mịn hơn)",
+            "d) The Dove brand is widely available (Thương hiệu Dove có ở mọi nơi)",
+            "e) None of the above (Không có điều nào nêu trên)"
+        ],
+        "correct": 2,
+        "explanation": "Đáp án correct là vì việc nhấn mạnh rằng các sản phẩm của Dove bao gồm cả xà phòng và gội đầu giúp tạo ra điểm khác biệt cho thương hiệu so với các thương hiệu khác, đồng thời cũng làm rõ phạm vi sản phẩm của Dove. Điều này giúp khách hàng hiểu được sự đa dạng và phong phú của các sản phẩm Dove, từ xà phòng đến shampoo, và có thể đánh giá được chất lượng và độ đa dạng của thương hiệu."
+    },
+    {
+        "id": 76,
+        "question": "Chất thay thế đường Splenda trở thành thương hiệu đứng đầu chủng loại nhờ vào sự khác biệt hóa bản thân nó bằng cách chứng thực nó là sản phẩm được làm từ đường. Điểm khác biệt (POD) này minh họa ______ bởi vì người tiêu dùng mục tiêu nhận thấy nó độc nhất và cao cấp hơn",
+        "type": "multiple",
+        "options": [
+            "a) Believability (Tính đáng tin cậy)",
+            "b) Relevance (Tính có liên quan)",
+            "c) Feasibility (Tính khả thi)",
+            "d) Communicability (Tính có thể truyền thông)",
+            "e) Distinctiveness (Tính độc nhất)"
+        ],
+        "correct": 4,
+        "explanation": "Đáp án đúng là \"Distinctiveness\" (Tính độc nhất) vì điều này minh họa cho điểm khác biệt chính của Splenda là nó được chứng thực là sản phẩm được làm từ đường, giúp người tiêu dùng nhận thấy nó độc nhất và cao cấp hơn so với các chất thay thế đường khác. Điều này cho thấy rằng điểm khác biệt này đã tạo ra sự khác biệt đáng kể giữa Splenda và các sản phẩm tương tự trên thị trường."
+    },
+    {
+        "id": 78,
+        "question": "Một ____ Nên tuân theo dạng: Đối với (nhóm hoặc nhu cầu mục tiêu), (thương hiệu) của chúng tôi là (khái niệm) mà điểm khác biệt là hoặc làm được",
+        "type": "multiple",
+        "options": [
+            "a) Feasibility statement (Bản tuyên bố khả thi)",
+            "b) Positioning statement (Bản tuyên bố định vị)",
+            "c) Breakaway branding campaign (Chiến dịch xây dựng thương hiệu ly khai)",
+            "d) Brand specification (Sự mô tả thương hiệu)",
+            "e) Category membership mechanism (Cơ chế tư cách thành viên chủng loại)"
+        ],
+        "correct": 1,
+        "explanation": "Đáp án chính xác là \"Positioning statement\" (Bản tuyên bố định vị) vì nó mô tả cách một thương hiệu hoặc sản phẩm khác biệt so với đối thủ cạnh tranh và giúp khách hàng hiểu rõ về giá trị và lợi ích mà thương hiệu mang lại.\n\n\"Bản tuyên bố định vị\" là một khái niệm trong tiếp thị, được sử dụng để mô tả cách một thương hiệu hoặc sản phẩm thể hiện sự khác biệt của mình đối với đối thủ cạnh tranh. Nó thường bao gồm thông tin về thương hiệu, sản phẩm hoặc dịch vụ, cũng như lợi ích và giá trị mà nó mang lại cho khách hàng.\n\nTrong câu hỏi, \"Positioning statement\" là lựa chọn phù hợp nhất vì nó mô tả cách"
+    }
+]
