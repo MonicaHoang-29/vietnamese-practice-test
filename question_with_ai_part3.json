@@ -1,0 +1,613 @@
+[
+    {
+        "id": 120,
+        "question": "Để đo lường hiệu suất thị trường của một thương hiệu, các nhà tiếp thị trường dựa vào các tiêu chí sau: Phí bảo hiểm giá, Độ co giãn giá, Thị phần, ___________, Cấu trúc chi phí, Khả năng sinh lời",
+        "type": "multiple",
+        "options": [
+            "Hiệu quả khuyến mại",
+            "Đối thủ cạnh tranh rút lui",
+            "Thành công mở rộng",
+            "Phát triển kênh",
+            "Không có đáp án nào ở trên"
+        ],
+        "correct": 2,
+        "explanation": "Đáp án đúng là \"Thành công mở rộng\". Đây là một yếu tố quan trọng giúp đánh giá hiệu suất thị trường của một thương hiệu, vì nó cho thấy khả năng của thương hiệu trong việc mở rộng và tăng trưởng doanh thu, đồng thời cạnh tranh với các đối thủ khác trên thị trường.\n\nCác tiêu chí đo lường hiệu suất thị trường bao gồm phí bảo hiểm giá, độ co giãn giá, thị phần, cấu trúc chi phí, khả năng sinh lời và thành công mở rộng. Trong số những yếu tố này, thành công mở rộng là một yếu tố quan trọng giúp đánh giá hiệu suất thị trường của một thương hiệu.\n\nCác yếu tố khác như phí bảo hiểm giá, độ co giãn giá, thị"
+    },
+    {
+        "id": 121,
+        "question": "Các nhà phân tích tài chính và nhà đầu tư cân nhắc: Biến động thị trường, Tiềm năng tăng trưởng, Hồ sơ rủi ro và _______.",
+        "type": "multiple",
+        "options": [
+            "Thị trường tài chính",
+            "Tỷ giá hối đoái",
+            "Tỷ lệ P/E",
+            "Góp phần của thương hiệu",
+            "Tỷ lệ chiết khấu"
+        ],
+        "correct": 3,
+        "explanation": "Đáp án chính xác là \"Góp phần của thương hiệu\" vì khi đánh giá một dự án hoặc công ty, các nhà phân tích tài chính và nhà đầu tư cần xem xét nhiều yếu tố khác nhau để đưa ra quyết định đầu tư thông minh. Góp phần của thương hiệu là một yếu tố quan trọng giúp xác định tiềm năng tăng trưởng và khả năng sinh lợi của công ty, đồng thời cũng ảnh hưởng đến mức độ rủi ro liên quan đến việc đầu tư vào dự án hoặc công ty đó. Bằng cách xem xét góp phần của thương hiệu, các nhà phân tích có thể đánh giá được tính bền vững và khả năng cạnh tranh của công ty trong ngành."
+    },
+    {
+        "id": 122,
+        "question": "Dựa trên tất cả thông tin hiện tại và dự báo có sẵn về một thương hiệu, cũng như nhiều cân nhắc khác, thị trường tài chính hình thành các ý kiến ​​ và đánh giá có tác động tài chính rất trực tiếp đến giá trị thương hiệu. Ba chỉ số đặc biệt quan trọng là giá cổ phiếu, bội số giá/thu nhập và vốn hóa thị trường chung của công ty",
+        "type": "multiple",
+        "options": [
+            "Bội số chương trình",
+            "Điều kiện thị trường",
+            "Bội số tâm lý nhà đầu tư",
+            "Bội số thương hiệu",
+            "Bội số giá/thu nhập"
+        ],
+        "correct": 4,
+        "explanation": "Đáp án correct là \"b\" - Giá cổ phiếu, vì nó trực tiếp ảnh hưởng đến giá trị thương hiệu của một công ty. Giá cổ phiếu là thước đo giá trị của cổ phiếu trong một công ty và thường được sử dụng để đánh giá giá trị tổng thể của công ty. Do đó, giá cổ phiếu có tác động trực tiếp đến giá trị thương hiệu của một công ty.\n\nTuy nhiên, câu hỏi không yêu cầu chỉ số chính xác, mà là \"cân nhắc khác\". Trong trường hợp này, bội số giá/thu nhập cũng có tác động quan trọng đến giá trị thương hiệu, vì nó cho thấy hiệu suất tài chính của công ty và khả năng tạo ra thu nhập cho cổ đông. Vì vậy"
+    },
+    {
+        "id": 123,
+        "question": "Từ góc độ của người quản lý marketing, có 3 bộ nhân tố chi phối tài sản thương hiệu. bộ nhân tố chi phối nào được áp dụng nhiều nhất khi McDonald quyết định dùng “những vòm cung vàng” và Ronald McDonald như biểu tượng của thương hiệu?)",
+        "type": "multiple",
+        "options": [
+            "(sản phẩm và tất cả các hoạt động marketing đi kèm và các chương trình marketing hỗ trợ)",
+            "(dịch vụ và hoạt động và chương trình marketing đi kèm)",
+            "(những sự lựa chọn đầu tiên cho các yếu tố nhãn hiệu hay những yếu tố nhận diện làm nên thương hiệu)",
+            "(những sự liên tưởng gián tiếp truyền đến nhãn hiệu bằng cách kết nối nó với vài thực thể khác)",
+            "(lợi nhuận gắn với sự phát triển thương hiệu"
+        ],
+        "correct": 2,
+        "explanation": "Đáp án đúng là b) (dịch vụ và hoạt động và chương trình marketing đi kèm). Điều này là vì khi McDonald quyết định dùng \"những vòm cung vàng\" và Ronald McDonald như biểu tượng của thương hiệu, họ đang tập trung vào việc tạo ra một trải nghiệm khách hàng toàn diện, bao gồm cả dịch vụ, sản phẩm và chương trình khuyến mãi. Bằng cách làm điều này, họ có thể tăng cường sự gắn kết với khách hàng và tạo ra một hình ảnh thương hiệu mạnh mẽ hơn.\n\nNó không chỉ là dịch vụ, hoạt động và chương trình marketing riêng lẻ mà là toàn bộ hệ thống của chúng kết hợp lại để tạo ra một trải nghiệm tổng thể."
+    },
+    {
+        "id": 124,
+        "question": "________là các yếu tố có thể đăng kí bản quyền nhằm phục vụ cho việc xác định và phân biệt thương hiệu",
+        "type": "multiple",
+        "options": [
+            "Brand elements (các yếu tố thương hiệu)",
+            "Brand value (giá trị thương hiệu)",
+            "Brand perception (nhận thức thương hiệu)",
+            "Brand image (hình ảnh thương hiệu)",
+            "Brand tracks (dấu vết về thương hiệu)"
+        ],
+        "correct": 0,
+        "explanation": "This answer is correct because \"Brand elements\" bao gồm các yếu tố như hình ảnh thương hiệu, tên thương hiệu, nhãn mác sản phẩm, và các đặc trưng khác được sử dụng để xác định và phân biệt thương hiệu của một công ty hoặc tổ chức. Việc đăng ký bản quyền cho những yếu tố này giúp bảo vệ sự độc đáo và tính thương mại của thương hiệu, đồng thời ngăn chặn việc sao chép hoặc giả mạo."
+    },
+    {
+        "id": 125,
+        "question": "Sáu yếu tố của thương hiệu hỗ trợ việc xây dựng thương hiệu. Điều nào dưới đây sẽ không nằm trong những yếu tố thương hiệu được ưa thích này?",
+        "type": "multiple",
+        "options": [
+            "Adaptable (thích nghi)",
+            "Protectible (bảo vệ)",
+            "Memorable (đáng nhớ)",
+            "Likable (yêu thích)",
+            "Subliminal nature (tính chất tiềm thức)"
+        ],
+        "correct": 4,
+        "explanation": "Đáp án correct là e) Subliminal nature (tính chất tiềm thức). Lý do là subliminal nature không phải là một yếu tố của thương hiệu, mà là một khái niệm trong tâm lý học mô tả cách ảnh hưởng của thông điệp không nhận thức được của người tiêu dùng."
+    },
+    {
+        "id": 126,
+        "question": "Nếu một yếu tố thương hiệu có thể được sử dụng để giới thiệu những sản phẩm mới ở trong cùng hoặc khác loại, yếu tố thương hiệu đó được gọi là _____",
+        "type": "multiple",
+        "options": [
+            "Memorable (đáng nhớ)",
+            "Meaningful (ý nghĩa)",
+            "Likeable (yêu thích)",
+            "Transferable (chuyển dời)",
+            "Adaptable (thích nghi)"
+        ],
+        "correct": 3,
+        "explanation": "Đáp án đúng là \"d) Transferable\" vì một yếu tố thương hiệu có thể được sử dụng để giới thiệu những sản phẩm mới ở trong cùng hoặc khác loại được gọi là yếu tố thương hiệu chuyển dời (transferable brand element). Điều này cho phép các công ty có thể tận dụng hiệu quả hơn về tài nguyên và tăng cường sự nhận biết của khách hàng đối với các sản phẩm mới."
+    },
+    {
+        "id": 128,
+        "question": "Đối với những yếu tố thương hiệu mạnh mẽ, một_________ là một phương tiện rất hiệu quả để xây dựng tài sản thương hiệu. Yếu tố này hoạt động như một “móc câu” hay “cái cán” hữu ích giúp người tiêu dùng nắm được thương hiệu là gì và làm cho nó đặc biệt.",
+        "type": "multiple",
+        "options": [
+            "Spokesperson (người phát ngôn)",
+            "Product shape (kiểu dáng sản phẩm)",
+            "Slogan (khẩu hiệu)",
+            "Patent (bằng sáng chế)",
+            "Promotional descriptor (yếu tố mô tả xúc tiến)"
+        ],
+        "correct": 2,
+        "explanation": "Đáp án c) Slogan (khẩu hiệu) là đúng vì slogan thường được sử dụng như một công cụ quan trọng trong việc tạo ra sự nhận biết và nhớ nhãn cho thương hiệu. Nó giúp người tiêu dùng nhanh chóng nắm được thương hiệu là gì và làm cho nó đặc biệt, trở thành một phần không thể thiếu của chiến lược tiếp thị và xây dựng tài sản thương hiệu."
+    },
+    {
+        "id": 132,
+        "question": "Có sáu tiêu chí được sử dụng trong việc tạo ra các yếu tố thương hiệu. Ba tiêu chí đầu tiên có thể được mô tả như là \"xây dựng thương hiệu\" về mặt tài sản thương hiệu có thể được xây dựng thông qua sự lựa chọn đúng đắn của một yếu tố thương hiệu như thế nào. Ba tiêu chí kế tiếp là \"phòng thủ\" và có liên quan đến tài sản thương hiệu chứa đựng trong các yếu tố thương hiệu có thể được tận dụng và gìn giữ đối với các cơ hội và hạn chế. Hãy liệt kê và mô tả tóm tắt sáu tiêu chí.",
+        "type": "shortanswer",
+        "hints": [
+            "dễ nhớ",
+            "ý nghĩa",
+            "thu hút"
+        ],
+        "explanation": "Sáu tiêu chí đó là: (1) dễ nhớ: nhận diện nhanh và gọi tên thương hiệu dễ dàng , (2) có ý nghĩa: truyền tải ý nghĩa về công dụng, chất lượng hoặc cảm xúc liên quan, (3) tính thu hút: Đem lại ấn tượng thẩm mỹ và tình cảm tích cực, khiến khách hàng yêu thích, (4) có thể chuyển nhượng: có thể mở rộng sang sản phẩm mới hoặc thị trường khác, (5) thích nghi: Dễ dàng thay đổi theo xu hướng, và (6) có thể bảo vệ: Đảm bảo bảo hộ pháp lý (nhãn hiệu, bản quyền) và khó bị sao chép"
+    },
+    {
+        "id": 133,
+        "question": "Chiến dịch nổi tiếng “Plop, Plop, Fizz, fizz! Oh, thật là nhẹ nhàng biết bao!” là một ví dụ tốt về cái được gọi là _____ thương hiệu",
+        "type": "multiple",
+        "options": [
+            "Element (yếu tố)",
+            "Bond ( ràng buộc)",
+            "Visual (khả năng nhớ)",
+            "Personification (sự nhân cách hoá)",
+            "Perception ( nhận thức)"
+        ],
+        "correct": 0,
+        "explanation": "Đáp án đúng là \"Element\" vì chiến dịch quảng bá của \"Plop, Plop, Fizz, fizz!\" là một ví dụ điển hình về thương hiệu Element, được biết đến với việc tạo ra ấn tượng mạnh mẽ và dễ nhớ thông qua việc sử dụng nhịp điệu và giai điệu đặc trưng trong quảng cáo. Việc sử dụng từ \"yếu tố\" trong câu hỏi cũng phù hợp vì nó ám chỉ rằng \"Plop, Plop, Fizz, fizz!\" là một yếu tố quan trọng trong việc tạo ra thương hiệu này."
+    },
+    {
+        "id": 134,
+        "question": "Lúc khởi đầu, một nhà bán sách trực tuyến, Amazon.com đã chọn không gọi chính nó là \"books 'R' Us,” đã tạo điều kiện cho phép nó bán một loạt đa dạng các sản phẩm. Quyết định đặt tên này làm cho yếu tố thương hiệu này có tính ____________nhiều hơn",
+        "type": "multiple",
+        "options": [
+            "Memorable (đáng nhớ)",
+            "Meaningful (có ý nghĩa)",
+            "Likable (sự ưa thích)",
+            "Protectible (có thể bảo vệ)",
+            "Transferable (có thể chuyển nhượng)"
+        ],
+        "correct": 4,
+        "explanation": "Đáp án đúng là e) Transferable (có thể chuyển nhượng). Lý do là vì việc đặt tên \"Amazon\" thay vì \"books 'R' Us\" cho phép Amazon.com có thể sử dụng thương hiệu của mình ở nhiều lĩnh vực khác ngoài sách, chẳng hạn như bán sản phẩm điện tử, thiết bị gia đình,... và tạo ra một thương hiệu đa dạng và linh hoạt. Điều này giúp tăng tính cạnh tranh và khả năng chuyển nhượng của thương hiệu trong các thị trường mới."
+    },
+    {
+        "id": 135,
+        "question": "Bộ mặt của Betty Crocker đã được cập nhật nhiều lần trong 75 năm qua mà không bị mất bất kỳ sự công nhận thương hiệu của mình. Yếu tố thương hiệu này là _____________",
+        "type": "multiple",
+        "options": [
+            "Likeable (có thể ưa thích)",
+            "Transferable (có thể chuyển nhượng)",
+            "adaptable (có thể thích ứng)",
+            "protectible (có thể bảo vệ)",
+            "memorable (đáng nhớ)"
+        ],
+        "correct": 2,
+        "explanation": "Đáp án chính xác là \"adaptable\" vì điều quan trọng nhất để một thương hiệu như Betty Crocker duy trì sự công nhận trong suốt 75 năm là khả năng thích ứng với thay đổi. Bộ mặt của Betty Crocker đã được cập nhật nhiều lần, nhưng vẫn giữ được tinh thần và giá trị cốt lõi của thương hiệu, cho thấy rằng công ty đã có thể thích nghi với thời gian và vẫn duy trì được sự công nhận của người tiêu dùng."
+    },
+    {
+        "id": 136,
+        "question": "Là một quản lý thương hiệu, bạn muốn có thương hiệu của bạn (tên thương hiệu) có thể được bảo vệ. Giải thích điều bạn nói \"có thể bảo vệ\" có nghĩa là gì và cho một minh họa",
+        "type": "shortanswer",
+        "hints": [
+            "độc đáo",
+            "bảo hộ pháp lý",
+            "ví dụ VinFast"
+        ],
+        "explanation": "Với tư cách là quản lý thương hiệu, “có thể bảo vệ” nghĩa là tên thương hiệu phải đủ độc đáo và không mâu thuẫn với các nhãn hiệu đã tồn tại để đăng ký bảo hộ dưới dạng nhãn hiệu, từ đó doanh nghiệp có quyền thực thi và ngăn chặn mọi hành vi xâm phạm. “Có thể bảo vệ” đảm bảo thương hiệu được độc quyền sử dụng, duy trì lợi thế cạnh tranh và bảo vệ nguồn vốn thương hiệu. Ví dụ, tại Việt Nam, thương hiệu ô tô điện “VinFast” đã được đăng ký bảo hộ cả về tên và logo trên nhiều thị trường. Nhờ đó, VinFast có thể kiện các đơn vị sản xuất xe nhái, bảo vệ uy tín và giá trị thương hiệu toàn cầu."
+    },
+    {
+        "id": 137,
+        "question": "Một ________ Có thể được định nghĩa là bất kỳ kinh nghiệm mang thông tin nào mà một khách hàng hoặc khách hàng tiềm năng trải qua với thương hiệu, chủng loại sản phẩm, hay thị trường có liên quan đến sản phẩm hoặc dịch vụ của nhà tiếp thị",
+        "type": "multiple",
+        "options": [
+            "brand value (giá trị thương hiệu)",
+            "brand element (yếu tố thương hiệu)",
+            "brand trait (nét đặc điểm thương hiệu)",
+            "brand character (nhân vật của thương hiệu)",
+            "brand contact (tiếp xúc với thương hiệu)"
+        ],
+        "correct": 4,
+        "explanation": "Đáp án \"e) brand contact\" là chính xác vì nó phù hợp với định nghĩa về \"kinh nghiệm mang thông tin\" được đề cập trong câu hỏi. Brand contact là một khái niệm trong tiếp thị quan trọng liên quan đến các tương tác giữa khách hàng và thương hiệu, bao gồm cả trải nghiệm tích cực và tiêu cực. Durch cách này, brand contact cung cấp cho nhà tiếp thị cái nhìn sâu sắc về thái độ và hành vi của khách hàng đối với sản phẩm hoặc dịch vụ của họ."
+    },
+    {
+        "id": 139,
+        "question": "______ Là đảm bảo rằng thương hiệu và hoạt động tiếp thị của nó càng có liên quan đến càng nhiều khách hàng càng tốt",
+        "type": "multiple",
+        "options": [
+            "Personalizing marketing (tiếp thị cá nhân hóa)",
+            "Segmenting marketing (tiếp thị phân khúc)",
+            "Brand imagery (hình ảnh thương hiệu)",
+            "Emotionalizing brands (thương hiệu tạo tình cảm)",
+            "Rationalizing brands (các thương hiệu lý trí hóa)"
+        ],
+        "correct": 0,
+        "explanation": "The correct answer is \"Personalizing marketing\" because it là đảm bảo rằng thương hiệu và hoạt động tiếp thị của nó càng có liên quan đến càng nhiều khách hàng càng tốt. Personalizing marketing là quá trình tạo ra các trải nghiệm và thông điệp cụ thể cho từng khách hàng, dựa trên những đặc điểm cá nhân và hành vi của họ, giúp tăng cường sự gắn kết và trung thành của khách hàng với thương hiệu. Điều này giúp thương hiệu có liên quan đến nhiều khách hàng hơn, từ đó tăng cường khả năng cạnh tranh trên thị trường."
+    },
+    {
+        "id": 140,
+        "question": "(Khái niệm \"hỗn hợp tiếp thị \"truyền thống và quan điểm của \"bốn chữ P\" có thể không mô tả đầy đủ các chương trình tiếp thị hiện đại. ________ là nói về sự pha trộn và làm phù hợp các hoạt động tiếp thị để tối đa hóa hiệu quả của từng công cụ và hiệu quả chung của chúng",
+        "type": "multiple",
+        "options": [
+            "Personalizing marketing (cá nhân hóa tiếp thị)",
+            "Individualizing marketing (cá nhân hóa tiếp thị)",
+            "Globalizing marketing (toàn cầu hóa tiếp thị)",
+            "Institutionalizing marketing (thể chế hóa tiếp thị)",
+            "Integration marketing (tiếp thị tích hợp)"
+        ],
+        "correct": 4,
+        "explanation": "The correct answer is indeed \"e) Integration marketing\" because it accurately describes the concept of \"hỗn hợp tiếp thị\" or \"hybrid marketing\". Integration marketing involves combining traditional and modern marketing strategies to achieve maximum effectiveness, which aligns with the idea of blending \"bốn chữ P\" (four Ps) principles of marketing with contemporary marketing techniques. This approach allows marketers to optimize the benefits of each individual tool while achieving a broader, more cohesive marketing strategy."
+    },
+    {
+        "id": 141,
+        "question": "Để cho một thương hiệu thành công, các nhà tiếp thị phải \"bắt tay hành động\" và đảm bảo rằng các nhân viên và các đối tác tiếp thị cũng làm như vậy. Các nhà tiếp thị thường phải sử dụng ________ để động viên các nhóm để hỗ trợ thương hiệu",
+        "type": "multiple",
+        "options": [
+            "global branding (xây dựng thương hiệu toàn cầu)",
+            "retro-branding (xây dựng thương hiệu hướng về quá khứ)",
+            "internal branding (xây dựng thương hiệu nội bộ)",
+            "external branding (xây dựng thương hiệu bên ngoài)",
+            "dual branding (xây dựng thương hiệu hai mặt)"
+        ],
+        "correct": 2,
+        "explanation": "Đáp án correct là internal branding (xây dựng thương hiệu nội bộ). Điều này đúng vì internal branding giúp tạo ra một cảm giác gắn kết và sự đồng nhất trong toàn bộ tổ chức, từ nhân viên đến đối tác, để họ cùng hỗ trợ và truyền tải giá trị của thương hiệu. Bằng cách xây dựng thương hiệu nội bộ, các nhà tiếp thị có thể động viên các nhóm và cá nhân khác nhau làm việc theo hướng đồng bộ và hiệu quả hơn."
+    },
+    {
+        "id": 142,
+        "question": "Mark Thomas đã quan sát thấy rằng Shell thực hiện lời hứa của mình để cung cấp xăng dầu tốt nhất có thể cho công chúng lái xe. Các chương trình khuyến mãi, nhân viên, và các nhà phân phối của Shell gửi một thông điệp chung và nhất quán về lời hứa của Shell đối với Ông Thomas. Nhiều khả năng nhất là Ông Thomas đang trải nghiệm _______________",
+        "type": "multiple",
+        "options": [
+            "brand image (hình ảnh thương hiệu)",
+            "brand enhancement (sự tăng cường thương hiệu)",
+            "brand belief (niềm tin vào thương hiệu)",
+            "brand attitude (thái độ đối với thương hiệu)",
+            "brand bonding (sự ràng buộc với thương hiệu)"
+        ],
+        "correct": 4,
+        "explanation": "Đáp án correct là e) brand bonding (sự ràng buộc với thương hiệu). Lý do là vì Mark Thomas đã quan sát thấy sự nhất quán và đồng nhất trong các chương trình khuyến mãi, nhân viên, và các nhà phân phối của Shell, điều này cho thấy một sự cam kết rõ ràng về lời hứa của họ đối với công chúng lái xe. Sự thống nhất này tạo ra sự gắn kết giữa Mark Thomas và thương hiệu Shell, khiến ông cảm thấy được chăm sóc và tin tưởng vào chất lượng sản phẩm của họ."
+    },
+    {
+        "id": 143,
+        "question": "Tài sản thương hiệu có thể được xây dựng bởi ________ - liên kết thương hiệu với các thông tin khác trong bộ nhớ nhằm truyền đạt ý nghĩa cho khách hàng",
+        "type": "multiple",
+        "options": [
+            "internal marketing (tiếp thị nội bộ)",
+            "brand bonding (sự ràng buộc với thương hiệu)",
+            "secondary associations (các liên tưởng thứ cấp)",
+            "customer alignment (liên kết với khách hàng)",
+            "brand auditing (kiểm toán thương hiệu)"
+        ],
+        "correct": 2,
+        "explanation": "This answer là đúng vì \"secondary associations\" (các liên quan thứ cấp) là một khái niệm trong kinh doanh và tiếp thị được định nghĩa là các liên kết giữa thương hiệu và thông tin khác trong bộ nhớ của khách hàng nhằm tạo ra ý nghĩa và giá trị cho sản phẩm hoặc dịch vụ. Điều này phù hợp với câu hỏi về việc tài sản thương hiệu có thể được xây dựng bằng cách tạo ra các liên kết thứ cấp, giúp khách hàng gắn kết với thương hiệu và tăng cường nhận thức về giá trị của nó."
+    },
+    {
+        "id": 145,
+        "question": "Marketing cá nhân được dựa trên sự kiện là tất cả khách hàng là giống nhau trong một số cách",
+        "type": "truefalse",
+        "correct": false,
+        "explanation": "Đáp án False là đúng vì marketing cá nhân tập trung vào việc xây dựng mối quan hệ cá nhân và hiểu biết cụ thể về nhu cầu và sở thích của từng khách hàng thay vì cố gắng áp dụng một chiến lược tiếp thị chung cho tất cả khách hàng giống nhau. Mỗi người đều có những đặc điểm, phong cách và nhu cầu riêng biệt, do đó marketing cá nhân dựa trên việc xây dựng mối quan hệ và hiểu biết cụ thể về từng khách hàng."
+    },
+    {
+        "id": 146,
+        "question": "Gillette gửi một sản phẩm dao cạo đổi mới cho 1,000 người đàn ông trẻ. Để đáp lại, công ty yêu cầu những người đàn ông trẻ này cung cấp địa chỉ email để trong tương lai công ty có thể tiếp xúc được. Đây có thể được xem là một ví dụ của marketing cho phép",
+        "type": "truefalse",
+        "correct": true,
+        "explanation": "Đó là một ví dụ của marketing cho phép vì Gillette đang cung cấp sản phẩm và dịch vụ (dao cạo) nhưng thay vào đó họ yêu cầu sự cho phép từ những người nhận sản phẩm để có thể tiếp tục tương tác với họ trong tương lai thông qua địa chỉ email. Điều này cho thấy công ty đang xây dựng mối quan hệ lâu dài với khách hàng, điều này là đặc điểm của marketing cho phép."
+    },
+    {
+        "id": 148,
+        "question": "Nhà tiếp thị cần phải “walk the walk (nói là làm)” để thực hiện lời hứa thương hiệu. Thông thường xây dựng thương hiệu nội bộ là cần thiết để đảm bảo rằng tất cả nhân viên đều hỗ trợ trong việc thực hiện lời hứa thương hiệu",
+        "type": "truefalse",
+        "correct": true,
+        "explanation": "Đáp án này đúng vì nó phản ánh quan điểm phổ biến trong ngành tiếp thị và quản lý nhân sự, nhấn mạnh tầm quan trọng của việc các nhà tiếp thị thực hiện lời hứa của thương hiệu một cách chân chính và nhất quán. Xây dựng thương hiệu nội bộ là một phần quan trọng để đảm bảo rằng tất cả nhân viên đều hiểu và hỗ trợ lời hứa thương hiệu này. Bằng cách \"làm theo\" lời hứa, các nhà tiếp thị có thể xây dựng niềm tin và uy tín với khách hàng và cộng đồng."
+    },
+    {
+        "id": 149,
+        "question": "Lời hứa thương hiệu sẽ không được thực hiện trừ khi mỗi người trong công ty với với thương hiệu",
+        "type": "truefalse",
+        "correct": true,
+        "explanation": "Lời hứa thương hiệu cần sự tham gia của mọi người trong công ty. Đúng, vì sự cam kết toàn diện là cần thiết."
+    },
+    {
+        "id": 150,
+        "question": "Để cải thiện tinh thần của nhân viên, Công ty Miller Brewing đã sử dụng di sản chế tạo bia của mình để tạo ra sự tự hào và đam mê. Đây là một ví dụ của tiếp thị nội bộ.",
+        "type": "truefalse",
+        "correct": true,
+        "explanation": "Đáp án đúng là \"True\". Điều này đúng vì việc Công ty Miller Brewing sử dụng di sản chế tạo bia của mình để tạo ra sự tự hào và đam mê cho nhân viên có thể được coi là một hình thức tiếp thị nội bộ, nhằm thúc đẩy tinh thần làm việc tích cực và gắn kết trong công ty. Bằng cách tận dụng di sản của công ty, họ đã tạo ra một cảm giác thuộc về và gắn kết giữa nhân viên với tổ chức."
+    },
+    {
+        "id": 152,
+        "question": "Theo Seth Godin, các nhà tiếp thị không còn có thể sử dụng ________. Thay vào đó, các nhà tiếp thị nên chuyển thành tiếp thị cho phép để tiếp thị như một cách để đảm bảo mối quan hệ khách hàng và lòng trung thành lâu dài",
+        "type": "multiple",
+        "options": [
+            "task-oriented marketing (tiếp thị theo định hướng nhiệm vụ)",
+            "interruption marketing (tiếp thị gián đoạn)",
+            "hard core selling (bán áp đặt)",
+            "advocacy marketing (tiếp thị vận động)",
+            "one-to-one marketing (tiếp thị một-đối-một)"
+        ],
+        "correct": 1,
+        "explanation": "Đáp án đúng là \"b) interruption marketing\" vì theo Godin, tiếp thị gián đoạn (interruption marketing) đã trở thành một phương pháp tiếp thị không còn hiệu quả trong thời đại hiện đại khi khách hàng ngày càng có nhiều lựa chọn và kiểm soát quyền lực hơn. Thay vào đó, các nhà tiếp thị nên tập trung vào việc xây dựng mối quan hệ với khách hàng và tạo ra giá trị lâu dài thông qua tiếp thị cho phép ( Permission Marketing). Điều này đòi hỏi sự thay đổi cách tiếp thị từ tập trung vào gây chú ý đến việc xây dựng lòng tin và sự chấp thuận của khách hàng."
+    },
+    {
+        "id": 153,
+        "question": "Nếu Olive Garden gửi nhân viên đến các lớp học đặc biệt để dạy cho họ những giá trị của thương hiệu và mì ống như thế nào hơn chỉ là mì ống đơn thuần, Olive Garden đang sử dụng ________ để hoàn thành nhiệm vụ này",
+        "type": "multiple",
+        "options": [
+            "interruption marketing (tiếp thị gián đoạn)",
+            "loyalty marketing (tiếp thị lòng trung thành)",
+            "cohort marketing (tiếp thị nhóm đối tượng)",
+            "macrobranding (xây dựng thương hiệu quy mô lớn)",
+            "internal branding (xây dựng thương hiệu nội bộ)"
+        ],
+        "correct": 4,
+        "explanation": "Đáp án correct là e) internal branding (xây dựng thương hiệu nội bộ). Điều này vì Olive Garden đang tập trung vào việc xây dựng những giá trị và hình ảnh của chính họ, chứ không chỉ là đơn thuần quảng cáo mì ống. Bằng cách gửi nhân viên đến các lớp học để dạy cho họ về giá trị của thương hiệu, Olive Garden đang tạo ra một sự gắn kết và thống nhất trong đội ngũ nhân viên, giúp họ trở thành đại diện của thương hiệu một cách tự nhiên hơn."
+    },
+    {
+        "id": 154,
+        "question": "Chiến dịch e-business của IBM không chỉ giúp thay đổi nhận thức của công chúng về công ty trên thị trường, nó cũng đã gửi một tín hiệu cho nhân viên rằng IBM đã quyết tâm là một nhà lãnh đạo trong việc sử dụng của công nghệ Internet. Đây là một ví dụ của ________",
+        "type": "multiple",
+        "options": [
+            "leveraging secondary associations (tận dụng các liên tưởng thứ cấp)",
+            "linking internal and external marketing (liên kết tiếp thị nội bộ và bên ngoài)",
+            "integration marketing (tiếp thị tích hợp)",
+            "permission marketing (tiếp thị cho phép)",
+            "brand tracking (theo dõi thương hiệu)"
+        ],
+        "correct": 1,
+        "explanation": "This answer là đúng vì chiến dịch e-business của IBM không chỉ nhằm mục đích thay đổi nhận thức của công chúng về công ty mà còn nhằm mục đích gửi một tín hiệu cho nhân viên về tầm quan trọng của công nghệ Internet trong việc thúc đẩy sự phát triển và thành công của công ty. Điều này cho thấy IBM đã thực hiện một chiến lược tiếp thị nội bộ (internal marketing) để truyền đạt thông điệp này đến nhân viên, đồng thời cũng gửi một tín hiệu bên ngoài (external marketing) về vị trí của mình như một nhà lãnh đạo trong việc sử dụng công nghệ Internet."
+    },
+    {
+        "id": 155,
+        "question": "Tiếp thị cho phép là gì và tại sao nó đem lại kết quả?",
+        "type": "shortanswer",
+        "hints": [
+            "Đồng ý",
+            "Cá nhân hóa",
+            "Lòng trung thành"
+        ],
+        "explanation": "Trong Tiếp thị cho phép là việc tiếp cận người tiêu dùng diễn ra sau khi họ chủ động cho phép thông qua việc đăng ký nhận email, tin nhắn hay thông báo ứng dụng. Nó đem lại kết quả vì khách hàng mong đợi và sẵn sàng đón nhận thông điệp, nội dung được cá nhân hóa phù hợp với sở thích và lịch sử tương tác, thông điệp tập trung vào nhu cầu thật sự của người dùng, giảm thiểu lãng phí. Ví dụ, chuỗi quán Starbucks mời khách hàng đăng ký thẻ thành viên để nhận ưu đãi và khuyến mãi cá nhân hóa qua ứng dụng, từ đó tăng tỷ lệ chuyển đổi và lòng trung thành."
+    },
+    {
+        "id": 156,
+        "question": "Xác định ba nguyên tắc quan trọng cho việc xây dựng thương hiệu nội bộ",
+        "type": "shortanswer",
+        "hints": [
+            "Thời điểm",
+            "Liên kết",
+            "Trải nghiệm"
+        ],
+        "explanation": "Ba nguyên tắc quan trọng cho việc xây dựng thương hiệu nội bộ là: (1) chọn đúng thời điểm: khi công ty có sự kiện then chốt (ra mắt sản phẩm mới, tái cơ cấu) để nhân viên dễ tiếp nhận và cam kết , (2) liên kết tiếp thị nội bộ và bên ngoài: đảm bảo thông điệp, giá trị và hình ảnh truyền tới nhân viên khớp với những gì khách hàng nhìn thấy, và (3) làm cho thương hiệu sống động đối với nhân viên: sử dụng hoạt động trải nghiệm (workshop, trò chơi, video tương tác) để mỗi cá nhân cảm nhận rõ vai trò của mình trong việc hiện thực hóa thương hiệu"
+    },
+    {
+        "id": 157,
+        "question": "Khi thiết kế và đánh giá một chiến dịch quảng cáo, các nhà tiếp thị nên phân biệt chiến lược thông điệp hoặc định vị của một quảng cáo (những gì quảng cáo cố gắng truyền tải về thương hiệu) với ______________ (cách quảng cáo thể hiện tuyên bố của thương hiệu",
+        "type": "multiple",
+        "options": [
+            "Chiến lược sáng tạo",
+            "Chiến lược thương hiệu",
+            "Chiến lược tiếp thị",
+            "Chiến lược truyền thông"
+        ],
+        "correct": 0,
+        "explanation": "Đáp án đúng là \"a) Chiến lược sáng tạo\".\n\nChiến lược thông điệp hoặc định vị là phần nội dung chính mà quảng cáo muốn truyền tải về thương hiệu, trong khi chiến lược sáng tạo là cách thức thể hiện tuyên bố của thương hiệu thông qua hình ảnh, âm thanh, ngôn ngữ và các yếu tố khác. Việc phân biệt giữa hai khái niệm này giúp các nhà tiếp thị hiểu rõ hơn về mục tiêu và cách thực hiện của quảng cáo, từ đó có thể đánh giá hiệu quả của chiến dịch quảng cáo một cách chính xác hơn."
+    },
+    {
+        "id": 158,
+        "question": "Khi đánh giá tác động chung của một chương trình IMC, các nhà tiếp thị sử dụng sáu tiêu chí có liên quan, được gọi tắt là \"6 chữ C\", tiêu chí nào sau đây KHÔNG thuộc về 6 chữ C",
+        "type": "multiple",
+        "options": [
+            "Phạm vi bao phủ",
+            "Chiến lược thương hiệu",
+            "Tính chung",
+            "Tính nhất quán"
+        ],
+        "correct": 3,
+        "explanation": "Đáp án đúng là \"d) Tính nhất quán\". Tính nhất quán không phải là một trong các tiêu chí cơ bản được gọi là \"6 chữ C\" khi đánh giá tác động chung của một chương trình IMC (Marketing Mix). Các 6 chữ C bao gồm: Chất lượng, Giá cả, Vị trí, Thời gian, Thương hiệu và Chất lượng sản phẩm."
+    },
+    {
+        "id": 159,
+        "question": "Khi một công ty sử dụng một thương hiệu vững chắc để giới thiệu một sản phẩm mới, nó được gọi là một ______",
+        "type": "multiple",
+        "options": [
+            "Sub Brand (thương hiệu phụ)",
+            "brand value (giá trị thương hiệu)",
+            "brand extension (mở rộng thương hiệu)",
+            "brand mix (hỗn hợp thương hiệu)",
+            "brand posture (tư thế thương hiệu)"
+        ],
+        "correct": 2,
+        "explanation": "Đáp án correct là \"c) brand extension\" vì khi một công ty sử dụng một thương hiệu vững chắc để giới thiệu một sản phẩm mới, điều đó nghĩa là họ đang mở rộng thương hiệu của mình sang một lĩnh vực mới hoặc sản phẩm mới, nhằm tận dụng lợi thế và uy tín đã có từ thương hiệu chính. Điều này giúp tăng cường sự gắn kết với khách hàng hiện tại và thu hút khách hàng mới đến với thương hiệu."
+    },
+    {
+        "id": 160,
+        "question": "Một thương hiệu cha mẹ được liên kết với nhiều sản phẩm thông qua mở rộng thương hiệu cũng có thể được gọi là ________",
+        "type": "multiple",
+        "options": [
+            "category brand (thương hiệu chủng loại)",
+            "subbrand (thương hiệu phụ)",
+            "extension brand (thương hiệu mở rộng)",
+            "family brand (thương hiệu gia đình)",
+            "line brand (thương hiệu tuyến)"
+        ],
+        "correct": 3,
+        "explanation": "Đáp án correct là \"family brand\" (thương hiệu gia đình) vì nó mô tả một thương hiệu cha mẹ được liên kết với nhiều sản phẩm thông qua mở rộng thương hiệu. Điều này phù hợp với định nghĩa của family brand, nơi một thương hiệu chính được mở rộng sang các mặt hàng và sản phẩm khác trong cùng một nhà máy hoặc tập đoàn."
+    },
+    {
+        "id": 161,
+        "question": "Một ________ Bao gồm tất cả các sản phẩm- đầu tiên cũng như mở rộng theo tuyến và theo chủng loại - được bán dưới một thương hiệu cụ thể",
+        "type": "multiple",
+        "options": [
+            "brand line (tuyến thương hiệu)",
+            "brand variant (biến thể thương hiệu)",
+            "brand mix (hỗn hợp thương hiệu)",
+            "licensed product (sản phẩm được giấy phép)",
+            "sub brand (thương hiệu phụ)"
+        ],
+        "correct": 0,
+        "explanation": "Đáp án \"tuyến thương hiệu\" (brand line) là phù hợp vì nó chính xác mô tả khái niệm về bao gồm tất cả các sản phẩm dưới một thương hiệu cụ thể. Tuyến thương hiệu thường được sử dụng để mô tả sự đa dạng của các sản phẩm có cùng thương hiệu, từ đó tạo ra sự liên kết và nhận thức chung cho khách hàng."
+    },
+    {
+        "id": 162,
+        "question": "Một lợi thế lớn của một chiến lược ________ là công ty không cột chặt danh tiếng của nó cho một sản phẩm nào đó",
+        "type": "multiple",
+        "options": [
+            "blanket family name (tên gia đình toàn bộ)",
+            "licensing (cấp giấy phép)",
+            "individual‐names (các tên cá nhân)",
+            "category extension (mở rộng chủng loại)",
+            "brand revitalization (hồi sinh thương hiệu)"
+        ],
+        "correct": 2,
+        "explanation": "Đáp án correct là \"individual-names\" vì lợi thế này cho phép công ty phân biệt rõ ràng giữa danh tiếng của công ty và các sản phẩm hoặc dịch vụ cụ thể. Điều này giúp công ty bảo vệ danh tiếng của mình khỏi sự ảnh hưởng tiêu cực từ những sản phẩm hoặc dịch vụ không thành công. Bằng cách làm điều này, công ty có thể duy trì một danh tiếng tổng thể tích cực mà không bị ảnh hưởng bởi những sản phẩm hoặc dịch vụ cụ thể."
+    },
+    {
+        "id": 163,
+        "question": "Hai lợi thế của ________ là chúng có thể tạo điều kiện thuận lợi cho sự chấp nhận sản phẩm mới và cung cấp thông tin phản hồi tích cực với thương hiệu cha mẹ và công ty.",
+        "type": "multiple",
+        "options": [
+            "product licensing (cấp giấy phép sản phẩm)",
+            "brand extensions (mở rộng thương hiệu)",
+            "individual‐names strategies (chiến lược tên cá nhân)",
+            "brand audits (kiểm toán thương hiệu)",
+            "brand dilutions (sự pha loãng thương hiệu)"
+        ],
+        "correct": 1,
+        "explanation": "Đáp án correct là \"b) brand extensions\" vì chúng cho phép các thương hiệu mở rộng phạm vi hoạt động của mình, tạo điều kiện thuận lợi cho sự chấp nhận sản phẩm mới và cung cấp thông tin phản hồi tích cực với thương hiệu cha mẹ và công ty. Brand extensions giúp tăng cường sức mạnh thương mại của một thương hiệu hiện có, đồng thời cung cấp cơ hội để thử nghiệm sản phẩm mới và thu thập dữ liệu về thị trường. Điều này giúp các công ty có thể đánh giá hiệu quả của sản phẩm mới và đưa ra quyết định sáng suốt về việc tiếp tục phát triển hoặc không."
+    },
+    {
+        "id": 165,
+        "question": "Ngay cả khi doanh số của một sự mở rộng thương hiệu cao và đáp ứng các mục tiêu, doanh thu có thể đến từ người tiêu dùng đang dùng sản phẩm của thương hiệu cha mẹ chuyển sang phần mở rộng – kết quả là________ thương hiệu mẹ",
+        "type": "multiple",
+        "options": [
+            "Diluting (pha loãng)",
+            "Cannibalizing (ăn thịt)",
+            "Reinforcing (tăng cường)",
+            "Eroding (làm xói mòn)",
+            "feeding back to (phản hồi ngược đến)"
+        ],
+        "correct": 1,
+        "explanation": "This answer is correct because khi doanh số của một sự mở rộng thương hiệu cao và đáp ứng các mục tiêu, điều đó có nghĩa là người tiêu dùng đang dùng sản phẩm của thương hiệu cha mẹ chuyển sang phần mở rộng sẽ mua nhiều sản phẩm từ thương hiệu mẹ hơn trước. Điều này dẫn đến việc doanh thu của thương hiệu mẹ tăng lên, nhưng đồng thời làm giảm doanh thu của thương hiệu con (mở rộng). Trong trường hợp này, doanh thu của thương hiệu mẹ có thể bị \"ăn thịt\" (cannibalizing) bởi sự mở rộng của thương hiệu con."
+    },
+    {
+        "id": 166,
+        "question": "________ Là tập hợp của tất cả các thương hiệu và tuyến thương hiệu mà một công ty cụ thể bán cho người mua trong một chủng loại cụ thể",
+        "type": "multiple",
+        "options": [
+            "brand partition (phân vùng thương hiệu)",
+            "brand position (vị trí thương hiệu)",
+            "brand portfolio (danh mục thương hiệu)",
+            "brand concept (khái niệm thương hiệu)",
+            "brand image (hình ảnh thương hiệu)"
+        ],
+        "correct": 2,
+        "explanation": "The correct answer is \"danh mục thương hiệu\" because it accurately describes the concept of a collection of all brands and sub-brands sold by a specific company to customers within a particular product category. This term directly translates from the Vietnamese phrase \"tập hợp của tất cả các thương hiệu và tuyến thương hiệu\". The other options, while related to branding, do not specifically convey this meaning."
+    },
+    {
+        "id": 167,
+        "question": "(Các nhà tiếp thị giới thiệu nhiều thương hiệu trong một chủng loại vì tất cả những lý do sau NGOẠI TRỪ ________",
+        "type": "multiple",
+        "options": [
+            "(để tăng sự hiện diện trên quầy hàng và sự phụ thuộc của nhà bán lẻ trong cửa hàng)",
+            "(để thu hút người tiêu dùng tìm kiếm sự đa dạng mà họ có thể chuyển sang thương hiệu khác)",
+            "(để tăng tính cạnh tranh nội bộ trong công ty)",
+            "(để tạo ra lợi thế quy mô trong quảng cáo, bán hàng, và trưng bày hàng hóa)",
+            "(để giảm chi phí sản xuất và phức tạp)"
+        ],
+        "correct": 4,
+        "explanation": "Đáp án c) (để tăng tính cạnh tranh nội bộ trong công ty) là đúng vì các nhà tiếp thị thường giới thiệu nhiều thương hiệu trong một chủng loại để tạo ra sự cạnh tranh nội bộ giữa các thương hiệu, điều này giúp tăng cường sự khác biệt và thu hút khách hàng hơn. Việc này cũng giúp công ty giảm thiểu rủi ro khi một thương hiệu không thành công, đồng thời tăng cường khả năng thích nghi với thị trường."
+    },
+    {
+        "id": 168,
+        "question": "Khi Honda mở rộng thương hiệu của nó vào những lĩnh vực như ô tô, xe thổi tuyết, và động cơ tàu thủy, nó đã theo đuổi một chiến lược được gọi là mở rộng chủng loại của một thương hiệu.",
+        "type": "truefalse",
+        "correct": true,
+        "explanation": "Đáp án này đúng vì khi Honda mở rộng vào các lĩnh vực ô tô, xe thổi tuyết và động cơ tàu thủy, nó đã tăng cường sự đa dạng hóa sản phẩm của mình, giúp thương hiệu trở nên đa dạng hơn và thu hút được nhiều khách hàng khác nhau. Chiến lược mở rộng chủng loại của một thương hiệu là một chiến lược kinh doanh phổ biến giúp các công ty tăng cường vị thế trên thị trường bằng cách cung cấp nhiều sản phẩm đa dạng hơn. Bằng cách này, Honda có thể tận dụng tối đa tài nguyên và sức mạnh của mình để cạnh tranh tốt hơn trong các ngành công nghiệp khác nhau."
+    },
+    {
+        "id": 169,
+        "question": "Sự mở rộng thương hiệu có thể làm giảm chi phí của những chiến dịch tung sản phẩm mà thuyết phục người bán lẻ dễ dàng hơn đệ họ mua và xúc tiến sản phẩm.",
+        "type": "truefalse",
+        "correct": true,
+        "explanation": "Sự mở rộng thương hiệu có thể giúp tạo ra một hình ảnh và cảm nhận bền vững về thương hiệu trong tâm trí người tiêu dùng, từ đó làm giảm chi phí tiếp thị cho các chiến dịch mới. Khi người bán lẻ đã quen thuộc với thương hiệu, họ sẽ dễ dàng tin tưởng vào sản phẩm hơn và không cần phải được thuyết phục để mua. Điều này giúp giảm chi phí tiếp thị và tăng cường hiệu quả cho từng chiến dịch."
+    },
+    {
+        "id": 170,
+        "question": "Sự mất phẩm chất thương hiệu xảy ra khi người tiêu dùng không còn liên kết một thương hiệu với một sản phẩm cụ thể hoặc những sản phẩm tương tự và bắt đầu ít nghĩ về thương hiệu",
+        "type": "truefalse",
+        "correct": true,
+        "explanation": "Sự mất phẩm chất thương hiệu xảy ra khi người tiêu dùng không còn gắn kết mạnh mẽ với thương hiệu, khiến họ giảm quan tâm đến sản phẩm cụ thể hoặc những sản phẩm tương tự liên quan đến thương hiệu đó. Điều này dẫn đến sự giảm thiểu của khả năng tạo ra lòng trung thành và sự tin tưởng của người tiêu dùng đối với thương hiệu. Kết quả là, thương hiệu mất đi giá trị và sức mạnh mà nó từng có trong thị trường."
+    },
+    {
+        "id": 171,
+        "question": "Sự chuyển đổi doanh số giữa các thương hiệu trong cùng một công ty luôn luôn là điều không mong muốn",
+        "type": "truefalse",
+        "correct": false,
+        "explanation": "Sự chuyển đổi doanh số giữa các thương hiệu trong cùng một công ty không phải lúc nào cũng là điều không mong muốn. Thực tế, sự chuyển đổi này có thể là dấu hiệu của việc cải thiện chiến lược kinh doanh và tăng cường cạnh tranh trên thị trường. Điều này giúp công ty phát triển và mở rộng khả năng cạnh tranh của mình."
+    },
+    {
+        "id": 173,
+        "question": "Việc quyết định làm thế nào để chọn thương hiệu cho những sản phẩm mới là đặc biệt quan trọng. Khi một công ty giới thiệu một sản phẩm mới, có ba lựa chọn chính. Những lựa chọn đó là gì?",
+        "type": "shortanswer",
+        "hints": [
+            "Mới",
+            "Hiện tại",
+            "Kết hợp"
+        ],
+        "explanation": "Khi giới thiệu sản phẩm mới, công ty có thể: (1) phát triển các yếu tố thương hiệu mới cho sản phẩm mới: đặt tên, logo, slogan mới, (2) áp dụng một số các yếu tố thương hiệu hiện tại của nó: tận dụng tên thương hiệu, hình ảnh và yếu tố nhận diện đã có, hoặc (3) Kết hợp cả yếu tố mới và yếu tố hiện tại: giữ lại những đặc trưng sẵn có, đồng thời thêm các chi tiết mới để làm rõ điểm khác biệt"
+    },
+    {
+        "id": 174,
+        "question": "Cách mở rộng thương hiệu nào có thể cải thiện tỷ lệ thành công sản phẩm mới?",
+        "type": "shortanswer",
+        "hints": [
+            "Sub branding",
+            "Uy tín",
+            "Phù hợp"
+        ],
+        "explanation": "Trong chương 12, một cách mở rộng thương hiệu cải thiện tỷ lệ thành công sản phẩm mới là áp dụng sub branding. Cách này gắn tên thương hiệu gốc với tên sản phẩm mới, vừa tận dụng giá trị của thương hiệu mẹ, vừa tạo định vị riêng cho dòng sản phẩm mới. Sự phù hợp (perceived fit) giữa thương hiệu gốc và sản phẩm mới phải cao về công dụng, giá trị cốt lõi hoặc đối tượng khách hàng, giảm rủi ro cảm nhận và tăng lòng tin mua hàng. Ví dụ, dòng sản phẩm Galaxy của Samsung là Galaxy S, Galaxy Note đều ứng dụng công nghệ lõi và tên gọi rõ ràng, nên khách hàng mới nhận biết và ưa chuộng. Nhờ chiến lược này, doanh nghiệp tiết kiệm được chi phí truyền thông, rút ngắn thời gian ra mắt và nâng cao tỷ lệ chấp nhận sản phẩm."
+    },
+    {
+        "id": 175,
+        "question": "Dannon giới thiệu vài loại sữa chua Dannon ________ trong những năm qua - Fruit on the Bottom, All Natural Flavors, và Fruit Blends",
+        "type": "multiple",
+        "options": [
+            "category extensions (mở rộng chủng loại sản phẩm)",
+            "line extensions (mở rộng dòng sản phẩm)",
+            "brand extensions (mở rộng thương hiệu)",
+            "sub brands (thương hiệu phụ)",
+            "family brands (thương hiệu gia đình)"
+        ],
+        "correct": 1,
+        "explanation": "This answer is correct because \"line extensions\" là một thuật ngữ kinh doanh được sử dụng để mô tả việc mở rộng dòng sản phẩm của một công ty bằng cách tạo ra các sản phẩm mới khác liên quan đến sản phẩm gốc. Trong trường hợp của Dannon, việc giới thiệu sữa chua Fruit on the Bottom, All Natural Flavors, và Fruit Blends có thể được xem là sự mở rộng dòng sản phẩm của họ, với các sản phẩm mới này bổ sung thêm tính năng hoặc nguyên liệu đặc trưng vào các sản phẩm sữa chua gốc."
+    },
+    {
+        "id": 176,
+        "question": "Khách hàng bây giờ có thể mua xe đẩy và hàng may mặc của Jeep, mà không phải do Jeep sản xuất, nhưng đây là những ví dụ khi Jeep nhận được khoản tiền thanh toán từ các nhà sản xuất các sản phẩm này khi sử dụng tên thương hiệu Jeep. Các mặt hàng này được coi là __________",
+        "type": "multiple",
+        "options": [
+            "licensed products (sản phẩm được cấp phép)",
+            "family products (sản phẩm gia đình)",
+            "line extensions (mở rộng tuyến)",
+            "brand extensions (mở rộng thương hiệu)",
+            "sub brands (thương hiệu phụ)"
+        ],
+        "correct": 0,
+        "explanation": "Đáp án \"licensed products\" là đúng vì các sản phẩm không được sản xuất bởi Jeep nhưng sử dụng tên thương hiệu Jeep để bán cho khách hàng. Điều này cho thấy rằng Jeep đã cấp phép sử dụng tên thương hiệu của họ cho các nhà sản xuất khác, tạo ra các sản phẩm được cấp phép (licensed products). Việc này giúp Jeep có thể tận dụng lợi ích của việc sử dụng tên thương hiệu của mình mà không phải chịu trách nhiệm về sản phẩm đó."
+    },
+    {
+        "id": 178,
+        "question": "Bốn chiến lược chung có thể được sử dụng trong xây dựng thương hiệu. Chiến lược nào trong những chiến lược sau đây được sử dụng bởi Kellogg’s, khi nó theo một chính sách thương hiệu phụ với Kellogg’s Rice Krispies, Kellogg’s Raisin Bran, and Kellogg’s Corn Flakes?",
+        "type": "multiple",
+        "options": [
+            "Individual names (tên cá nhân)",
+            "Blanket family names (tên chung của gia đình)",
+            "Separate family names for all products (tên gia đình riêng cho tất cả các sản phẩm)",
+            "Global names for all products (tên chung cho tất cả sản phẩm)",
+            "Corporate name combined with individual product names (tên công ty kết hợp với tên riêng của sản phẩm)"
+        ],
+        "correct": 4,
+        "explanation": "Đáp án đúng là d) Global names for all products. Lý do là vì Kellogg's đã sử dụng tên chung \"Kellogg's\" cho tất cả các sản phẩm của mình, bao gồm Kellogg's Rice Krispies, Kellogg's Raisin Bran và Kellogg's Corn Flakes. Điều này cho thấy chiến lược sử dụng tên chung cho tất cả sản phẩm, một chiến lược được sử dụng bởi nhiều thương hiệu lớn khác để tạo ra sự liên kết mạnh mẽ với thương hiệu của họ."
+    },
+    {
+        "id": 179,
+        "question": "Xác định và định nghĩa hai chủng loại phổ biến thuộc về mở rộng thương hiệu",
+        "type": "shortanswer",
+        "hints": [
+            "Tuyến",
+            "Chủng loại",
+            "Uy tín"
+        ],
+        "explanation": "Mở rộng thương hiệu được chia thành hai loại chính: (1) mở rộng tuyến, nơi thương hiệu chính thêm một sản phẩm mới trong một chủng loại mà nó hiện đang có VD: Coca-Cola giới thiệu Cherry Coke (hương vị anh đào) trong dòng nước ngọt, giúp người tiêu dùng có thêm lựa chọn mà vẫn nhận diện được thương hiệu gốc, và (2) mở rộng chủng loại, khi thương hiệu chính được dùng cho sản phẩm thuộc chủng loại mới, khác với hiện tại, nhằm bước vào thị trường mới VD: Coca-Cola ra mắt Dasani (nước đóng chai) để tham gia ngành nước tinh khiết, tận dụng uy tín và mạng lưới phân phối sẵn có."
+    },
+    {
+        "id": 180,
+        "question": "Là một người quản lý xây dựng thương hiệu, bạn có đề nghị ban giám đốc một chính sách của công ty về việc xây dựng thương hiệu gia đình bao quát toàn bộ. Hãy viết một tuyên bố ngắn gọn phác thảo những lợi thế của thương hiệu gia đình bao quát toàn bộ",
+        "type": "shortanswer",
+        "hints": [
+            "Tiết kiệm",
+            "Nhận diện",
+            "Doanh số"
+        ],
+        "explanation": "Chính sách Branded house (gia đình thương hiệu) mang lại ba lợi thế chính: tiết kiệm chi phí phát triển, tăng cường nhận diện thương hiệu, đẩy mạnh doanh số sản phẩm mới nhờ uy tín sẵn có. Ví dụ, Heinz và GE đều áp dụng chính sách này để mở rộng vào nhiều chủng loại khác nhau. Tương tự, Campbell ra mắt các vị súp mới dưới tên Campbell, tạo nhận biết ngay lập tức và kích cầu mua nhanh. Nhờ vậy, chính sách gia đình thương hiệu không chỉ giảm thiểu rủi ro mà còn tạo lợi thế cạnh tranh bền vững thông qua tính nhất quán và lợi thế quy mô."
+    }
+]

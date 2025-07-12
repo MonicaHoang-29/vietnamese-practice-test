@@ -1,0 +1,604 @@
+[
+    {
+        "id": 58,
+        "question": "Nếu Barry so sánh sản phẩm của tổ chức anh ta với những sản phẩm của những công ty dẫn đầu trong lĩnh vực, thì anh ta đang truyền đạt tư cách thành viên chủng loại bằng cách “so sánh với sản phẩm chuẩn mực”.",
+        "type": "truefalse",
+        "correct": true,
+        "explanation": "Đáp án này đúng vì việc so sánh sản phẩm của tổ chức một mình (Barry) với những sản phẩm của những công ty dẫn đầu trong lĩnh vực giúp người xem hoặc người nghe hiểu rõ hơn về giá trị và tư cách của tổ chức đó. Việc làm này cho thấy rằng tổ chức đó có thể cạnh tranh và có khả năng đáp ứng nhu cầu khách hàng như các công ty hàng đầu khác. Bằng cách so sánh, Barry đang tạo ra ấn tượng rằng tổ chức anh ta là một phần của tập đoàn hoặc mạng lưới các tổ chức có uy tín và chất lượng cao."
+    },
+    {
+        "id": 59,
+        "question": "Một sự minh họa tốt cho những thuộc tính hoặc lợi ích có tương quan nghịch (negatively correlated) là vị ngon đối với vị dở",
+        "type": "truefalse",
+        "correct": false,
+        "explanation": "Vị ngon và vị dở không phải là một ví dụ về các thuộc tính hoặc lợi ích có tương quan nghịch. Thực tế, vị ngon thường đi kèm với vị ngọt, thơm, và cảm giác dễ chịu, trong khi vị dở thường mang lại cảm giác khó chịu, đắng, và không thoải mái. Do đó, vị ngon và vị dở thường được coi là hai cực đối lập, có tương quan tích cực (positively correlated) chứ không phải tương quan nghịch."
+    },
+    {
+        "id": 60,
+        "question": "Các thương hiệu chỉ có thể làm cho sản phẩm khác biệt dựa trên các thuộc tính thực và có liên quan",
+        "type": "truefalse",
+        "correct": false,
+        "explanation": "Đáp án này là sai vì mặc dù các thuộc tính thực (tiêu chuẩn) của sản phẩm rất quan trọng trong việc tạo ra sự khác biệt cho thương hiệu, nhưng cũng có thể là yếu tố hạn chế. Các thương hiệu có thể vượt qua những giới hạn này bằng cách cung cấp trải nghiệm khách hàng độc đáo, dịch vụ sau bán hàng xuất sắc hoặc chiến lược tiếp thị sáng tạo."
+    },
+    {
+        "id": 61,
+        "question": "Có ba tiêu chuẩn mong muốn của người tiêu dùng đối với POD (điểm khác nhau): giá cả, giá trị, và tính có thể tôn trọng",
+        "type": "truefalse",
+        "correct": false,
+        "explanation": "Tiêu chí của POD là liên quan, khác biệt, đáng tin, không phải giá cả, giá trị, tôn trọng. Sai, vì tiêu chí được liệt kê không chính xác."
+    },
+    {
+        "id": 62,
+        "question": "Một xí nghiệp cần phải cam kết đầy đủ và sẵn sàng cống hiến đầy đủ tài nguyên để tạo ra một định vị lâu dài cho những điểm-khác-biệt được xem là có thể thực hiện",
+        "type": "truefalse",
+        "correct": true,
+        "explanation": "Đáp án đúng là \"True\" vì việc cam kết đầy đủ và sẵn sàng cống hiến tài nguyên để tạo ra một định vị lâu dài cho những điểm-khác-biệt đòi hỏi sự cam kết và đầu tư nghiêm túc từ xí nghiệp. Điều này có thể bao gồm việc cung cấp nguồn lực, kiến thức và kỹ năng cần thiết để phát triển và duy trì các điểm-khác-biệt. Bằng cách làm như vậy, xí nghiệp có thể tạo ra giá trị lâu dài cho cả chính mình và cộng đồng."
+    },
+    {
+        "id": 63,
+        "question": "Những người tiêu dùng hài lòng một cách điển hình để chấp nhận sự đánh đổi cố hữu trong các thuộc tính và lợi ích có tương quan nghịch.",
+        "type": "truefalse",
+        "correct": false,
+        "explanation": "Người tiêu dùng không luôn chấp nhận đánh đổi trong các thuộc tính tương quan nghịch. Sai, vì họ có thể từ chối nếu đánh đổi không hợp lý."
+    },
+    {
+        "id": 66,
+        "question": "Trong việc chọn các điểm khác biệt, một trong những sự xem xét quan trọng là người tiêu dùng có nhận thấy những điểm khác biệt đó là mong muốn không. Có ba tiêu chí mong muốn chủ yếu của người tiêu dùng đối với người tiêu dùng. Ba tiêu chí đó là gì?",
+        "type": "shortanswer",
+        "hints": [
+            "Liên quan",
+            "Khác biệt",
+            "Đáng tin"
+        ],
+        "explanation": "Ba tiêu chí người tiêu dùng mong muốn là: (1) Có liên quan: phải đáp ứng đúng nhu cầu hoặc kỳ vọng quan trọng của khách hàng; (2) Khác biệt: cần tạo sự nổi bật so với đối thủ; (3) Đáng tin cậy: phải thể hiện hiệu quả hoặc lợi ích rõ ràng hơn các lựa chọn thay thế"
+    },
+    {
+        "id": 79,
+        "question": "Điều nào dưới đây không phải là một cặp lợi ích hoặc thuộc tính có tương quan nghịch với nhau",
+        "type": "multiple",
+        "options": [
+            "Efficacious versus mild (Có hiệu lực đối với nhẹ nhàng)",
+            "Varied versus simple (Đa dạng đối với đơn giản)",
+            "Powerful versus safe (Mạnh mẽ đối với an toàn)",
+            "Nutritious versus good tasting (Có dinh dưỡng đối với có vị ngon)",
+            "Low price versus low quality (Giá cả thấp đối với chất lượng thấp)"
+        ],
+        "correct": 4,
+        "explanation": "Đáp án chính xác là \"e) Low price versus low quality\". Lý do là vì giá cả thấp thường đi kèm với chất lượng cao, không phải chất lượng thấp. Do đó, cặp lợi ích này có tương quan thuận, không phải nghịch nhau."
+    },
+    {
+        "id": 80,
+        "question": "Một điểm khởi đầu trong việc định nghĩa khung tham chiếu cạnh tranh đối với việc định vị một thương hiệu là xác định tư các thành viên chủng loại. Làm cách nào mà bạn có thể định nghĩa tư cách thành viên chủng loại?",
+        "type": "shortanswer",
+        "hints": [
+            "Chức năng",
+            "Cạnh tranh",
+            "Thay thế"
+        ],
+        "explanation": "Tư cách thành viên chủng loại tập hợp những sản phẩm có cùng chức năng cơ bản, mà thương hiệu cạnh tranh và có thể thay thế lẫn nhau trong mắt người tiêu dùng. Ví dụ, với thương hiệu nước tăng lực Red Bull, khung chủng loại bao gồm các nhãn hàng như Sting, Monster và Rockstar, bởi chúng cùng phục vụ nhu cầu cơ bản về bổ sung năng lượng tức thì. Khi đã xác định tư cách thành viên, Red Bull mới có thể xây dựng điểm tương đồng như hương vị sảng khoái, rồi tiếp đó phát triển điểm khác biệt như công thức độc quyền và chiến dịch “Đánh thức bản lĩnh”"
+    },
+    {
+        "id": 81,
+        "question": "Khi đề cập đến điểm bằng nhau, Hãy giải thích tại sao một sản phẩm không cần phải bằng với một sản phẩm cạnh tranh để có thể được so sánh với sản phẩm đó",
+        "type": "shortanswer",
+        "hints": [
+            "Đủ tốt",
+            "Dung sai",
+            "So sánh"
+        ],
+        "explanation": "Để đạt được một điểm bằng nhau về một thuộc tính hoặc lợi ích, chỉ cần có đủ khách hàng tin rằng thương hiệu “đủ tốt” trong chiều kích đó, không nhất thiết phải hoàn toàn bằng đối thủ. Thực tế tồn tại một dải mức độ sai số (hay dung sai) cho phép: miễn sản phẩm của bạn nằm trong khoảng chấp nhận được, khách hàng vẫn xem nó là tùy chọn hợp lệ. Ví dụ, smartphone tầm trung có camera 12MP có thể so sánh với mẫu cao cấp 13MP miễn là chất lượng ảnh đáp ứng nhu cầu “đủ rõ” của người dùng. Khi đó, dù không bằng đối thủ, sản phẩm vẫn được so sánh và cân nhắc cạnh tranh, giúp khách hàng nhận diện điểm khác biệt của thương hiệu bạn so với đối thủ."
+    },
+    {
+        "id": 82,
+        "question": "Là một công ty tìm kiếm tư cách thành viên chủng loại, làm như thế nào công ty đó tiếp cận những điểm khác nhau? Cái gì cần làm trước?",
+        "type": "shortanswer",
+        "hints": [
+            "Nhận diện",
+            "Thông báo",
+            "Khác biệt"
+        ],
+        "explanation": "Trong quá trình định vị, công ty tìm kiếm tư cách thành viên chủng loại nên tiến hành hai bước rõ ràng. Đầu tiên, công ty cần thông báo cho khách hàng biết sản phẩm thuộc chủng loại nào và có những tính năng cơ bản gì qua logo và thông điệp truyền thông. Việc này giúp khách hàng xác định sản phẩm đủ tiêu chuẩn để so sánh. Sau đó, doanh nghiệp nhấn mạnh điểm khác biệt độc đáo dựa trên kỳ vọng khách hàng và năng lực của thương hiệu. Ví dụ, với ô tô điện, VinFast trước hết khẳng định đây là chiếc xe đạt tiêu chuẩn an toàn và vận hành ổn định, rồi giới thiệu dịch vụ thuê bao pin kết hợp thiết kế mang đậm dấu ấn Việt, tạo sự khác biệt so với các thương hiệu nước ngoài."
+    },
+    {
+        "id": 83,
+        "question": "Có ba cách chính để truyền đạt tư cách thành viên chủng loại của một thương hiệu. Giả sử bạn là một nhà thiết kế xe hơi cho hãng Ford và mong muốn định vị một loại xe “wagon thể thao.” Cách nào trong ba cách nêu trên là thích hợp nhất để truyền đạt tư cách chủng loại cho thương hiệu?",
+        "type": "shortanswer",
+        "hints": [
+            "Mô tả",
+            "Tên",
+            "Chức năng"
+        ],
+        "explanation": "Trong ba cách truyền đạt tư cách thành viên chủng loại, chiến lược thích hợp nhất là dựa trên yếu tố mô tả sản phẩm. Chọn tên sản phẩm và thông điệp làm nổi bật chức năng và vị trí của chủng loại, giúp khách hàng ngay lập tức hiểu đây là mẫu wagon thể thao. Ví dụ, Ford có thể đặt tên “Ford Sport Wagon” hoặc “Ford ActiveWagon”, trong đó “Sport” (hoặc “Active”) nhấn mạnh khả năng vận hành năng động, còn “Wagon” khẳng định dung tích chở hành lý và phong cách của dòng xe"
+    },
+    {
+        "id": 84,
+        "question": "Là nhà tiếp thị của một loại nước giải khát mới, ba mức độ mà bạn có thể neo những điểm khác biệt của thương hiệu là gì?",
+        "type": "shortanswer",
+        "hints": [
+            "Thuộc tính",
+            "Lợi ích",
+            "Giá trị"
+        ],
+        "explanation": "Ba mức độ mà một nhà tiếp thị có thể neo chặt những điểm khác biệt cho một thương hiệu là: (1) Thuộc tính của thương hiệu; (2) Lợi ích của thương hiệu, và (3) Giá trị của thương hiệu. Ví dụ: Trà Xanh Không độ - sử dụng 100% lá trà tươi, mang đến giải nhiệt tức thì, giảm mệt mỏi và, truyền tải thông điệp sống khỏe, năng động và bảo vệ môi trường."
+    },
+    {
+        "id": 86,
+        "question": "Thực hiện lời hứa về những điểm khác biệt rất quan trọng đối với hoạt động tiếp thị thành công. Có ba tiêu chuẩn về thực hiện (lời hứa) được nhấn mạnh trong giáo trình có liên quan đến những điểm khác biệt (POD). Đó là những tiêu chuẩn nào?",
+        "type": "shortanswer",
+        "hints": [
+            "Khả thi",
+            "Truyền thông",
+            "Duy trì"
+        ],
+        "explanation": "Ba tiêu chuẩn đó là (1) tính khả thi: thương hiệu phải có đủ nguồn lực, năng lực và công nghệ để thực thi đề xuất giá trị một cách nhất quán, (2) tính có thể truyền thông: thông điệp về sự khác biệt cần được diễn giải rõ ràng, dễ hiểu và thuyết phục qua các kênh marketing và (3) tính có thể duy trì: điểm khác biệt phải tồn tại lâu dài, khó bị đối thủ sao chép và phù hợp với định hướng chiến lược"
+    },
+    {
+        "id": 88,
+        "question": "Bốn bước này của mô hình cộng hưởng thương hiệu đại diện cho một tập hợp các câu hỏi cơ bản mà khách hàng luôn hỏi về thương hiệu, ít nhất là ngầm hiểu. Bốn câu hỏi liên quan đến bản sắc thương hiệu, ý nghĩa thương hiệu, phản hồi của thương hiệu và ______",
+        "type": "multiple",
+        "options": [
+            "hình ảnh thương hiệu",
+            "mối quan hệ thương hiệu",
+            "liên tưởng thương hiệu",
+            "giá trị thương hiệu",
+            "tính nhất quán của thương hiệu"
+        ],
+        "correct": 1,
+        "explanation": "Đáp án \"b) mối quan hệ thương hiệu\" là chính xác vì nó hoàn thành chuỗi các câu hỏi cơ bản về thương hiệu được đề cập trong mô hình cộng hưởng thương hiệu. Câu hỏi này liên quan đến việc khách hàng muốn hiểu rõ hơn về mối quan hệ giữa họ và thương hiệu, bao gồm cả cách mà thương hiệu phản hồi lại những gì họ làm hoặc trải nghiệm. Bằng cách trả lời câu hỏi này, thương hiệu có thể xây dựng một sự gắn kết mạnh mẽ với khách hàng."
+    },
+    {
+        "id": 89,
+        "question": "Sáu khối xây dựng thương hiệu dựa trên mô hình cộng hưởng thương hiệu là sự nổi bật của thương hiệu, hiệu suất thương hiệu, hình ảnh thương hiệu, phán đoán thương hiệu, cảm nhận thương hiệu và __________",
+        "type": "multiple",
+        "options": [
+            "cộng hưởng thương hiệu",
+            "niềm đam mê thương hiệu",
+            "thứ bậc thương hiệu",
+            "danh mục thương hiệu",
+            "tính nhất quán của thương hiệu"
+        ],
+        "correct": 0,
+        "explanation": "The correct answer is indeed \"a) cộng hưởng thương hiệu\" (convergence of branding). This term refers to the process where multiple brands come together to create a unified brand identity and image. By converging their strengths and expertise, these brands can create a cohesive and recognizable brand that resonates with consumers.\n\nIn this context, the six factors you mentioned - sự nổi bật của thương hiệu (brand differentiation), hiệu suất thương hiệu (brand performance), hình ảnh thương hiệu (brand image), phán đoán thương hiệu (brand perception), cảm nhận thương hiệu (brand emotion) và cộng hưởng thương hiệu (convergence of branding) - all contribute to a unified and effective brand strategy.\n\nTherefore, \"a) cộng hòa thương hiệu\" is the correct"
+    },
+    {
+        "id": 90,
+        "question": "______ nhận thức thương hiệu đo lường khả năng một yếu tố thương hiệu xuất hiện trong tâm trí và mức độ dễ dàng mà nó xuất hiện. Một thương hiệu mà chúng ta dễ nhớ lại có mức độ nhận thức thương hiệu sâu sắc hơn so với thương hiệu mà chúng ta chỉ nhận ra khi nhìn thấy",
+        "type": "multiple",
+        "options": [
+            "Chiều rộng",
+            "Chiều cao",
+            "Kích thước",
+            "Ý nghĩa",
+            "Độ sâu"
+        ],
+        "correct": 4,
+        "explanation": "The correct answer is indeed \"e) Độ sâu\" (Depth). Độ sâu (Depth) là một khái niệm trong Marketing và thương hiệu, mô tả khả năng nhận thức của một thương hiệu đối với người tiêu dùng. Nó đo lường mức độ dễ dàng mà một yếu tố thương hiệu xuất hiện trong tâm trí người dùng, từ mức độ đơn giản đến mức độ phức tạp. Độ sâu của nhận thức thương hiệu ảnh hưởng trực tiếp đến việc khách hàng có thể nhớ lại và gắn kết với thương hiệu đó."
+    },
+    {
+        "id": 91,
+        "question": "_____ nhận thức thương hiệu đo lường phạm vi các tình huống mua và sử dụng mà yếu tố thương hiệu xuất hiện trong tâm trí và phụ thuộc phần lớn vào việc tổ chức kiến ​​thức về thương hiệu và sản phẩm trong trí nhớ.",
+        "type": "multiple",
+        "options": [
+            "Chiều rộng",
+            "Chiều cao",
+            "Mức độ",
+            "Ý nghĩa",
+            "Độ sâu"
+        ],
+        "correct": 2,
+        "explanation": "The correct answer is \"Mức độ\" (Degree). This is because nó nhận thức thương hiệu đo lường phạm vi các tình huống mua và sử dụng mà yếu tố thương hiệu xuất hiện trong tâm trí và phụ thuộc phần lớn vào việc tổ chức kiến ​​thức về thương hiệu và sản phẩm trong trí nhớ. Mức độ nhận thức thương hiệu là một khái niệm quan trọng trong quản lý thương hiệu, giúp các công ty đánh giá mức độ ảnh hưởng của thương hiệu đối với khách hàng và quyết định chiến lược tiếp thị phù hợp."
+    },
+    {
+        "id": 92,
+        "question": "Thông thường, các nhà tiếp thị cho rằng thường tồn tại một hệ thống phân cấp sản phẩm, với thông tin về loại sản phẩm ở cấp cao nhất, thông tin về danh mục sản phẩm ở cấp cao thứ hai, thông tin về loại sản phẩm ở cấp tiếp theo và ___ ở cấp thấp nhất.",
+        "type": "multiple",
+        "options": [
+            "thuộc tính thương hiệu",
+            "thông tin thương hiệu",
+            "hiệu suất thương hiệu",
+            "ý nghĩa thương hiệu",
+            "cảm nhận về thương hiệu"
+        ],
+        "correct": 1,
+        "explanation": "Đáp án \"b) thông tin thương hiệu\" là đúng vì trong hệ thống phân cấp sản phẩm, thông tin về thương hiệu thường được xem là thông tin quan trọng và cần thiết nhất cho khách hàng. Thông tin này cung cấp thông tin chi tiết hơn về sản phẩm, giúp khách hàng hiểu rõ hơn về giá trị và tính ưu việt của sản phẩm so với các sản phẩm khác trong cùng một danh mục hoặc loại sản phẩm. Do đó, thông tin thương hiệu thường được đặt ở cấp thấp nhất trong hệ thống phân cấp sản phẩm."
+    },
+    {
+        "id": 93,
+        "question": "Việc tạo ra ý nghĩa thương hiệu bao gồm việc thiết lập _______________ thương hiệu được đặc trưng bởi điều gì và nên đại diện cho điều gì trong tâm trí khách hàng.",
+        "type": "multiple",
+        "options": [
+            "hình ảnh thương hiệu",
+            "thông tin thương hiệu",
+            "hiệu suất thương hiệu",
+            "ý nghĩa thương hiệu",
+            "cảm nhận về thương hiệu"
+        ],
+        "correct": 0,
+        "explanation": "Đáp án correct là \"a) hình ảnh thương hiệu\". Lý do là vì hình ảnh thương hiệu (brand image) chính là sự tổng hợp của các yếu tố như giá trị, thái độ, phong cách và truyền thông mà một thương hiệu thể hiện trong tâm trí khách hàng. Khi tạo ra ý nghĩa thương hiệu, công ty cần thiết lập một hình ảnh thương hiệu cụ thể, đặc trưng và có ý nghĩa với khách hàng, giúp họ liên kết và gắn bó với thương hiệu đó."
+    },
+    {
+        "id": 94,
+        "question": "Bản thân sản phẩm là cốt lõi của giá trị thương hiệu, vì nó là yếu tố ảnh hưởng chính đến trải nghiệm của người tiêu dùng với một thương hiệu, những gì họ nghe về một thương hiệu từ những người khác và những gì công ty có thể nói với khách hàng về thương hiệu trong các thông tin truyền thông của họ",
+        "type": "multiple",
+        "options": [
+            "Khuyến mãi",
+            "Sản phẩm",
+            "Giá",
+            "Phân phối",
+            "Khác"
+        ],
+        "correct": 1,
+        "explanation": "Đáp án \"Sản phẩm\" là chính xác vì bản thân sản phẩm là yếu tố quan trọng nhất ảnh hưởng đến trải nghiệm của người tiêu dùng với một thương hiệu. Khi khách hàng mua sản phẩm từ một thương hiệu, họ thường có ấn tượng đầu tiên và quyết định mua lại do chất lượng và giá trị của sản phẩm đó. Do đó, sản phẩm là cốt lõi của giá trị thương hiệu và ảnh hưởng trực tiếp đến trải nghiệm của người tiêu dùng."
+    },
+    {
+        "id": 95,
+        "question": "____ mô tả mức độ sản phẩm hoặc dịch vụ đáp ứng tốt các nhu cầu chức năng của khách hàng",
+        "type": "multiple",
+        "options": [
+            "Hình ảnh thương hiệu",
+            "Cảm xúc về thương hiệu",
+            "Hiệu suất thương hiệu",
+            "Sự cộng hưởng của thương hiệu",
+            "Những yếu tố khác"
+        ],
+        "correct": 2,
+        "explanation": "The correct answer is indeed \"c) Hiệu suất thương hiệu\" (Brand Performance). This answer is correct because hiệu suất thương hiệu (brand performance) mô tả mức độ đáp ứng tốt của sản phẩm hoặc dịch vụ đối với nhu cầu chức năng của khách hàng, đồng thời cũng phản ánh sự hài lòng và tin tưởng của khách hàng đối với thương hiệu đó."
+    },
+    {
+        "id": 96,
+        "question": "Năm loại thuộc tính và lợi ích quan trọng thường là nền tảng cho hiệu suất thương hiệu, như sau: (1) Thành phần chính và các tính năng bổ sung; (2) Độ tin cậy, độ bền và khả năng phục vụ của sản phẩm; (3) Hiệu quả, hiệu suất và sự đồng cảm của dịch vụ; (4) Phong cách và thiết kế; và (5)____________",
+        "type": "multiple",
+        "options": [
+            "Khuyến mãi",
+            "Sản phẩm",
+            "Phân phối",
+            "Giá",
+            "Những yếu tố khác"
+        ],
+        "correct": 3,
+        "explanation": "Giá là một yếu tố quan trọng trong việc xây dựng và duy trì hiệu suất thương hiệu vì nó ảnh hưởng trực tiếp đến quyết định mua hàng của khách hàng. Giá cả quá cao hoặc quá thấp có thể gây ra sự mất lòng tin của khách hàng, trong khi giá cả hợp lý giúp tạo ấn tượng về giá trị và chất lượng sản phẩm. Do đó, giá là một yếu tố cần được cân nhắc khi xây dựng và duy trì hiệu suất thương hiệu."
+    },
+    {
+        "id": 97,
+        "question": "Hình ảnh thương hiệu đề cập đến nhiều khía cạnh vô hình hơn của thương hiệu và người tiêu dùng có thể hình thành các liên tưởng ____ trực tiếp từ trải nghiệm của riêng họ hoặc gián tiếp thông qua quảng cáo hoặc một số nguồn thông tin khác, chẳng hạn như truyền miệng",
+        "type": "multiple",
+        "options": [
+            "sử dụng",
+            "sản phẩm",
+            "hiệu suất",
+            "nhận thức",
+            "Hình ảnh"
+        ],
+        "correct": 4,
+        "explanation": "The correct answer is indeed \"e) Hình ảnh\" (image). This answer is correct because hình ảnh thương hiệu (brand image) đề cập đến sự tổng hòa của các yếu tố vô hình tạo ấn tượng về thương hiệu đối với người tiêu dùng, bao gồm cả trải nghiệm cá nhân và những gì họ nhận biết từ quảng cáo hoặc thông tin khác. Người tiêu dùng có thể hình thành liên tưởng trực tiếp hoặc gián tiếp về thương hiệu dựa trên những gì họ quan sát được và cảm nhận được."
+    },
+    {
+        "id": 98,
+        "question": "Thông qua trải nghiệm của người tiêu dùng hoặc các hoạt động tiếp thị, các thương hiệu có thể tiếp nhận các đặc điểm tính cách hoặc giá trị của con người và giống như một con người, có vẻ \"hiện đại\", \"cổ điển\", \"sôi động\" hoặc \"kỳ lạ\". Năm chiều của tính cách thương hiệu là sự chân thành, sự phấn khích, năng lực, sự tinh tế và _______.",
+        "type": "multiple",
+        "options": [
+            "độ chắc chắn",
+            "tự do",
+            "thực tế",
+            "trung thực",
+            "lành mạnh"
+        ],
+        "correct": 0,
+        "explanation": "Đáp án \"a) độ chắc chắn\" là đúng vì nó phù hợp với các đặc điểm tính cách thương hiệu được mô tả trong câu hỏi. Các đặc điểm tính cách thương hiệu như chân thành, phấn khích, năng lực và tinh tế thường đi kèm với một cảm giác độ chắc chắn, thể hiện sự ổn định và tin tưởng của người tiêu dùng vào thương hiệu. Điều này giúp xây dựng niềm tin và lòng trung thành lâu dài từ người tiêu dùng."
+    },
+    {
+        "id": 99,
+        "question": "Chúng ta có thể phân biệt _____ là đánh giá về thương hiệu (khách hàng nghĩ gì về thương hiệu) hoặc cảm nhận về thương hiệu (khách hàng cảm thấy gì về thương hiệu), nghĩa là, xét về việc chúng xuất phát từ \"cái đầu\" hay từ \"trái tim”",
+        "type": "multiple",
+        "options": [
+            "Giá trị thương hiệu",
+            "Phản ứng của thương hiệu",
+            "Ý nghĩa thương hiệu",
+            "Sự cộng hưởng của thương hiệu",
+            "Nhận thức về thương hiệu"
+        ],
+        "correct": 1,
+        "explanation": "This answer is correct because \"phản ứng của thương hiệu\" accurately describes the difference between đánh giá về thương hiệu (evaluation of the brand) và cảm nhận về thương hiệu (perception of the brand). Phản ứng của thương hiệu (response of the brand) implies a reaction or interaction from the customer, which can be either positive or negative, and is often driven by emotions. This answer captures the idea that đánh giá về thương hiệu và cảm nhận về thương hiệu là hai khía cạnh khác nhau của tương tác giữa khách hàng và thương hiệu."
+    },
+    {
+        "id": 100,
+        "question": "_____ là ý kiến ​​cá nhân và đánh giá của khách hàng về thương hiệu, mà người tiêu dùng hình thành bằng cách kết hợp tất cả các liên tưởng về hiệu suất và hình ảnh thương hiệu khác nhau. Khách hàng có thể đưa ra mọi loại đánh giá liên quan đến một thương hiệu, nhưng có bốn loại đặc biệt quan trọng: đánh giá về chất lượng, độ tin cậy, sự cân nhắc và tính vượt trội",
+        "type": "multiple",
+        "options": [
+            "Giá trị thương hiệu",
+            "Phản ứng của thương hiệu",
+            "Đánh giá về thương hiệu",
+            "Niềm tin vào thương hiệu",
+            "Nhận thức về thương hiệu"
+        ],
+        "correct": 2,
+        "explanation": "The correct answer is indeed \"c) Đánh giá về thương hiệu\". This is because the question specifically asks about ý kiến ​​cá nhân và đánh giá của khách hàng về thương hiệu, và \"đánh giá về thương hiệu\" là khái niệm chính xác nhất để mô tả ý định này. Các lựa chọn khác như \"đánh giá chất lượng\", \"độ tin cậy\", \"sự cân nhắc\", và \"tính vượt trội\" đều là các thành phần của đánh giá thương hiệu, nhưng không hoàn toàn đúng trong phạm vi câu hỏi."
+    },
+    {
+        "id": 101,
+        "question": "________là đánh giá chung của người tiêu dùng về một thương hiệu và thường tạo thành cơ sở cho việc lựa chọn thương hiệu. Chúng thường phụ thuộc vào các thuộc tính và lợi ích cụ thể của thương hiệu. Ví dụ, hãy xem xét các khách sạn Hilton. Thái độ của người tiêu dùng đối với Hilton phụ thuộc vào mức độ họ tin rằng thương hiệu được đặc trưng bởi một số liên tưởng quan trọng đối với người tiêu dùng đối với một chuỗi khách sạn, như vị trí; sự thoải mái của phòng, thiết kế và diện mạo; chất lượng dịch vụ của nhân viên; cơ sở giải trí; dịch vụ ăn uống; an ninh; giá cả; v.v..",
+        "type": "multiple",
+        "options": [
+            "Nhận thức về thương hiệu",
+            "Phản ứng của thương hiệu",
+            "Đánh giá về thương hiệu",
+            "Thái độ của thương hiệu",
+            "Hành vi thương hiệu"
+        ],
+        "correct": 3,
+        "explanation": "The correct answer is indeed \"d) Thái độ của thương hiệu\" (attitude of the brand). This answer is correct because it accurately reflects the definition provided in the question, which states that thái độ của thương hiệu là đánh giá chung của người tiêu dùng về một thương hiệu và thường tạo thành cơ sở cho việc lựa chọn thương hiệu. The term \"thái độ của thương hiệu\" is a common Vietnamese translation for \"attitude of the brand\", making it a suitable answer to complete the sentence."
+    },
+    {
+        "id": 102,
+        "question": "Khách hàng cũng có thể đưa ra đánh giá về công ty hoặc tổ chức đằng sau thương hiệu. _____ mô tả mức độ mà khách hàng coi thương hiệu là đáng tin cậy theo ba chiều: chuyên môn được nhận thức, sự đáng tin cậy và khả năng thích ứng. Nói cách khác, độ tin cậy đo lường xem người tiêu dùng có coi công ty hoặc tổ chức đằng sau thương hiệu là giỏi trong những gì họ làm, quan tâm đến khách hàng và chỉ đơn giản là đang thích hay không.",
+        "type": "multiple",
+        "options": [
+            "Nhận thức về thương hiệu",
+            "Phản ứng của thương hiệu",
+            "Đánh giá về thương hiệu",
+            "Thái độ của thương hiệu",
+            "Uy tín của thương hiệu"
+        ],
+        "correct": 4,
+        "explanation": "This answer is correct because it directly relates to the concept of uy tín của thương hiệu (brand reputation), which refers to how customers perceive a brand's trustworthiness and reliability. The description provided matches the definition of uy tín của thương hiệu, as it outlines three dimensions: chuyên môn được nhận thức (acknowledged expertise), sự đáng tin cậy (trustworthiness), and khả năng thích ứng (adaptability). This answer accurately conveys the idea that uy tín của thương hiệu is a measure of how much customers trust a brand."
+    },
+    {
+        "id": 103,
+        "question": "Cho dù họ coi trọng thương hiệu đến mức nào hoặc thấy thương hiệu đó đáng tin cậy đến mức nào, trừ khi họ cũng nghiêm túc ____ và coi nó có liên quan, khách hàng sẽ giữ một thương hiệu ở khoảng cách xa và không bao giờ chấp nhận nó một cách chặt chẽ",
+        "type": "multiple",
+        "options": [
+            "cân nhắc",
+            "Nhận thức",
+            "uy tín",
+            "nhận thức",
+            "hình ảnh"
+        ],
+        "correct": 0,
+        "explanation": "The correct answer, \"cân nhắc\", is the best fit because it implies a level of evaluation or weighing that suggests customers will consider multiple factors before committing to a brand. This word choice accurately conveys the idea that customers are not automatically loyal to a brand unless they also seriously consider its merits. The alternative option, \" nghiêm túc\" (literally \"serious\"), does not convey the same nuance and suggestion of deliberation or evaluation."
+    },
+    {
+        "id": 104,
+        "question": "______ đo lường mức độ mà khách hàng coi thương hiệu là độc đáo và tốt hơn các thương hiệu khác. Điều này hoàn toàn quan trọng để xây dựng mối quan hệ chặt chẽ và tích cực với khách hàng và phụ thuộc rất nhiều vào số lượng và bản chất của các liên tưởng thương hiệu độc đáo tạo nên hình ảnh thương hiệu.",
+        "type": "multiple",
+        "options": [
+            "Xem xét thương hiệu",
+            "Ưu thế thương hiệu",
+            "Uy tín thương hiệu",
+            "Nhận thức thương hiệu",
+            "Hình ảnh thương hiệu"
+        ],
+        "correct": 1,
+        "explanation": "The correct answer is \"Ưu thế thương hiệu\" (Brand Advantage) because nó mô tả chính xác khái niệm về mức độ mà khách hàng coi thương hiệu là độc đáo và tốt hơn các thương hiệu khác. Ưu thế thương hiệu là yếu tố quan trọng trong việc xây dựng mối quan hệ với khách hàng, vì nó ảnh hưởng đến lòng trung thành và sự tin tưởng của khách hàng đối với thương hiệu. Bằng cách hiểu rõ ưu thế thương hiệu, doanh nghiệp có thể tạo ra chiến lược tiếp thị hiệu quả hơn để duy trì sự độc đáo và hấp dẫn của thương hiệu."
+    },
+    {
+        "id": 105,
+        "question": "_____ là phản ứng và phản hồi cảm xúc của khách hàng đối với thương hiệu. Chúng cũng liên quan đến giá trị xã hội mà thương hiệu gợi lên và có thể nhẹ nhàng hoặc mãnh liệt và có thể tích cực hoặc tiêu cực",
+        "type": "multiple",
+        "options": [
+            "Xem xét thương hiệu",
+            "Ưu thế thương hiệu",
+            "Cảm xúc thương hiệu",
+            "Đánh giá thương hiệu",
+            "Hình ảnh thương hiệu"
+        ],
+        "correct": 2,
+        "explanation": "The correct answer is \"Cảm xúc thương hiệu\" (Emotional Branding). This term accurately describes the emotional connection and response of customers to a brand, encompassing both positive and negative emotions, as well as its impact on social values. The other options do not fully capture the complex and multifaceted nature of this concept."
+    },
+    {
+        "id": 106,
+        "question": "Ngày càng có nhiều công ty cố gắng khai thác nhiều cảm xúc của người tiêu dùng hơn với thương hiệu của họ. Sau đây là sáu loại cảm xúc quan trọng khi xây dựng thương hiệu: Ấm áp, Vui vẻ, Phấn khích, An toàn, Sự chấp thuận của xã hội, ___________.",
+        "type": "multiple",
+        "options": [
+            "chân thành",
+            "phấn khích",
+            "năng lực",
+            "Tự trọng",
+            "tinh tế"
+        ],
+        "correct": 3,
+        "explanation": "Đáp án đúng là \"Tự trọng\" (Self-respect). Tự trọng là một cảm xúc quan trọng khi xây dựng thương hiệu vì nó liên quan đến việc người tiêu dùng đánh giá cao bản thân và cảm thấy tự tin với lựa chọn của mình. Khi một thương hiệu thể hiện sự tự trọng, nó tạo ra ấn tượng rằng thương hiệu đó có những giá trị và nguyên tắc rõ ràng, giúp tăng cường sự tin tưởng và trung thành của khách hàng.\n\nVí dụ, nếu một thương hiệu thời trang như Gucci sử dụng cảm xúc tự trọng trong chiến dịch quảng cáo, họ sẽ thể hiện rằng họ tin vào chất lượng và phong cách của mình, điều này có thể tạo ra ấn tượng tích cực với khách hàng"
+    },
+    {
+        "id": 107,
+        "question": "Sự cộng hưởng thương hiệu mô tả bản chất của mối quan hệ này và mức độ mà khách hàng cảm thấy rằng họ \"đồng bộ\" với thương hiệu. Sự cộng hưởng được đặc trưng theo cường độ hoặc chiều sâu của mối liên kết tâm lý mà khách hàng có với thương hiệu,cũng như mức độ hoạt động đo lòng trung thành này tạo ra. Chúng ta có thể chia nhỏ hai chiều của sự cộng hưởng thương hiệu này thành bốn loại: Lòng trung thành về hành vi, Sự gắn bó về thái độ, Ý thức cộng đồng, _____________",
+        "type": "multiple",
+        "options": [
+            "Sự tham gia của cộng đồng",
+            "Mua hàng lặp lại",
+            "Thu thập thông tin",
+            "Tham gia thụ động",
+            "Tham gia tích cực"
+        ],
+        "correct": 4,
+        "explanation": "Sự cộng hưởng thương hiệu được chia nhỏ thành bốn loại dựa trên mức độ hoạt động của lòng trung thành và mối liên kết tâm lý với thương hiệu. Trong đó, \"Tham gia tích cực\" là đúng vì nó mô tả sự tham gia tích cực của khách hàng vào các hoạt động của thương hiệu, như tham gia các chương trình khuyến mãi, theo dõi trang web chính thức, hoặc tham gia các cộng đồng trên mạng xã hội liên quan đến thương hiệu. Sự cộng hưởng thương hiệu với \"Tham gia tích cực\" cho thấy mức độ sâu sắc và rộng rãi của mối liên kết tâm lý giữa khách hàng và thương hiệu."
+    },
+    {
+        "id": 108,
+        "question": "Chúng ta có thể đánh giá ____ về mặt mua hàng lặp lại và số lượng hoặc tỷ lệ khối lượng danh mục được quy cho thương hiệu, tức là \"tỷ lệ yêu cầu về danh mục\". Nói cách khác, khách hàng mua một thương hiệu thường xuyên như thế nào và họ mua bao nhiêu?",
+        "type": "multiple",
+        "options": [
+            "Lòng trung thành về hành vi",
+            "Sự gắn bó về thái độ",
+            "Ý thức cộng đồng",
+            "Tham gia tích cực",
+            "Tham gia thụ động"
+        ],
+        "correct": 0,
+        "explanation": "Đáp án \"a) Lòng trung thành về hành vi\" là chính xác vì nó mô tả được sự liên tục và số lượng của việc mua hàng lặp lại của khách hàng đối với một thương hiệu cụ thể. Tỷ lệ yêu cầu về danh mục (repeat purchase rate) là một chỉ số quan trọng trong phân tích dữ liệu bán hàng, giúp hiểu được mức độ lòng trung thành của khách hàng đối với thương hiệu. Bằng cách đánh giá tỷ lệ mua hàng lặp lại và số lượng, chúng ta có thể xác định xem khách hàng mua sản phẩm từ thương hiệu đó bao nhiêu và thường xuyên như thế nào."
+    },
+    {
+        "id": 109,
+        "question": "Sự cộng hưởng đòi hỏi sự gắn bó cá nhân mạnh mẽ. Khách hàng nên vượt ra ngoài thái độ tích cực để xem thương hiệu như một thứ gì đó đặc biệt trong bối cảnh rộng hơn. Ví dụ, những khách hàng có nhiều ______ đối với một thương hiệu có thể nói rằng họ \"yêu thích\" thương hiệu đó, mô tả thương hiệu đó là một trong những tài sản yêu thích của họ hoặc coi đó là một \"niềm vui nhỏ\" mà họ mong đợi",
+        "type": "multiple",
+        "options": [
+            "Lòng trung thành về hành vi",
+            "Sự gắn bó về thái độ",
+            "Cảm giác cộng đồng",
+            "Sự tham gia tích cực",
+            "Sự tham gia thụ động"
+        ],
+        "correct": 1,
+        "explanation": "Đáp án \"sự gắn bó về thái độ\" là đúng vì nó mô tả sự gắn kết cá nhân giữa khách hàng và thương hiệu, tạo ra một cảm giác gắn bó sâu sắc hơn. Sự gắn bó về thái độ bao gồm cả việc khách hàng có thái độ tích cực, như yêu thích, coi trọng hoặc tin tưởng thương hiệu, giúp tạo ra sự cộng hưởng mạnh mẽ. Điều này cho thấy rằng sự gắn bó về thái độ là yếu tố quan trọng để khách hàng vượt qua giới hạn của thái độ tích cực và xem thương hiệu như một phần của cuộc sống hàng ngày của họ."
+    },
+    {
+        "id": 110,
+        "question": "Thương hiệu cũng có thể mang ý nghĩa rộng hơn đối với khách hàng bằng cách truyền tải ______. Nhận dạng với cộng đồng thương hiệu có thể phản ánh một hiện tượng xã hội quan trọng trong đó khách hàng cảm thấy có mối quan hệ họ hàng hoặc liên kết với những người khác có liên quan đến thương hiệu, cho dù là người dùng thương hiệu khác hay khách hàng, hoặc nhân viên hoặc đại diện của công ty. Một cộng đồng thương hiệu có thể tồn tại trực tuyến hoặc ngoại tuyến",
+        "type": "multiple",
+        "options": [
+            "Lòng trung thành về hành vi",
+            "Sự gắn bó về thái độ",
+            "Cảm giác cộng đồng",
+            "Sự tham gia tích cực",
+            "Sự tham gia thụ động"
+        ],
+        "correct": 2,
+        "explanation": "Đáp án \"Cảm giác cộng đồng\" là chính xác vì thương hiệu có thể tạo ra cảm giác cộng đồng cho khách hàng bằng cách truyền tải sự liên kết và mối quan hệ với những người khác có liên quan đến thương hiệu. Điều này giúp khách hàng cảm thấy được chấp nhận, gắn kết và trở thành phần của một nhóm, dẫn đến lòng trung thành và loyalties cao hơn. Bằng cách tạo ra cảm giác cộng đồng, thương hiệu có thể xây dựng mối quan hệ sâu sắc với khách hàng và tạo ra lợi ích cho doanh nghiệp."
+    },
+    {
+        "id": 111,
+        "question": "Cuối cùng, có lẽ sự khẳng định mạnh mẽ nhất về lòng trung thành với thương hiệu xảy ra khi khách hàng thể hiện sự tham gia tích cực, nghĩa là họ sẵn sàng đầu tư thời gian, năng lượng, tiền bạc hoặc các nguồn lực khác vào thương hiệu ngoài những nguồn lực đã chi trong quá trình mua hoặc tiêu thụ thương hiệu. Ví dụ: khách hàng có thể chọn tham gia một câu lạc bộ tập trung vào một thương hiệu, nhận thông tin cập nhật và trao đổi thư từ với những người dùng thương hiệu khác hoặc đại diện chính thức hoặc không chính thức của chính thương hiệu đó",
+        "type": "multiple",
+        "options": [
+            "Lòng trung thành về hành vi",
+            "Sự gắn bó về thái độ",
+            "Cảm giác cộng đồng",
+            "Tham gia tích cực",
+            "Tham gia thụ động"
+        ],
+        "correct": 3,
+        "explanation": "Đáp án là \"Tham gia tích cực\" vì đây là hành động thể hiện sự tham gia và đầu tư mạnh mẽ nhất từ phía khách hàng vào thương hiệu, chứng minh lòng trung thành của họ đối với thương hiệu. Hành động này vượt qua đơn giản là mua hoặc tiêu thụ sản phẩm, thể hiện sự gắn kết thực sự với thương hiệu và cam kết lâu dài."
+    },
+    {
+        "id": 112,
+        "question": "Mô hình cộng hưởng thương hiệu cũng củng cố một số nguyên lý xây dựng thương hiệu quan trọng, trong đó có năm nguyên lý đặc biệt đáng chú ý. Đó là: (1) Khách hàng sở hữu thương hiệu, (2) Không đi tắt đón đầu thương hiệu, (3) Thương hiệu phải có tính hai mặt, (4) Thương hiệu phải có thương hiệu phong phú và (5) ---------------",
+        "type": "multiple",
+        "options": [
+            "Công ty nên triển khai xây dựng thương hiệu nội bộ",
+            "Công ty nên tập trung vào đối thủ cạnh tranh",
+            "Công ty nên tôn trọng môi trường",
+            "Công ty nên thể hiện trách nhiệm xã hội",
+            "Sự cộng hưởng thương hiệu mang lại sự tập trung quan trọng"
+        ],
+        "correct": 4,
+        "explanation": "The correct answer is indeed \"e) Sự cộng hưởng thương hiệu mang lại sự tập trung quan trọng\". This reason is correct because it completes the five key principles of brand co-creation and emphasizes the importance of co-creating with customers to build a strong brand identity that resonates with them. By acknowledging this principle, the model reinforces the idea that brands must engage with their target audience to create a shared understanding and sense of ownership around the brand."
+    },
+    {
+        "id": 113,
+        "question": "Phát triển vị thế vững chắc và xây dựng sự cộng hưởng thương hiệu là những mục tiêu tiếp thị quan trọng. Tuy nhiên, để hiểu rõ hơn về ROI của các khoản đầu tư tiếp thị, cần có một công cụ khác. ____ là một phương pháp tiếp cận có cấu trúc để đánh giá các nguồn và kết quả của giá trị thương hiệu và cách thức các hoạt động tiếp thị tạo ra giá trị thương hiệu",
+        "type": "multiple",
+        "options": [
+            "Chuỗi giá trị thương hiệu",
+            "Mô hình cộng hưởng thương hiệu",
+            "Mô hình giá trị thương hiệu",
+            "Mô hình định vị thương hiệu",
+            "Mô hình đánh giá thương hiệu"
+        ],
+        "correct": 0,
+        "explanation": "Đáp án đúng là \"a) Chuỗi giá trị thương hiệu\". Điều này vì chuỗi giá trị thương hiệu là một phương pháp tiếp cận có cấu trúc để đánh giá các nguồn và kết quả của giá trị thương hiệu và cách thức các hoạt động tiếp thị tạo ra giá trị thương hiệu. Phương pháp này giúp doanh nghiệp hiểu rõ hơn về việc đầu tư vào đâu, làm sao để đạt được lợi ích tối đa từ các hoạt động tiếp thị."
+    },
+    {
+        "id": 114,
+        "question": "Mô hình chuỗi giá trị thương hiệu giả định rằng quá trình tạo ra giá trị thương hiệu trải qua bốn giai đoạn: (1) Đầu tư chương trình tiếp thị, (2) tư duy của khách hàng là kết quả của hoạt động tiếp thị liên quan, (3) hiệu suất thương hiệu được tạo ra bởi tư duy này, (4) _____ là kết quả đánh giá của cộng đồng đầu tư.",
+        "type": "multiple",
+        "options": [
+            "Chuỗi giá trị thương hiệu",
+            "Giá trị cổ đông",
+            "Giá trị khách hàng",
+            "Giá trị thương hiệu",
+            "Giá trị hợp lực"
+        ],
+        "correct": 1,
+        "explanation": "This answer is correct because nó phù hợp với mô hình chuỗi giá trị thương hiệu, trong đó quá trình tạo ra giá trị thương hiệu được chia thành bốn giai đoạn. Giai đoạn thứ tư là kết quả đánh giá của cộng đồng đầu tư, nơi giá trị thương hiệu được định giá và đánh giá để quyết định xem có nên đầu tư vào nó hay không. Giá trị cổ đông là cụm từ thường dùng để mô tả kết quả đánh giá này."
+    },
+    {
+        "id": 115,
+        "question": "Mô hình chuỗi giá trị thương hiệu giả định rằng quá trình tạo ra giá trị thương hiệu phải trải qua bốn giai đoạn giá trị, ngoài ra, một số yếu tố liên kết can thiệp giữa các giai đoạn này. Các yếu tố liên kết này xác định mức độ giá trị được tạo ra ở một giai đoạn được chuyển giao hoặc \"nhân lên\" sang giai đoạn tiếp theo. Ba bộ nhân tố là: nhân tố chất lượng chương trình, nhân tố điều kiện thị trường và ____.",
+        "type": "multiple",
+        "options": [
+            "Nhân tố sản phẩm",
+            "Nhân tố giá",
+            "Nhân tố tâm lý nhà đầu tư",
+            "Nhân tố kênh",
+            "Nhân tố khuyến mại"
+        ],
+        "correct": 2,
+        "explanation": "Đáp án đúng là nhân tố tâm lý nhà đầu tư (Pyschological Investor). Điều này có nghĩa là người mua hàng hóa hoặc dịch vụ không chỉ dựa vào thông tin về chất lượng sản phẩm hay giá cả, mà còn trên các yếu tố như cảm xúc, nhận thức và kỳ vọng cá nhân của họ. Nhân tố tâm lý nhà đầu tư giúp xác định mức độ giá trị được tạo ra ở một giai đoạn được chuyển giao sang giai đoạn tiếp theo trong chuỗi giá trị thương hiệu."
+    },
+    {
+        "id": 116,
+        "question": "Khả năng chương trình tiếp thị tác động đến tư duy của khách hàng sẽ phụ thuộc vào chất lượng của nó. Một cách tiện lợi để ghi nhớ một số cân nhắc chính là thông qua từ viết tắt DRIVE, tức là Tính khác biệt, Tính liên quan, Tính tích hợp, Giá trị, _____",
+        "type": "multiple",
+        "options": [
+            "Chuyên môn",
+            "Sự thanh lịch",
+            "Tính tự chọn",
+            "Sự xuất sắc",
+            "Không có đáp án nào ở trên"
+        ],
+        "correct": 3,
+        "explanation": "The correct answer is \"Điểm nổi bật\" (D) instead of \"Sự xuất sắc\". This is because the từ viết tắt DRIVE được sử dụng để ghi nhớ các yếu tố quan trọng khi tiếp thị đến khách hàng, bao gồm tính khác biệt, tính liên quan, tính tích hợp, giá trị, và điểm nổi bật. Điểm nổi bật là một khái niệm quan trọng trong tiếp thị, mô tả khả năng của sản phẩm hoặc dịch vụ vượt trội so với đối thủ cạnh tranh."
+    },
+    {
+        "id": 117,
+        "question": "Nhìn chung, mô hình cộng hưởng thương hiệu nắm bắt được nhiều khía cạnh khác nhau của tư duy khách hàng. Để cung cấp một bản tóm tắt ngắn gọn, danh sách \"5 AS\" ngắn hơn có thể nêu bật các biện pháp quan trọng của tư duy khách hàng theo gợi ý của mô hình cộng hưởng: Nhận thức về thương hiệu, Liên tưởng thương hiệu, Thái độ thương hiệu, Sự gắn bó với thương hiệu, ______ thương hiệu",
+        "type": "multiple",
+        "options": [
+            "Hình ảnh",
+            "Hiệu suất",
+            "Phán đoán",
+            "Cảm xúc",
+            "Hoạt động"
+        ],
+        "correct": 4,
+        "explanation": "The correct answer is \"Hoạt động\" (Activity) because nó là phần thứ năm trong mô hình cộng hưởng thương hiệu của Eugene M. Lang và Stephen J. McCarthy, mô tả cách khách hàng tương tác với thương hiệu thông qua các hoạt động mua sắm, tham gia vào các chương trình khuyến mãi, chia sẻ sản phẩm trên mạng xã hội, v.v. Hoạt động thương hiệu giúp xác định vai trò và hành vi của khách hàng trong quá trình xây dựng mối quan hệ với thương hiệu.\n\n\"Nhìn chung, mô hình cộng hưởng thương hiệu nắm bắt được nhiều khía cạnh khác nhau của tư duy khách hàng.\" là một câu mở đầu cho việc giải thích về các khía cạnh khác nhau của tư duy"
+    },
+    {
+        "id": 118,
+        "question": "___ Hệ số nhân có thể được định nghĩa là mức độ giá trị được tạo ra trong tâm trí khách hàng ảnh hưởng đến hiệu suất thị trường phụ thuộc vào các yếu tố ngoài từng khách hàng",
+        "type": "multiple",
+        "options": [
+            "Điều kiện thị trường",
+            "Chất lượng chương trình tiếp thị",
+            "Tâm lý nhà đầu tư",
+            "Mức độ cạnh tranh",
+            "Mức độ đổi mới"
+        ],
+        "correct": 0,
+        "explanation": "The correct answer is \"a) Điều kiện thị trường\". This answer is correct because hệ số nhân (market elasticity of demand) là một công thức toán học được sử dụng để đo mức độ biến động của nhu cầu hàng hóa do thay đổi giá hoặc các yếu tố khác. Trong ngữ cảnh này, điều kiện thị trường (market conditions) là yếu tố ngoài từng khách hàng mà ảnh hưởng đến hiệu suất thị trường, và hệ số nhân chính xác cho thấy mức độ giá trị được tạo ra trong tâm trí khách hàng do những điều kiện thị trường này gây ra."
+    },
+    {
+        "id": 119,
+        "question": "Điều kiện thị trường Hệ số nhân bao gồm ba yếu tố bao gồm (1) Ưu thế cạnh tranh, (2) Kênh và hỗ trợ trung gian khác, và (3) ______",
+        "type": "multiple",
+        "options": [
+            "Quy mô thị trường",
+            "Quy mô và hồ sơ khách hàng",
+            "Loại thị trường",
+            "Cạnh tranh giữa các loại",
+            "Không có đáp án nào ở trên"
+        ],
+        "correct": 1,
+        "explanation": "Đáp án đúng là b) Quy mô và hồ sơ khách hàng vì điều kiện thị trường Hệ số nhân thường được xác định bởi ba yếu tố chính: ưu thế cạnh tranh, kênh và hỗ trợ trung gian khác, và quy mô và hồ sơ khách hàng. Điều này giúp đánh giá khả năng cạnh tranh của một công ty trên thị trường, bao gồm cả sự có mặt của kênh phân phối, khả năng tiếp cận khách hàng, và quy mô hoạt động. Bằng cách xem xét những yếu tố này, các nhà lãnh đạo kinh doanh có thể đưa ra quyết định sáng suốt về chiến lược kinh doanh của mình."
+    },
+    {
+        "id": 129,
+        "question": "Một và sự minh họa tốt cho những yếu tố thương hiệu mạnh mẽ là logo “Swoosh” của Nike, khẩu hiệu “Just Do It”, và cái tên có tính huyền thoại “Nike” dựa vào một vị nữ thần chiến thắng có cánh",
+        "type": "truefalse",
+        "correct": true,
+        "explanation": "Đáp án \"True\" là chính xác vì những yếu tố này đều góp phần tạo nên thương hiệu Nike mạnh mẽ và độc đáo. Logo \"Swoosh\" của Nike biểu trưng cho sự linh hoạt và tốc độ, trong khi khẩu hiệu \"Just Do It\" khích lệ người dùng thực hiện mục tiêu của mình. Cái tên \"Nike\" được dựa trên vị nữ thần chiến thắng có cánh trong thần thoại Hy Lạp, giúp tạo ra một hình ảnh mạnh mẽ và đầy sức hút cho thương hiệu."
+    },
+    {
+        "id": 130,
+        "question": "Một trong những tiêu chuẩn lựa chọn để tạo ra một yếu tố thương hiệu thành công là nó phải có tính chất có thể bảo vệ được",
+        "type": "truefalse",
+        "correct": true,
+        "explanation": "Đáp án đúng là \"True\" vì tính chất mà tôi đang nói đến là \"được bảo vệ bởi bản quyền\" hay \"được bảo vệ bằng nhãn hiệu\". Điều này là một tiêu chuẩn quan trọng để tạo ra một yếu tố thương hiệu thành công, giúp ngăn chặn sự sao chép và đảm bảo sự độc đáo của sản phẩm hoặc dịch vụ. Việc bảo vệ bằng bản quyền hoặc nhãn hiệu cho phép doanh nghiệp kiểm soát việc sử dụng và phân phối sản phẩm hoặc dịch vụ của mình."
+    },
+    {
+        "id": 144,
+        "question": "Bởi vì người tiêu dùng không thay đổi một cách cơ bản trong những năm gần đây, nên không có những chiến lược và chiến thuật đằng sau những chương trình marketing",
+        "type": "truefalse",
+        "correct": false,
+        "explanation": "Đáp án này đúng vì người tiêu dùng luôn thay đổi theo thời gian do sự phát triển của công nghệ, thay đổi trong nhu cầu và sở thích cũng như ảnh hưởng từ môi trường xung quanh. Điều này có nghĩa là chiến lược và chiến thuật đằng sau các chương trình marketing phải linh hoạt và có khả năng thích ứng để đáp ứng những thay đổi đó. Do đó, không có chương trình marketing nào được thiết kế một cách cố định và mãn hạn mà không cần sự điều chỉnh liên tục."
+    }
+]
